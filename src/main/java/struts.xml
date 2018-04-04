@@ -9,6 +9,8 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<package name="MyPackage" namespace="/"
 		extends="struts-default">
-		
+		<action name="goToCodeOnLine" class="cn.sjy.GoToCodeOnLineAction">
+			<result name="success">/pages/codeOnLine.html</result>
+		</action>
 	</package>
 </struts>

@@ -1,0 +1,58 @@
+body {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+#nav-brand-img {
+	width: 30px;
+}
+
+#navbarsExampleDefault {
+	text-align: center;
+}
+
+#nav-btn-1 {
+	width: 20%;
+}
+
+footer.footer {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+
+/*
+ * 自定义的样式。
+ */
+
+#main-body {
+	margin-top: 70px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+li {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+form {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
