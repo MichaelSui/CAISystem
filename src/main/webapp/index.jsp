@@ -30,7 +30,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
 <body>
@@ -47,18 +47,14 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse ml-5" id="navbarsExampleDefault">
+			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="goToCodeOnLine">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./pages/handInHomework.html">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./pages/askQuestions.html">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./pages/downloadResources.html">下载资源</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./pages/myInformation.html">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToSignIn">登陆</a>
 			</div>
@@ -207,8 +203,7 @@
 					<h2 class="mb-4">迫不及待想要开始学习了？请先登录。</h2>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-					<a class="btn btn-primary" id="call-to-action-btn-1"
-						href="./pages/signIn.html">登陆</a>
+					<a class="btn btn-primary" id="call-to-action-btn-1" href="#">登陆</a>
 				</div>
 			</div>
 		</div>

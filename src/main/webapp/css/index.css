@@ -2,12 +2,7 @@ body {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 }
@@ -50,7 +45,7 @@ header.masthead h1 {
 	font-size: 2rem;
 }
 
-@media (min-width: 768px) {
+@media ( min-width : 768px) {
 	header.masthead {
 		padding-top: 12rem;
 		padding-bottom: 12rem;
@@ -89,7 +84,7 @@ header.masthead h1 {
 	background-image: url(../img/bg-showcase-5.jpg);
 }
 
-@media (min-width: 768px) {
+@media ( min-width : 768px) {
 	.showcase .showcase-text {
 		padding: 7rem;
 	}
@@ -134,18 +129,13 @@ header.masthead h1 {
 	color: black;
 }
 
-
 /*
  * a:link，定义正常链接的样式；
  * a:visited，定义已访问过链接的样式；
  * a:hover，定义鼠标悬浮在链接上时的样式；
  * a:active，定义鼠标点击链接时的样式。
  * */
-
-a.black:link,
-a.black:visited,
-a.black:hover,
-a.black:active {
+a.black:link, a.black:visited, a.black:hover, a.black:active {
 	color: black;
 }
 

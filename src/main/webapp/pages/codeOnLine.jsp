@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="codeOnLine.html">
+<meta name="description" content="codeOnLine.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -54,7 +54,7 @@
 <script src="./vendor/CodeMirror-master/addon/edit/matchbrackets.js"></script>
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/codeOnLine.css">
+<link rel="stylesheet" type="text/css" href="./css/codeOnLine.css">
 </head>
 
 <body>
@@ -75,16 +75,12 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="goToCodeOnLine">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./handInHomework.html">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./askQuestions.html">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./downloadResources.html">下载资源</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./myInformation.html">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="./signIn.html">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="#">登陆</a>
 			</div>
 		</div>
 	</nav>

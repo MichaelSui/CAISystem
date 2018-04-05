@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="signIn.html">
+<meta name="description" content="signIn.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -29,16 +29,16 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/signIn.css">
+<link rel="stylesheet" type="text/css" href="./css/sign_In.css">
 </head>
 
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="./index.html"> <img id="nav-brand-img"
-				src="./img/favicon.ico" alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="./index.html">CAI System</a>
+			<a href="#"> <img id="nav-brand-img" src="./img/favicon.ico"
+				alt="brand" />
+			</a> <a class="navbar-brand ml-2" href="#">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -46,23 +46,35 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse ml-5" id="navbarsExampleDefault">
+			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="./codeOnLine.html">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./handInHomework.html">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./askQuestions.html">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./downloadResources.html">下载资源</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="./myInformation.html">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">在线编程</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="./signIn.html">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="#">登陆</a>
 			</div>
 		</div>
 	</nav>
+
+	<!-- 登录功能。 -->
+	<div class="container text-center" id="main-body">
+		<form class="form-signin">
+			<img class="mb-4" src="./img/electronics.png" alt="" width="72px"
+				height="72px">
+			<h1 class="h3 mb-3 font-weight-normal">请登陆</h1>
+			<input type="text" id="inputName" class="form-control"
+				placeholder="用户名" required autofocus> <input type="password"
+				id="inputPassword" class="form-control" placeholder="密码" required>
+			<div class="checkbox mb-3">
+				<input type="checkbox" value="remember-me"> 记住密码
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+			<button class="btn btn-lg btn-danger btn-block">忘记密码</button>
+		</form>
+	</div>
 
 	<!-- Footer. -->
 	<footer class="footer bg-light">
