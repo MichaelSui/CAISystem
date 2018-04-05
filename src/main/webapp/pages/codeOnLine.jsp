@@ -1,7 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,9 +61,9 @@
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="./index.html"> <img id="nav-brand-img"
+			<a href="./index.jsp"> <img id="nav-brand-img"
 				src="./img/favicon.ico" alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="./index.html">CAI System</a>
+			</a> <a class="navbar-brand ml-2" href="./index.jsp">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -101,8 +104,8 @@
 					</div>
 				</ul>
 				<br />
-				<h2 id="questionTitle">标题</h2>
-				<div id="questionDetails">详细要求</div>
+				<h2 id="questionTitle">练习标准输入输出函数</h2>
+				<div id="questionDetails">在控制台打印“Hello World!”字符串。</div>
 				<br />
 				<fieldset id="codeFieldSet">
 					<legend>编程</legend>

@@ -37,9 +37,9 @@
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="./index.html"> <img id="nav-brand-img"
+			<a href="./index.jsp"> <img id="nav-brand-img"
 				src="./img/favicon.ico" alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="./index.html">CAI System</a>
+			</a> <a class="navbar-brand ml-2" href="./index.jsp">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -60,7 +60,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="./pages/myInformation.html">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="./pages/signIn.html">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="goToSignIn">登陆</a>
 			</div>
 		</div>
 	</nav>

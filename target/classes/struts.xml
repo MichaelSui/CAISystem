@@ -7,10 +7,16 @@
 	<constant name="struts.enable.DynamicMethodInvocation"
 		value="false" />
 	<constant name="struts.devMode" value="true"></constant>
+
 	<package name="MyPackage" namespace="/"
 		extends="struts-default">
-		<action name="goToCodeOnLine" class="cn.sjy.GoToCodeOnLineAction">
-			<result name="success">/pages/codeOnLine.html</result>
+		<action name="goToCodeOnLine"
+			class="cn.sjy.action.GoToCodeOnLineAction">
+			<result name="success">./pages/codeOnLine.jsp</result>
+		</action>
+		<action name="goToSignIn"
+			class="cn.sjy.action.GoToSignInAction">
+			<result name="success">./pages/signIn.jsp</result>
 		</action>
 	</package>
 </struts>
