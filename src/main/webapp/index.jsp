@@ -50,13 +50,13 @@
 			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="goToCodeOnLine">在线编程</a></li>
+						href="goToCodeOnLineAction.do">在线编程</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="goToSignIn">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
