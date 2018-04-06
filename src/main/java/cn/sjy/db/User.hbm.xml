@@ -12,6 +12,6 @@
 		
 		<!-- 其他属性 -->
 		<property name="password" column="c_password" type="java.lang.String"></property>
-		<property name="authority" column="c_authority" type="cn.sjy.utils.Authority"></property>
+		<property name="authority" column="c_authority" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>   

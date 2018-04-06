@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
 import cn.sjy.db.User;
+import cn.sjy.utils.Authority;
 import cn.sjy.utils.HibernateUtil;
 
 /*
@@ -50,7 +51,7 @@ public class LoginAction {
 	    User user = list.get(0);
 	    cn.sjy.utils.User sessionUser = new cn.sjy.utils.User();
 	    sessionUser.setId(user.getId());
-	    sessionUser.setAuthority(user.getAuthority());
+	    sessionUser.setAuthority(Authority.valueOf(user.getAuthority()));
 	    httpSession.put("user", sessionUser);
 	    transaction.commit();
 	    session.close();
