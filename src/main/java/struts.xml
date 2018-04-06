@@ -19,5 +19,9 @@
 			class="cn.sjy.action.GoToLogInAction">
 			<result name="success">./pages/logIn.jsp</result>
 		</action>
+		<action name="loginAction" class="cn.sjy.action.LoginAction">
+			<result name="success">./index.jsp</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
 	</package>
 </struts>

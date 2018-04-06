@@ -12,7 +12,7 @@
 		<filter-class>cn.sjy.utils.IsLogInFilter</filter-class>
 		<init-param>
 			<param-name>passURL</param-name>
-			<param-value>index.jsp;logIn.jsp;goToLogInAction.do</param-value>
+			<param-value>index.jsp;logIn.jsp;goToLogInAction.do;loginAction.do</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>

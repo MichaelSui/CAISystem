@@ -39,7 +39,7 @@ public class LoginAction {
     public String execute() throws Exception {
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
-	String hql = "from cn.sjy.db.User u where u.id = :id and u.password = :password";
+	String hql = "from User user where user.id = :id and user.password = :password";
 	Query query = session.createQuery(hql);
 	query.setParameter("id", id);
 	query.setParameter("password", password);

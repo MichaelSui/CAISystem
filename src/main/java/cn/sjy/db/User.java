@@ -1,11 +1,8 @@
 package cn.sjy.db;
 
-import java.io.Serializable;
-
 import cn.sjy.utils.Authority;
 
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class User {
     private String id;
     private String password;
     private Authority authority;

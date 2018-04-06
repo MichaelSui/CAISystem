@@ -61,13 +61,14 @@
 
 	<!-- 登录功能。 -->
 	<div class="container text-center" id="main-body">
-		<form class="form-signin">
+		<form class="form-signin" action="loginAction.do" method="post">
 			<img class="mb-4" src="./img/electronics.png" alt="" width="72px"
 				height="72px">
 			<h1 class="h3 mb-3 font-weight-normal">请登陆</h1>
-			<input type="text" id="inputName" class="form-control"
+			<input type="text" id="inputName" class="form-control" name="id"
 				placeholder="用户名" required autofocus> <input type="password"
-				id="inputPassword" class="form-control" placeholder="密码" required>
+				id="inputPassword" class="form-control" name="password"
+				placeholder="密码" required>
 			<div class="checkbox mb-3">
 				<input type="checkbox" value="remember-me"> 记住密码
 			</div>
