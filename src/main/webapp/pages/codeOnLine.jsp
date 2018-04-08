@@ -150,7 +150,7 @@
 		</div>
 	</footer>
 
-	<!-- Bootstrap core JavaScript. -->
+	<!-- Bootstrap core JavaScript and etc. -->
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>

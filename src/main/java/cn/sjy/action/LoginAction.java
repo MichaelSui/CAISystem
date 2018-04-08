@@ -49,10 +49,8 @@ public class LoginAction {
 	    ActionContext actionContext = ActionContext.getContext();
 	    Map<String, Object> httpSession = actionContext.getSession();
 	    User user = list.get(0);
-	    cn.sjy.utils.User sessionUser = new cn.sjy.utils.User();
-	    sessionUser.setId(user.getId());
-	    sessionUser.setAuthority(Authority.valueOf(user.getAuthority()));
-	    httpSession.put("user", sessionUser);
+	    httpSession.put("userId", user.getId());
+	    httpSession.put("userAuthority", user.getAuthority());
 	    transaction.commit();
 	    session.close();
 	    return Action.SUCCESS;

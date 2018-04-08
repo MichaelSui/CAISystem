@@ -46,7 +46,7 @@ public class IsLogInFilter implements Filter {
 	/*
 	 * 对来访者的权限进行判断。
 	 */
-	if (session.getAttribute("user") != null) {
+	if (session.getAttribute("userId") != null) {
 	    filterChain.doFilter(servletRequest, servletResponse);
 	    return;
 	} else {
