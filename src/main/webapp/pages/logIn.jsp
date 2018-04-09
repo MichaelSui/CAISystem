@@ -66,11 +66,14 @@
 				height="72px">
 			<h1 class="h3 mb-3 font-weight-normal">请登陆</h1>
 			<input type="text" id="inputName" class="form-control" name="id"
-				placeholder="用户名" required autofocus> <input type="password"
+				placeholder="用户名" required> <input type="password"
 				id="inputPassword" class="form-control" name="password"
 				placeholder="密码" required>
-			<div class="checkbox mb-3">
-				<input type="checkbox" value="remember-me"> 记住密码
+			<div class="radio mb-3">
+				<input type="radio" id="notRemember" name="remember"
+					value="notRemember" checked="checked"> 忘记密码 <input class="ml-3"
+					type="radio" id="remember" name="remember" value="remember">
+				记住密码
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
 			<button class="btn btn-lg btn-danger btn-block">忘记密码</button>

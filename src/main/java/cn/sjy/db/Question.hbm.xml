@@ -6,13 +6,16 @@
 <!-- ORM映射配置 -->
 <hibernate-mapping package="cn.sjy.db">
 	<!-- name:类名 table:表名 -->
-	<class name="question" table="t_question">
+	<class name="cn.sjy.db.Question" table="t_question">
 		<!-- 主键 -->
-		<id name="id" column="c_id">
+		<id name="id" column="c_id" type="java.lang.Integer">
 			<generator class="native"></generator>
 		</id>
+
 		<!-- 其他属性 -->
-		<property name="questionName" column="c_questionname"></property>
-		<property name="questionDetails" column="c_questionDetails"></property>
+		<property name="questionName" column="c_questionname"
+			type="java.lang.String"></property>
+		<property name="questionDetails" column="c_questionDetails"
+			type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>   

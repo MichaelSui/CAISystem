@@ -11,7 +11,6 @@ import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
 import cn.sjy.db.User;
-import cn.sjy.utils.Authority;
 import cn.sjy.utils.HibernateUtil;
 
 /*
@@ -20,6 +19,15 @@ import cn.sjy.utils.HibernateUtil;
 public class LoginAction {
     private String id;
     private String password;
+    private String remember;
+
+    public String getRemember() {
+	return remember;
+    }
+
+    public void setRemember(String remember) {
+	this.remember = remember;
+    }
 
     public String getId() {
 	return id;
@@ -38,6 +46,14 @@ public class LoginAction {
     }
 
     public String execute() throws Exception {
+	/*
+	 * 记住密码功能。
+	 */
+	System.out.println(remember);
+
+	/*
+	 * 用户名和密码正误的判断和Session信息的保存。
+	 */
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 	String hql = "from User user where user.id = :id and user.password = :password";

@@ -155,6 +155,20 @@
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<script src="./vendor/jquery-3.3.1/jquery-labelauty.js"></script>
+	<!-- 将后台的相关数据传递给js。 -->
+	<%
+	    String userId = null;
+	    String userAuthority = null;
+	    try {
+			userId = session.getAttribute("userId").toString();
+			userAuthority = session.getAttribute("userAuthority").toString();
+	    } catch (NullPointerException e) {
+			userId = "null";
+			userAuthority = "null";
+	    }
+	%>
+	<input type="hidden" id="userId" value="<%=userId%>" />
+	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
 	<script src="./js/codeOnLine.js"></script>
 </body>
 
