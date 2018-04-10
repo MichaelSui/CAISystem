@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
 import cn.sjy.db.Question;
@@ -33,6 +32,6 @@ public class GoToCodeOnLineAction {
 	}
 	transaction.commit();
 	session.close();
-	return Action.SUCCESS;
+	return "success";
     }
 }

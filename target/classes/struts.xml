@@ -22,6 +22,7 @@
 		<action name="loginAction" class="cn.sjy.action.LoginAction">
 			<result name="success">./index.jsp</result>
 			<result name="error">./pages/error.jsp</result>
+			<result name="noPass">./index.jsp</result>
 		</action>
 	</package>
 </struts>

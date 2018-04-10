@@ -3,6 +3,10 @@ package cn.sjy.action;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -47,9 +51,46 @@ public class LoginAction {
 
     public String execute() throws Exception {
 	/*
+	 * 防止直接访问。
+	 */
+	if (id == null || password == null || remember == null) {
+	    return "noPass";
+	}
+
+	/*
 	 * 记住密码功能。
 	 */
-	System.out.println(remember);
+	if (remember.equals("remember")) {
+	    /*
+	     * 选中了记住密码。
+	     */
+	    Cookie cookieId = new Cookie("userId", id);
+	    cookieId.setMaxAge(60 * 60 * 24 * 7);
+	    Cookie cookiePassword = new Cookie("userPassword", password);
+	    cookiePassword.setMaxAge(60 * 60 * 24 * 7);
+	    ActionContext actionContext = ActionContext.getContext();
+	    HttpServletResponse httpServletResponse = (HttpServletResponse) actionContext
+		    .get(org.apache.struts2.StrutsStatics.HTTP_RESPONSE);
+	    httpServletResponse.addCookie(cookieId);
+	    httpServletResponse.addCookie(cookiePassword);
+	} else if (remember.equals("notRemember")) {
+	    /*
+	     * 选中了忘记密码。
+	     */
+	    ActionContext actionContext = ActionContext.getContext();
+	    HttpServletResponse httpServletResponse = (HttpServletResponse) actionContext
+		    .get(org.apache.struts2.StrutsStatics.HTTP_RESPONSE);
+	    HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
+		    .get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
+	    Cookie[] cookies = httpServletRequest.getCookies();
+	    for (int i = 0; i < cookies.length; i++) {
+		String name = cookies[i].getName();
+		if (name.equals("userId") || name.equals("userPassword")) {
+		    cookies[i].setMaxAge(0);
+		    httpServletResponse.addCookie(cookies[i]);
+		}
+	    }
+	}
 
 	/*
 	 * 用户名和密码正误的判断和Session信息的保存。
@@ -69,11 +110,11 @@ public class LoginAction {
 	    httpSession.put("userAuthority", user.getAuthority());
 	    transaction.commit();
 	    session.close();
-	    return Action.SUCCESS;
+	    return "success";
 	} else {
 	    transaction.commit();
 	    session.close();
-	    return Action.ERROR;
+	    return "error";
 	}
     }
 }
