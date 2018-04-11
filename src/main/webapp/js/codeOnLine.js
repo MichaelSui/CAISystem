@@ -12,19 +12,19 @@ function leftZeroPad(val, minLength) {
 /*
  * 获取后台传来的信息并处理问题展示模块。
  */
-// var questionNumber = 100;//TODO
-// var questions = document.getElementById("questions");
-//
-// for(var i = 0; i < questionNumber; i++) {
-// var element = document.createElement("input");
-// element.setAttribute("type", "radio");
-// element.setAttribute("name", "question");
-// element.setAttribute("value", "question" + leftZeroPad(i + 1, 4));
-// element.setAttribute("data-labelauty", "问题" + leftZeroPad(i + 1, 4));
-// var elementOutter = document.createElement("li");
-// elementOutter.appendChild(element);
-// questions.appendChild(elementOutter);
-// }
+var questionNumber = document.getElementById("questionNumber").value;
+
+for (var i = 0; i < questionNumber; i++) {
+	var element = document.createElement("input");
+	element.setAttribute("type", "radio");
+	element.setAttribute("name", "question");
+	element.setAttribute("value", "question" + leftZeroPad(i + 1, 4));
+	element.setAttribute("data-labelauty", "问题" + leftZeroPad(i + 1, 4));
+	var elementOutter = document.createElement("li");
+	elementOutter.appendChild(element);
+	questions.appendChild(elementOutter);
+}
+
 $(function() {
 	$(':input').labelauty();
 });
@@ -67,18 +67,19 @@ editor.setValue(scriptCode);
 /*
  * 根据选择的按钮显示对应的内容。
  */
-// $(function() {
-// $(":radio").click(function() {
-// var questionName = $("input:radio:checked").val();
-// questionName += "Title";
-// questionDetails += "Details";
-// var questionTitle = $(requestScope.questionName);
-// var questionDetails = $(requestScope.questionDetails);
-// alert(questionTitle + questionDetails);
-// $("#questionTitle").text(questionTitle);
-// $("#questionDetails").text(questionDetails);
-// });
-// });
+$(function() {
+	$(":radio").click(function() {
+		var questionName = $("input:radio:checked").val();
+		var num = questionName.replace(/[^0-9]/gi, "");
+		questionName = "questionName" + num.replace(/\b(0+)/gi,"");
+		var questionDetails = "questionDetails" + num.replace(/\b(0+)/gi, "");
+		var questionTitle0 = document.getElementById(questionName).value;
+		var questionDetails0 = document.getElementById(questionDetails).value;
+		$("#questionTitle").text(questionTitle0);
+		$("#questionDetails").text(questionDetails0);
+	});
+});
+
 /**
  * 针对用户登陆后的界面变化。
  */

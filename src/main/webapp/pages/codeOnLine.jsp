@@ -74,7 +74,7 @@
 			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="goToCodeOnLine">在线编程</a></li>
+						href="goToCodeOnLineAction.do">在线编程</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
@@ -159,16 +159,35 @@
 	<%
 	    String userId = null;
 	    String userAuthority = null;
+	    int questionNumber = 0;
 	    try {
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
+			questionNumber = Integer.valueOf(session.getAttribute("questionNumber").toString());
 	    } catch (NullPointerException e) {
 			userId = "null";
 			userAuthority = "null";
+			questionNumber = 0;
 	    }
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
+	<input type="hidden" id="questionNumber" value="<%=questionNumber%>" />
+	<%
+	    for (int i = 1; i < questionNumber + 1; i++) {
+			String questionName = "questionName" + i;
+			String questionNameValue = session.getAttribute(questionName).toString();
+			String questionDetails = "questionDetails" + i;
+			String questionDetailsValue = session.getAttribute(questionDetails).toString();
+	%>
+	<input type="hidden" id="<%=questionName%>"
+		value="<%=questionNameValue%>">
+	<input type="hidden" id="<%=questionDetails%>"
+		value="<%=questionDetailsValue%>">
+	<%
+	    }
+	    ;
+	%>
 	<script src="./js/codeOnLine.js"></script>
 </body>
 
