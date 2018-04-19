@@ -88,7 +88,7 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<form class="col-12">
+			<form class="col-12" method="executionAction.do">
 				<ul>
 					<li>
 						<h2>问题列表:</h2>
@@ -109,8 +109,6 @@
 					<button class="btn btn-primary mt-2 mb-3" type="submit">提交</button>
 				</fieldset>
 			</form>
-			<h2 class="col-12">返回结果:</h2>
-			<div class="col-12">详细结果</div>
 		</div>
 	</div>
 
@@ -173,6 +171,8 @@
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
 	<input type="hidden" id="questionNumber" value="<%=questionNumber%>" />
+	<input type="hidden" id="questionName0" value="练习标准输入输出函数" />
+	<input type="hidden" id="questionDetails0" value="在控制台打印“Hello World!”字符串。" />
 	<%
 	    for (int i = 1; i < questionNumber + 1; i++) {
 			String questionName = "questionName" + i;

@@ -24,5 +24,8 @@
 			<result name="error">./pages/error.jsp</result>
 			<result name="noPass">./index.jsp</result>
 		</action>
+		<action name="executionAction" class="cn.sjy.action.ExecutionAction">
+			<result name="success">./pages/result.jsp</result>
+		</action>
 	</package>
 </struts>

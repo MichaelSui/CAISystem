@@ -71,8 +71,14 @@ $(function() {
 	$(":radio").click(function() {
 		var questionName = $("input:radio:checked").val();
 		var num = questionName.replace(/[^0-9]/gi, "");
-		questionName = "questionName" + num.replace(/\b(0+)/gi,"");
-		var questionDetails = "questionDetails" + num.replace(/\b(0+)/gi, "");
+		var questionDetails = "";
+		if (num.replace(/\b(0+)/gi,"") == "") {
+			questionName = "questionName0";
+			questionDetails = "questionDetails0";
+		} else {
+			questionName = "questionName" + num.replace(/\b(0+)/gi,"");
+			questionDetails = "questionDetails" + num.replace(/\b(0+)/gi, "");
+		}
 		var questionTitle0 = document.getElementById(questionName).value;
 		var questionDetails0 = document.getElementById(questionDetails).value;
 		$("#questionTitle").text(questionTitle0);
