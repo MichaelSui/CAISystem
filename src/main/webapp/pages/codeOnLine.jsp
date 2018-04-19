@@ -88,7 +88,7 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<form class="col-12" method="executionAction.do">
+			<form class="col-12" action="executionAction.do" method="post">
 				<ul>
 					<li>
 						<h2>问题列表:</h2>
@@ -105,7 +105,7 @@
 				<br />
 				<fieldset id="codeFieldSet">
 					<legend>编程</legend>
-					<textarea class="form-control" rows="12" id="code"></textarea>
+					<textarea class="form-control" rows="12" id="code" name="code"></textarea>
 					<button class="btn btn-primary mt-2 mb-3" type="submit">提交</button>
 				</fieldset>
 			</form>

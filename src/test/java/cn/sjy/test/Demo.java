@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import cn.sjy.db.Question;
 import cn.sjy.db.User;
+import cn.sjy.utils.FileUtils;
 import cn.sjy.utils.HibernateUtil;
 
 public class Demo {
@@ -40,5 +41,12 @@ public class Demo {
 
 	tx.commit();
 	session.close();
+    }
+
+    @Test
+    public void test3() {
+	String path = "C:\\Users\\Michael\\Documents\\docker\\HelloWorld.cpp";
+	String content = "HelloWorld!";
+	System.out.println(FileUtils.writeFile(path, content));
     }
 }
