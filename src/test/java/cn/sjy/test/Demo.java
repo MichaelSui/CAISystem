@@ -45,8 +45,9 @@ public class Demo {
 
     @Test
     public void test3() {
-	String path = "C:\\Users\\Michael\\Documents\\docker\\HelloWorld.cpp";
+	String directory = "C:\\Users\\Michael\\Documents\\docker";
+	String fileName = "HelloWorld.cpp";
 	String content = "HelloWorld!";
-	System.out.println(FileUtils.writeFile(path, content));
+	System.out.println(FileUtils.writeFile(directory, fileName, content));
     }
 }

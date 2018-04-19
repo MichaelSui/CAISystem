@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 public class FileUtils {
-    public static boolean writeFile(String path, String content) {
+    public static boolean writeFile(String directory, String fileName, String content) {
 	byte[] contentByte = content.getBytes();
 	if (contentByte != null) {
 	    try {
-		File file = new File(path);
+		File file = new File(directory + "\\" + fileName);
 		if (!file.exists()) {
 		    File dir = new File(file.getParent());
 		    dir.mkdirs();
