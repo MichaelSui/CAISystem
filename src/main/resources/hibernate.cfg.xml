@@ -23,5 +23,6 @@
 		<!-- *.hbm.xml文件 -->
 		<mapping resource="cn/sjy/db/User.hbm.xml" />
 		<mapping resource="cn/sjy/db/Question.hbm.xml" />
+		<mapping resource="cn/sjy/db/QuestionExample.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>	

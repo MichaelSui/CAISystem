@@ -61,7 +61,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 });
 editor.setSize('100%', '500px');
 editor.setValue("");
-var scriptCode = "#include<iostream>\nusing namespace std;\nint main(int argc, char* argv[])\n{\n\tcout << \"Hello World!\" << endl;\n\treturn 0;\n}";
+var scriptCode = "#include<iostream>\nusing namespace std;\n\nint main(int argc, char* argv[])\n{\n\tcout << \"Hello World!\" << endl;\n\treturn 0;\n}";
 editor.setValue(scriptCode);
 
 /*

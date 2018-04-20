@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.junit.Test;
 
 import cn.sjy.db.Question;
+import cn.sjy.db.QuestionExample;
 import cn.sjy.db.User;
 import cn.sjy.utils.FileUtils;
 import cn.sjy.utils.HibernateUtil;
@@ -45,9 +46,27 @@ public class Demo {
 
     @Test
     public void test3() {
-	String directory = "C:\\Users\\Michael\\Documents\\docker";
-	String fileName = "HelloWorld.cpp";
-	String content = "HelloWorld!";
-	System.out.println(FileUtils.writeFile(directory, fileName, content));
+	// String directory = "C:\\Users\\Michael\\Documents\\docker";
+	// String fileName = "HelloWorld.cpp";
+	// String content = "HelloWorld!";
+	// System.out.println(FileUtils.writeFile(directory, fileName, content));
+    }
+
+    @Test
+    public void test4() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	Query query = session.createQuery("from QuestionExample");
+	List<QuestionExample> list = query.list();
+	for (QuestionExample questionExample : list) {
+	    System.out.println(questionExample.getQuestionId());
+	    System.out.println(questionExample.getExampleId());
+	    System.out.println(questionExample.getInput());
+	    System.out.println(questionExample.getOutput());
+	}
+
+	tx.commit();
+	session.close();
     }
 }
