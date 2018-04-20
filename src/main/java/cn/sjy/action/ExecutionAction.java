@@ -1,5 +1,6 @@
 package cn.sjy.action;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -100,7 +101,6 @@ public class ExecutionAction {
 	String execOutput = output.readFully();
 	System.out.println(execOutput);
 
-
 	// 程序正常执行还不够，必须从数据库中调取相应的测试用例，根据完成测试用例的数量进行打分。
 	int questionId = Integer.parseInt(question.replace("question", "").trim());
 
@@ -111,6 +111,8 @@ public class ExecutionAction {
 	Query query = session.createQuery(hql);
 	query.setParameter("questionId", questionId);
 
+	int correctCount = 0;
+	int errorCount = 0;
 	List<QuestionExample> list = query.list();
 	for (QuestionExample questionExample : list) {
 	    command = new String[] { "sh", "-c",
@@ -118,10 +120,16 @@ public class ExecutionAction {
 	    execCreation = docker.execCreate(id, command, DockerClient.ExecCreateParam.attachStdout(),
 		    DockerClient.ExecCreateParam.attachStderr());
 	    output = docker.execStart(execCreation.id());
-	    execOutput = output.readFully();
-	    execOutput = execOutput.replaceAll("\n", "");
-	    System.out.println(execOutput);
+	    execOutput = output.readFully().replaceAll("\n", "");
+	    if (execOutput.endsWith(questionExample.getOutput())) {
+		correctCount++;
+	    } else {
+		errorCount++;
+	    }
 	}
+	NumberFormat numberFormat = NumberFormat.getPercentInstance();
+	numberFormat.setMaximumFractionDigits(2);
+	System.out.println("正确率：" + numberFormat.format(((double) correctCount / list.size())));
 
 	tx.commit();
 	session.close();
