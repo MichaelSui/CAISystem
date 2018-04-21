@@ -103,11 +103,27 @@
 				<div id="questionDetails">在控制台打印“Hello World!”字符串。</div>
 				<br />
 				<fieldset id="codeFieldSet">
-					<legend>编程</legend>
+					<legend>编程区域</legend>
 					<textarea class="form-control" rows="12" id="code" name="code"></textarea>
 					<button class="btn btn-primary mt-2 mb-3" type="submit">提交</button>
 				</fieldset>
 			</form>
+			<div class="col-12">
+				<br />
+				<h2>注意事项：</h2>
+				<div>
+					1、推荐使用本地编译器，经调试无误后复制到代码输入区提交。 <br />
+					2、若程序有多个输出数据，请将所有输出数据置于一行，不同输出结果之间使用空格隔开，避免插入多余空格，引起系统误判。<br />
+					3、若程序有输入数据，请先在程序头文件处加上“#include
+					&lt;cstdlib&gt;”，然后在argv形参中读取数据，注意参数的类型转换。<br />
+					举例：输入两个数据，分别是数字3和字符串“HelloWorld!”,在程序中使用“int num =
+					atoi(argv[1]);”来获取数字3，使用“char* str=argv[2]”来获取字符串“HelloWorld!”。<br />
+					4、C/C++语言提供了几个标准库函数，可以将字符串转换为任意类型(整型、长整型、浮点型等)。atof()：将字符串转换为双精度浮点型值。atoi()：将字符串转换为整型值。atol()：将字符串转换为长整型值。strtod()：将字符串转换为双精度浮点型值，并报告不能被转换的所有剩余数字。strtol()：将字符串转换为长整值，并报告不能被转换的所有剩余数字。strtoul()：将字符串转换为无符号长整型值，并报告不能被转换的所有剩余数字。<br />
+					5、为保证服务器稳定，请不要使用文件读写等敏感操作。<br />
+					6、所有的程序都将保存到服务器，请自行完成，不要抄袭，否则可能影响最终成绩。
+				</div>
+				<br />
+			</div>
 		</div>
 	</div>
 
@@ -171,7 +187,8 @@
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
 	<input type="hidden" id="questionNumber" value="<%=questionNumber%>" />
 	<input type="hidden" id="questionName0" value="练习标准输入输出函数" />
-	<input type="hidden" id="questionDetails0" value="在控制台打印“Hello World!”字符串。" />
+	<input type="hidden" id="questionDetails0"
+		value="在控制台打印“Hello World!”字符串。" />
 	<%
 	    for (int i = 1; i < questionNumber + 1; i++) {
 			String questionName = "questionName" + i;

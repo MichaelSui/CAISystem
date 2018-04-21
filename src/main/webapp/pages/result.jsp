@@ -60,6 +60,7 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<div class="col-12">
+				<br />
 				<h2>服务器返回结果：</h2>
 				<div>
 					<%=request.getAttribute("msg")%>
@@ -72,6 +73,15 @@
 					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
 					<br /> 本题最终成绩：<%=request.getAttribute("score")%>
 				</div>
+			</div>
+			<div class="col-12">
+				<br />
+				<h2>帮助：</h2>
+				<div>
+					1、可以多次提交程序，最终成绩将按照<b>最后一次</b>提交保存。<br /> 2、刷新页面会导致代码的丢失，请自行做好程序备份。<br />
+					3、若服务器返回结果无显示，请检查程序中是否包含死循环等其他错误。<br />
+				</div>
+				<br />
 			</div>
 		</div>
 	</div>
