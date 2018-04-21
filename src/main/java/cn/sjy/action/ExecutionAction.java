@@ -2,13 +2,11 @@ package cn.sjy.action;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -97,12 +95,13 @@ public class ExecutionAction {
 	String targetName = userId;
 	String[] command = { "sh", "-c",
 		"timeout 10 g++ " + directory + "/" + fileName + " -o " + directory + "/" + targetName };
-	System.out.println(Arrays.toString(command));
 	ExecCreation execCreation = docker.execCreate(id, command, DockerClient.ExecCreateParam.attachStdout(),
 		DockerClient.ExecCreateParam.attachStderr());
 	LogStream output = docker.execStart(execCreation.id());
 	String execOutput = output.readFully();
-	System.out.println(execOutput);
+	System.out.println("execOutput:" + execOutput);
+	StringBuilder msg = new StringBuilder();
+	msg.append(execOutput);
 
 	// 程序正常执行还不够，必须从数据库中调取相应的测试用例，根据完成测试用例的数量进行打分。
 	int questionId = Integer.parseInt(question.replace("question", "").trim());
@@ -123,22 +122,25 @@ public class ExecutionAction {
 	    execCreation = docker.execCreate(id, command, DockerClient.ExecCreateParam.attachStdout(),
 		    DockerClient.ExecCreateParam.attachStderr());
 	    output = docker.execStart(execCreation.id());
-	    execOutput = output.readFully().replaceAll("\n", "");
+	    execOutput = output.readFully();
+	    msg.append(execOutput);
+	    execOutput = execOutput.replaceAll("\n", "");
+	    System.out.println(
+		    "execOutput:" + execOutput + " questionExample.getOutput():" + questionExample.getOutput());
 	    if (execOutput.endsWith(questionExample.getOutput())) {
 		correctCount++;
 	    } else {
 		errorCount++;
 	    }
 	}
-	/*
-	 * NumberFormat numberFormat = NumberFormat.getPercentInstance();
-	 * numberFormat.setMaximumFractionDigits(2); System.out.println("正确率：" +
-	 * numberFormat.format(((double) correctCount / list.size())));
-	 */
+	int score = (int) ((double) correctCount / (correctCount + errorCount) * 100);
 	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
 		.get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
 	httpServletRequest.setAttribute("correctCount", correctCount);
 	httpServletRequest.setAttribute("errorCount", errorCount);
+	httpServletRequest.setAttribute("allCount", correctCount + errorCount);
+	httpServletRequest.setAttribute("score", score);
+	httpServletRequest.setAttribute("msg", msg.toString().replaceAll("\n", "<br />"));
 
 	tx.commit();
 	session.close();
