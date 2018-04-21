@@ -54,6 +54,7 @@ public class ExecutionAction {
 	String userId = (String) httpSession.get("userId");
 	String directory = "C:\\Users\\Michael\\Documents\\docker\\" + question;
 	String fileName = userId + ".cpp";
+	boolean deleteAllFlag = FileUtils.deleteAllFile(directory, userId);
 	boolean writeFlag = FileUtils.writeFile(directory, fileName, code);
 
 	// Create a client based on DOCKER_HOST and DOCKER_CERT_PATH env vars
@@ -99,7 +100,6 @@ public class ExecutionAction {
 		DockerClient.ExecCreateParam.attachStderr());
 	LogStream output = docker.execStart(execCreation.id());
 	String execOutput = output.readFully();
-	System.out.println("execOutput:" + execOutput);
 	StringBuilder msg = new StringBuilder();
 	msg.append(execOutput);
 
@@ -125,8 +125,6 @@ public class ExecutionAction {
 	    execOutput = output.readFully();
 	    msg.append(execOutput);
 	    execOutput = execOutput.replaceAll("\n", "");
-	    System.out.println(
-		    "execOutput:" + execOutput + " questionExample.getOutput():" + questionExample.getOutput());
 	    if (execOutput.endsWith(questionExample.getOutput())) {
 		correctCount++;
 	    } else {

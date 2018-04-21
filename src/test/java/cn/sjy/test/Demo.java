@@ -69,4 +69,11 @@ public class Demo {
 	tx.commit();
 	session.close();
     }
+
+    @Test
+    public void test5() {
+	String directory = "C:\\Users\\Michael\\Documents\\docker\\question0";
+	String fileName = "root";
+	FileUtils.deleteAllFile(directory, fileName);
+    }
 }
