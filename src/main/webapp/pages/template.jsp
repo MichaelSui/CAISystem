@@ -1,11 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="template.html">
+<meta name="description" content="template.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -28,7 +29,6 @@
 <!-- Custom styles for this page. -->
 <link rel="stylesheet" href="./css/template.css">
 </head>
-
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -45,16 +45,11 @@
 
 			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="#">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="#">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="#">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="#">下载资源</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="#">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">在线编程</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">下载资源</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="./signIn.html">登陆</a>
 			</div>
@@ -97,10 +92,10 @@
 		</div>
 	</footer>
 
-	<!-- Bootstrap core JavaScript. -->
+	<!-- Bootstrap core JavaScript and etc. -->
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./js/template.js"></script>
 </body>
-
 </html>

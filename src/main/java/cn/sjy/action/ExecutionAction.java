@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -127,9 +130,15 @@ public class ExecutionAction {
 		errorCount++;
 	    }
 	}
-	NumberFormat numberFormat = NumberFormat.getPercentInstance();
-	numberFormat.setMaximumFractionDigits(2);
-	System.out.println("正确率：" + numberFormat.format(((double) correctCount / list.size())));
+	/*
+	 * NumberFormat numberFormat = NumberFormat.getPercentInstance();
+	 * numberFormat.setMaximumFractionDigits(2); System.out.println("正确率：" +
+	 * numberFormat.format(((double) correctCount / list.size())));
+	 */
+	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
+		.get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
+	httpServletRequest.setAttribute("correctCount", correctCount);
+	httpServletRequest.setAttribute("errorCount", errorCount);
 
 	tx.commit();
 	session.close();
