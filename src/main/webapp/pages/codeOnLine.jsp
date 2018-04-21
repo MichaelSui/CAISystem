@@ -94,7 +94,7 @@
 					</li>
 					<br />
 					<div id="questions">
-						<input type="radio" name="question" value="question0"
+						<input type="radio" name="question" value="question0000"
 							data-labelauty="示例" checked="true">
 					</div>
 				</ul>

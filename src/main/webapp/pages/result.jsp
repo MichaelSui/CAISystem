@@ -64,6 +64,7 @@
 				<div>
 					<%=request.getAttribute("msg")%>
 				</div>
+				<br />
 				<h2>最终成绩：</h2>
 				<div>
 					总计用例个数：<%=request.getAttribute("allCount")%>
