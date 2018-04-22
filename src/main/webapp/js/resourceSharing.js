@@ -11,3 +11,11 @@ if (userId != "null") {
 	loginButton.innerHTML = "您好 " + userAuthority + " " + userId;
 	loginButton.href = "#";
 }
+
+/*
+ * 文件上传模块的配置。
+ */
+$('#file-zh').fileinput({
+    theme: 'fa',
+    language: 'zh'
+});

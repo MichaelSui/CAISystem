@@ -24,10 +24,13 @@
 	href="./vendor/fontawesome-free-5.0.8/web-fonts-with-css/css/fa-solid.min.css">
 <link rel="stylesheet" type="text/css"
 	href="./vendor/fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome.min.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	media="all" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css"
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
-
-<!-- bootstrap fileinput -->
+<link media="all" rel="stylesheet" type="text/css"
+	href="./vendor/bootstrap-fileinput-master/themes/explorer-fa/theme.css">
 <link rel="stylesheet"
 	href="./vendor/bootstrap-fileinput-master/css/fileinput.css"
 	media="all">
@@ -68,12 +71,18 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<div class="col-12">
-				<h2>上传文件：</h2><br />
-				<form action="uploadAction.do" enctype="multipart/form-data" method="post">
+				<h2>上传文件：</h2>
+				<br />
+				<form action="uploadAction.do" enctype="multipart/form-data"
+					method="post">
 					<div class="file-loading">
-						<input class="file" type="file" name="uploadFile" multiple>
+						<input id="file-zh" type="file" name="uploadFile">
 					</div>
 				</form>
+			</div>
+			<div class="col-12 mt-4">
+				<h2>下载文件：</h2>
+
 			</div>
 		</div>
 	</div>
@@ -118,8 +127,11 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-	<script src="./vendor/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+	<script src="./vendor/bootstrap-fileinput-master/js/fileinput.js"></script>
 	<script src="./vendor/bootstrap-fileinput-master/js/locales/zh.js"></script>
+	<script
+		src="./vendor/bootstrap-fileinput-master/themes/explorer-fa/theme.js"></script>
+	<script src="./vendor/bootstrap-fileinput-master/themes/fa/theme.js"></script>
 	<%
 	    //将后台的相关数据传递给js。
 	    String userId = null;
