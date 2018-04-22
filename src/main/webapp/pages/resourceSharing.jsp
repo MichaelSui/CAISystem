@@ -82,7 +82,8 @@
 			</div>
 			<div class="col-12 mt-4">
 				<h2>下载文件：</h2>
-
+				<a href="./downloadAction.do?fileName=你好.txt">下载你好.txt</a> <a
+					href="./downloadAction.do?fileName=test.txt">下载test.txt</a>
 			</div>
 		</div>
 	</div>

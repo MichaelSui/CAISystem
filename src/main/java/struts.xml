@@ -44,5 +44,27 @@
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="success">./index.jsp</result>
 		</action>
+		<!-- 下载文件的Action -->
+		<action name="downloadAction"
+			class="cn.sjy.action.DownloadAction" method="download">
+			<!-- 指定被下载资源的位置 -->
+			<!-- <param name="inputPath">/Html/imgs/2.jpg</param> -->
+			<!-- 配置结果类型为stream的结果 -->
+			<result name="success" type="stream">
+				<!-- 动态文件下载的，事先并不知道未来的文件类型，那么我们可以把它的值设置成为：application/octet- stream;charset=ISO8859-1 
+					，注意一定要加入charset，否则某些时候会导致下载的文件出错； -->
+				<!-- contentType 指定下载文件的文件类型 ——application/octet-stream 表示无限制 -->
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<!-- inputName 流对象名 ——比如这里写inputStream，它就会自动去找Action中的getInputStream方法。 -->
+				<param name="inputName">inputStream</param>
+				<!-- contentDisposition 使用经过转码的文件名作为下载文件名 ——默认格式是attachment;filename="${fileName}"，将调用该Action中的getFileName方法。 -->
+				<!-- attachment;filename="struts2.txt"，表示文件下载的时候保存的名字应为struts2.txt。如果直接写filename="struts2.txt"，那么默认情况是代表inline，浏览器会尝试自动打开它，等价于这样的写法：inline; 
+					filename="struts2.txt" -->
+				<!-- contentDisposition 使用经过转码的文件名作为下载文件名 ——默认格式是attachment;filename="${fileName}"，将调用该Action中的getFileName方法。 -->
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<!-- 指定下载文件的缓冲大小 -->
+				<param name="bufferSize">1024000000</param>
+			</result>
+		</action>
 	</package>
 </struts>
