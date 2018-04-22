@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="template.jsp">
+<meta name="description" content="resourceSharing.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -27,7 +27,9 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/template.css">
+<link rel="stylesheet" href="./css/resourceSharing.css">
+<link rel="stylesheet"
+	href="./vendor/bootstrap-fileinput-master/css/fileinput.min.css">
 </head>
 <body>
 	<!-- Navigation. -->
@@ -55,6 +57,23 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- 主体部分。 -->
+	<div class="container" id="main-body">
+		<div class="row">
+			<div class="col-12">
+				<form action="uploadAction.do" enctype="multipart/form-data"
+					method="post">
+					<label class="contral-label"><h2>上传文件</h2></label> <input
+						id="input-1" type="file" class="file" name="uploadFile">
+					<div class="text-center">
+						<input class="btn btn-primary mt-3" type="submit"
+							id="sureToSubmit" value="确定上传">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<!-- Footer. -->
 	<footer class="footer bg-light">
@@ -96,6 +115,8 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./vendor/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+	<script src="./vendor/bootstrap-fileinput-master/js/locales/zh.js"></script>
 	<!-- 将后台的相关数据传递给js。 -->
 	<%
 	    String userId = null;
@@ -110,6 +131,6 @@
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
-	<script src="./js/template.js"></script>
+	<script src="./js/resourceSharing.js"></script>
 </body>
 </html>

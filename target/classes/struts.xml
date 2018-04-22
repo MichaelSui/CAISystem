@@ -8,6 +8,7 @@
 		value="false" />
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.custom.i18n.resources" value="struts"></constant>
 
 	<package name="MyPackage" namespace="/"
 		extends="struts-default">
@@ -24,8 +25,24 @@
 			<result name="error">./pages/error.jsp</result>
 			<result name="noPass">./index.jsp</result>
 		</action>
-		<action name="executionAction" class="cn.sjy.action.ExecutionAction">
+		<action name="executionAction"
+			class="cn.sjy.action.ExecutionAction">
 			<result name="success">./pages/result.jsp</result>
+		</action>
+		<action name="goToResourceSharingAction"
+			class="cn.sjy.action.GoToResourceSharingAction">
+			<result name="success">./pages/resourceSharing.jsp</result>
+		</action>
+		<action name="uploadAction" class="cn.sjy.action.UploadAction"
+			method="upload">
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件大小 -->
+				<param name="maximumSize">1024000000</param>
+			</interceptor-ref>
+			<!-- 配置struts2的默认拦截器栈 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">./index.jsp</result>
 		</action>
 	</package>
 </struts>
