@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
@@ -26,11 +27,16 @@
 <link rel="stylesheet" type="text/css"
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
+<!-- bootstrap fileinput -->
+<link rel="stylesheet"
+	href="./vendor/bootstrap-fileinput-master/css/fileinput.css"
+	media="all">
+
 <!-- Custom styles for this page. -->
 <link rel="stylesheet" href="./css/resourceSharing.css">
-<link rel="stylesheet"
-	href="./vendor/bootstrap-fileinput-master/css/fileinput.min.css">
+
 </head>
+
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -62,13 +68,10 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<div class="col-12">
-				<form action="uploadAction.do" enctype="multipart/form-data"
-					method="post">
-					<label class="contral-label"><h2>上传文件</h2></label> <input
-						id="input-1" type="file" class="file" name="uploadFile">
-					<div class="text-center">
-						<input class="btn btn-primary mt-3" type="submit"
-							id="sureToSubmit" value="确定上传">
+				<h2>上传文件：</h2><br />
+				<form action="uploadAction.do" enctype="multipart/form-data" method="post">
+					<div class="file-loading">
+						<input class="file" type="file" name="uploadFile" multiple>
 					</div>
 				</form>
 			</div>
@@ -112,13 +115,13 @@
 	</footer>
 
 	<!-- Bootstrap core JavaScript and etc. -->
-	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
+	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<script src="./vendor/bootstrap-fileinput-master/js/fileinput.min.js"></script>
 	<script src="./vendor/bootstrap-fileinput-master/js/locales/zh.js"></script>
-	<!-- 将后台的相关数据传递给js。 -->
 	<%
+	    //将后台的相关数据传递给js。
 	    String userId = null;
 	    String userAuthority = null;
 	    try {
@@ -133,4 +136,5 @@
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
 	<script src="./js/resourceSharing.js"></script>
 </body>
+
 </html>

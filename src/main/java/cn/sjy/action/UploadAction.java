@@ -46,12 +46,25 @@ public class UploadAction extends ActionSupport {
 	// 判断上传文件是否为空
 	if (uploadFile != null) {
 	    // 设置目标文件（根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例）
-	    System.out.println(realpath + uploadFileFileName);
+	    System.out.println(realpath + " " + uploadFileFileName);
 	    File savefile = new File(realpath, uploadFileFileName);
 
 	    // 判断上传目录是否存在
 	    if (!savefile.getParentFile().exists())
 		savefile.getParentFile().mkdirs();
+
+	    // 名字重复的文件按照windows系统的命名方式在后面添加小括号和数字。
+	    for (int i = 2; savefile.exists(); i++) {
+		String newName = null;
+		if (uploadFileFileName.indexOf(".") == -1) {
+		    newName = uploadFileFileName + "(" + i + ")";
+		} else {
+		    int dotNum = uploadFileFileName.indexOf(".");
+		    newName = uploadFileFileName.substring(0, dotNum) + "(" + i + ")"
+			    + uploadFileFileName.substring(dotNum);
+		}
+		savefile = new File(realpath, newName);
+	    }
 
 	    // 把文件uploadfile 拷贝到 savefile 里,FileUtils类需要commons-io-x.x.x.jar包支持
 	    FileUtils.copyFile(uploadFile, savefile);
