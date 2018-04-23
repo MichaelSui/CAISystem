@@ -3,6 +3,8 @@ package cn.sjy.action;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -23,12 +25,13 @@ public class GoToCodeOnLineAction {
 	Query query = session.createQuery(hql);
 	List<Question> list = query.list();
 	ActionContext actionContext = ActionContext.getContext();
-	Map<String, Object> httpSession = actionContext.getSession();
-	httpSession.put("questionNumber", list.size());
+	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
+		.get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
+	httpServletRequest.setAttribute("questionNumber", list.size());
 	for (int i = 1; i < list.size() + 1; i++) {
 	    Question question = list.get(i - 1);
-	    httpSession.put("questionName" + i, question.getQuestionName());
-	    httpSession.put("questionDetails" + i, question.getQuestionDetails());
+	    httpServletRequest.setAttribute("questionName" + i, question.getQuestionName());
+	    httpServletRequest.setAttribute("questionDetails" + i, question.getQuestionDetails());
 	}
 	transaction.commit();
 	session.close();

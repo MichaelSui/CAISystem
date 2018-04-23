@@ -82,8 +82,19 @@
 			</div>
 			<div class="col-12 mt-4">
 				<h2>下载文件：</h2>
-				<a href="./downloadAction.do?fileName=你好.txt">下载你好.txt</a> <a
-					href="./downloadAction.do?fileName=test.txt">下载test.txt</a>
+				<!-- 
+				<a href="./downloadAction.do?fileName=你好.txt">下载你好.txt</a> 
+				<a href="./downloadAction.do?fileName=test.txt">下载test.txt</a> 
+				-->
+				<table class="table table-hover mt-5">
+					<thead>
+						<tr>
+							<th>资源名称</th>
+							<th>资源链接</th>
+						</tr>
+					</thead>
+					<tbody id="resourceList"></tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -144,9 +155,21 @@
 			userId = "null";
 			userAuthority = "null";
 	    }
+	    String[] fileList = (String[]) request.getAttribute("fileList");
+	    int fileListNum = fileList.length;
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
+	<input type="hidden" id="fileListNum" value="<%=fileListNum%>" />
+	<%
+	    for (int i = 0; i < fileListNum; i++) {
+			String key = "fileList" + i;
+			String value = fileList[i];
+	%>
+	<input type="hidden" id="<%=key%>" value="<%=value%>" />
+	<%
+	    }
+	%>
 	<script src="./js/resourceSharing.js"></script>
 </body>
 

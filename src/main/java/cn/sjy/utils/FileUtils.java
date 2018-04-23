@@ -54,4 +54,16 @@ public class FileUtils {
 	    return true;
 	}
     }
+
+    /*
+     * 获取directory目录下的全部文件名。
+     */
+    public static String[] getAllFileName(String directory) {
+	File file = new File(directory);
+	if (!file.exists() || !file.isDirectory()) {
+	    return new String[0];
+	} else {
+	    return file.list();
+	}
+    }
 }

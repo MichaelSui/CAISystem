@@ -176,7 +176,7 @@
 	    try {
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
-			questionNumber = Integer.valueOf(session.getAttribute("questionNumber").toString());
+			questionNumber = Integer.parseInt(request.getAttribute("questionNumber").toString());
 	    } catch (NullPointerException e) {
 			userId = "null";
 			userAuthority = "null";
@@ -192,9 +192,9 @@
 	<%
 	    for (int i = 1; i < questionNumber + 1; i++) {
 			String questionName = "questionName" + i;
-			String questionNameValue = session.getAttribute(questionName).toString();
+			String questionNameValue = request.getAttribute(questionName).toString();
 			String questionDetails = "questionDetails" + i;
-			String questionDetailsValue = session.getAttribute(questionDetails).toString();
+			String questionDetailsValue = request.getAttribute(questionDetails).toString();
 	%>
 	<input type="hidden" id="<%=questionName%>"
 		value="<%=questionNameValue%>">

@@ -16,6 +16,27 @@ if (userId != "null") {
  * 文件上传模块的配置。
  */
 $('#file-zh').fileinput({
-    theme: 'fa',
-    language: 'zh'
+	theme : 'fa',
+	language : 'zh'
 });
+
+/*
+ * 文件下载模块的信息展示。
+ */
+var fileListNum = document.getElementById("fileListNum").value;
+for (var i = 0; i < fileListNum; i++) {
+	var element1 = document.createElement("td");
+	var fileName = document.getElementById("fileList" + i).value;
+	element1.innerHTML = fileName;
+	var element2 = document.createElement("td");
+	var element2_a = document.createElement("a");
+	var href = "./downloadAction.do?fileName=" + fileName;
+	element2_a.setAttribute("href", href);
+	element2_a.innerHTML = "点击下载";
+	element2.appendChild(element2_a);
+	var element_tr = document.createElement("tr");
+	element_tr.appendChild(element1);
+	element_tr.appendChild(element2);
+	var element_tbody = document.getElementById("resourceList");
+	element_tbody.appendChild(element_tr);
+}
