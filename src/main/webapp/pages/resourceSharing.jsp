@@ -44,9 +44,9 @@
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="./index.html"> <img id="nav-brand-img"
+			<a href="./index.jsp"> <img id="nav-brand-img"
 				src="./img/favicon.ico" alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="./index.html">CAI System</a>
+			</a> <a class="navbar-brand ml-2" href="./index.jsp">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -106,14 +106,11 @@
 					<ul class="list-inline mb-2">
 						<li class="list-inline-item"><a href="#">关于</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">联系</a>
-						</li>
+						<li class="list-inline-item"><a href="#">联系</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">使用条款</a>
-						</li>
+						<li class="list-inline-item"><a href="#">使用条款</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">隐私政策</a>
-						</li>
+						<li class="list-inline-item"><a href="#">隐私政策</a></li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0">&copy; CAI System
 						2017-2018. All Rights Reserved.</p>

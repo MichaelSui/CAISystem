@@ -43,9 +43,9 @@
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="./index.html"> <img id="nav-brand-img"
+			<a href="./index.jsp"> <img id="nav-brand-img"
 				src="./img/favicon.ico" alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="./index.html">CAI System</a>
+			</a> <a class="navbar-brand ml-2" href="./index.jsp">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
