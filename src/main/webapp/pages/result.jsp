@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
@@ -29,6 +30,7 @@
 <!-- Custom styles for this page. -->
 <link rel="stylesheet" href="./css/result.css">
 </head>
+
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -155,4 +157,5 @@
 	<script src="./vendor/Chart.js/Chart.Bundle.js"></script>
 	<script src="./vendor/Chart.js/utils.js"></script>
 </body>
+
 </html>

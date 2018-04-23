@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
@@ -37,6 +38,7 @@
 <!-- Custom styles for this page. -->
 <link rel="stylesheet" href="./css/handInHomeWork.css">
 </head>
+
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -164,4 +166,5 @@
 	%>
 	<script src="./js/handInHomeWork.js"></script>
 </body>
+
 </html>

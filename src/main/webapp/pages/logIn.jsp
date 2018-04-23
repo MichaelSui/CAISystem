@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="signIn.jsp">
+<meta name="description" content="logIn.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 

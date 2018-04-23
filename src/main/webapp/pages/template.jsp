@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
@@ -29,6 +30,7 @@
 <!-- Custom styles for this page. -->
 <link rel="stylesheet" href="./css/template.css">
 </head>
+
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -112,4 +114,5 @@
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
 	<script src="./js/template.js"></script>
 </body>
+
 </html>
