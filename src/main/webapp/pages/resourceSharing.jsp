@@ -80,7 +80,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-12 mt-4">
+			<div class="col-12 mt-5">
 				<h2>下载文件：</h2>
 				<table class="table table-hover mt-5">
 					<thead>

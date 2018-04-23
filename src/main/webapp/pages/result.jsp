@@ -66,12 +66,19 @@
 					<%=request.getAttribute("msg")%>
 				</div>
 				<br />
+			</div>
+			<div class="col-6">
 				<h2>最终成绩：</h2>
 				<div>
 					总计用例个数：<%=request.getAttribute("allCount")%>
 					<br /> 通过用例个数：<%=request.getAttribute("correctCount")%>
 					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
 					<br /> 本题最终成绩：<%=request.getAttribute("score")%>
+				</div>
+			</div>
+			<div class="col-6">
+				<div id="canvas-holder" style="width: 70%">
+					<canvas id="chart-area"></canvas>
 				</div>
 			</div>
 			<div class="col-12">
@@ -137,9 +144,15 @@
 			userId = "null";
 			userAuthority = "null";
 	    }
+	    int correctCount = Integer.parseInt(request.getAttribute("correctCount").toString());
+	    int errorCount = Integer.parseInt(request.getAttribute("errorCount").toString());
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
+	<input type="hidden" id="correctCount" value="<%=correctCount%>" />
+	<input type="hidden" id="errorCount" value="<%=errorCount%>" />
 	<script src="./js/result.js"></script>
+	<script src="./vendor/Chart.js/Chart.Bundle.js"></script>
+	<script src="./vendor/Chart.js/utils.js"></script>
 </body>
 </html>
