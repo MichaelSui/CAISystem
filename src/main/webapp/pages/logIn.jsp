@@ -35,9 +35,9 @@
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a href="#"> <img id="nav-brand-img" src="./img/favicon.ico"
-				alt="brand" />
-			</a> <a class="navbar-brand ml-2" href="#">CAI System</a>
+			<a href="./index.jsp"> <img id="nav-brand-img"
+				src="./img/favicon.ico" alt="brand" />
+			</a> <a class="navbar-brand ml-2" href="./index.jsp">CAI System</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarsExampleDefault"
 				aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -47,13 +47,16 @@
 
 			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="#">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToCodeOnLineAction.do">在线编程</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToHandInHomeWorkAction.do">提交作业</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">资源共享</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToResourceSharingAction.do">资源共享</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="#">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
@@ -74,7 +77,7 @@
 					id="notRemember" name="remember" value="notRemember"> 忘记密码
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-			<button class="btn btn-lg btn-danger btn-block">忘记密码</button>
+			<button class="btn btn-lg btn-danger btn-block">找回密码</button>
 		</form>
 	</div>
 
@@ -84,16 +87,13 @@
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="./about.html">关于</a></li>
+						<li class="list-inline-item"><a href="#">关于</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./contact.html">联系</a>
-						</li>
+						<li class="list-inline-item"><a href="#">联系</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./termsForUsage.html">使用条款</a>
-						</li>
+						<li class="list-inline-item"><a href="#">使用条款</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./privacyPolicy.html">隐私政策</a>
-						</li>
+						<li class="list-inline-item"><a href="#">隐私政策</a></li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0">&copy; CAI System
 						2017-2018. All Rights Reserved.</p>

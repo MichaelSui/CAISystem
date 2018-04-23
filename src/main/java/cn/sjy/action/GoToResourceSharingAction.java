@@ -10,7 +10,7 @@ import cn.sjy.utils.FileUtils;
 
 public class GoToResourceSharingAction {
     public String execute() throws Exception {
-	String path = ServletActionContext.getServletContext().getRealPath("/uploadAndDownloadFiles");
+	String path = ServletActionContext.getServletContext().getRealPath("/files/uploadAndDownloadFiles");
 	String[] fileList = FileUtils.getAllFileName(path);
 	ActionContext actionContext = ActionContext.getContext();
 	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext

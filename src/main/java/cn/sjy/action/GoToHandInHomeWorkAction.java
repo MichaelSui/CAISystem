@@ -10,7 +10,7 @@ import cn.sjy.utils.FileUtils;
 
 public class GoToHandInHomeWorkAction {
     public String execute() throws Exception {
-	String path = ServletActionContext.getServletContext().getRealPath("/handInHomeWorkFiles");
+	String path = ServletActionContext.getServletContext().getRealPath("/files/handInHomeWorkFiles");
 	String[] fileList = FileUtils.getAllFileName(path);
 	ActionContext actionContext = ActionContext.getContext();
 	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext

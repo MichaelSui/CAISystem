@@ -56,13 +56,16 @@
 
 			<div class="collapse navbar-collapse ml-4" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="#">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToCodeOnLineAction.do">在线编程</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToHandInHomeWorkAction.do">提交作业</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">资源共享</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToResourceSharingAction.do">资源共享</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
 				</ul>
-				<a class="btn btn-primary" id="nav-btn-1" href="./signIn.html">登陆</a>
+				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
@@ -101,15 +104,15 @@
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="./about.html">关于</a></li>
+						<li class="list-inline-item"><a href="#">关于</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./contact.html">联系</a>
+						<li class="list-inline-item"><a href="#">联系</a>
 						</li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./termsForUsage.html">使用条款</a>
+						<li class="list-inline-item"><a href="#">使用条款</a>
 						</li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="./privacyPolicy.html">隐私政策</a>
+						<li class="list-inline-item"><a href="#">隐私政策</a>
 						</li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0">&copy; CAI System

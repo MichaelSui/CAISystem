@@ -27,7 +27,7 @@ public class DownloadAction extends ActionSupport {
     public InputStream getInputStream() throws UnsupportedEncodingException {
 	System.out.println(fileName);
 	InputStream inputStream = ServletActionContext.getServletContext()
-		.getResourceAsStream("/uploadAndDownloadFiles/" + fileName);
+		.getResourceAsStream("/files/uploadAndDownloadFiles/" + fileName);
 	return inputStream;
     }
 
