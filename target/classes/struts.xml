@@ -33,8 +33,21 @@
 			class="cn.sjy.action.GoToResourceSharingAction">
 			<result name="success">./pages/resourceSharing.jsp</result>
 		</action>
+		<!-- 上传文件的Action -->
 		<action name="uploadAction" class="cn.sjy.action.UploadAction"
 			method="upload">
+			<!-- 配置fileUpload的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件大小 -->
+				<param name="maximumSize">1024000000</param>
+			</interceptor-ref>
+			<!-- 配置struts2的默认拦截器栈 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">./index.jsp</result>
+		</action>
+		<!-- 上传作业的Action -->
+		<action name="uploadHomeWorkAction"
+			class="cn.sjy.action.UploadHomeWorkAction" method="upload">
 			<!-- 配置fileUpload的拦截器 -->
 			<interceptor-ref name="fileUpload">
 				<!-- 配置允许上传的文件大小 -->
@@ -65,6 +78,10 @@
 				<!-- 指定下载文件的缓冲大小 -->
 				<param name="bufferSize">1024000000</param>
 			</result>
+		</action>
+		<action name="goToHandInHomeWorkAction"
+			class="cn.sjy.action.GoToHandInHomeWorkAction">
+			<result name="success">./pages/handInHomeWork.jsp</result>
 		</action>
 	</package>
 </struts>

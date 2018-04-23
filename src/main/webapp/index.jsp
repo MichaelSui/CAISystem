@@ -51,7 +51,8 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="goToCodeOnLineAction.do">在线编程</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">提交作业</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToHandInHomeWorkAction.do">提交作业</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>

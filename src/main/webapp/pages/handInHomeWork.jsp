@@ -2,12 +2,11 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="resourceSharing.jsp">
+<meta name="description" content="handInHomeWork.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -36,10 +35,8 @@
 	media="all">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/resourceSharing.css">
-
+<link rel="stylesheet" href="./css/handInHomeWork.css">
 </head>
-
 <body>
 	<!-- Navigation. -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -71,9 +68,9 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<div class="col-12">
-				<h2>上传文件：</h2>
+				<h2>提交作业：</h2>
 				<br />
-				<form action="uploadAction.do" enctype="multipart/form-data"
+				<form action="uploadHomeWorkAction.do" enctype="multipart/form-data"
 					method="post">
 					<div class="file-loading">
 						<input id="file-zh" type="file" name="uploadFile">
@@ -81,12 +78,11 @@
 				</form>
 			</div>
 			<div class="col-12 mt-4">
-				<h2>下载文件：</h2>
+				<h2>已经提交的文件：</h2>
 				<table class="table table-hover mt-5">
 					<thead>
 						<tr>
 							<th>资源名称</th>
-							<th>资源链接</th>
 						</tr>
 					</thead>
 					<tbody id="resourceList"></tbody>
@@ -166,7 +162,6 @@
 	<%
 	    }
 	%>
-	<script src="./js/resourceSharing.js"></script>
+	<script src="./js/handInHomeWork.js"></script>
 </body>
-
 </html>
