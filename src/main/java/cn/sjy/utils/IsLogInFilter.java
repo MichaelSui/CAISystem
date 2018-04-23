@@ -50,6 +50,7 @@ public class IsLogInFilter implements Filter {
 	    filterChain.doFilter(servletRequest, servletResponse);
 	    return;
 	} else {
+	    System.out.println(request.getRequestURI() + "请求被拦截。");
 	    response.sendRedirect("index.jsp");
 	}
     }

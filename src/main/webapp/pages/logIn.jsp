@@ -77,7 +77,6 @@
 					id="notRemember" name="remember" value="notRemember"> 忘记密码
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-			<button class="btn btn-lg btn-danger btn-block">找回密码</button>
 		</form>
 	</div>
 

@@ -9,7 +9,9 @@ if (userId != "null") {
 	var userAuthority = document.getElementById("userAuthority").value;
 	var loginButton = document.getElementById("nav-btn-1");
 	loginButton.innerHTML = "您好 " + userAuthority + " " + userId;
-	loginButton.href = "#";
+	var classVal = loginButton.getAttribute("class");
+	classVal = classVal.concat(" disabled");
+	loginButton.setAttribute("class", classVal);
 }
 
 /*

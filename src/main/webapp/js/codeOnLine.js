@@ -72,11 +72,11 @@ $(function() {
 		var questionName = $("input:radio:checked").val();
 		var num = questionName.replace(/[^0-9]/gi, "");
 		var questionDetails = "";
-		if (num.replace(/\b(0+)/gi,"") == "") {
+		if (num.replace(/\b(0+)/gi, "") == "") {
 			questionName = "questionName0";
 			questionDetails = "questionDetails0";
 		} else {
-			questionName = "questionName" + num.replace(/\b(0+)/gi,"");
+			questionName = "questionName" + num.replace(/\b(0+)/gi, "");
 			questionDetails = "questionDetails" + num.replace(/\b(0+)/gi, "");
 		}
 		var questionTitle0 = document.getElementById(questionName).value;
@@ -97,5 +97,7 @@ if (userId != "null") {
 	var userAuthority = document.getElementById("userAuthority").value;
 	var loginButton = document.getElementById("nav-btn-1");
 	loginButton.innerHTML = "您好 " + userAuthority + " " + userId;
-	loginButton.href = "#";
+	var classVal = loginButton.getAttribute("class");
+	classVal = classVal.concat(" disabled");
+	loginButton.setAttribute("class", classVal);
 }

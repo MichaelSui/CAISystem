@@ -43,7 +43,8 @@
 			</interceptor-ref>
 			<!-- 配置struts2的默认拦截器栈 -->
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success" type="redirect">/goToResourceSharingAction.do</result>
+			<result name="success" type="redirect">/goToResourceSharingAction.do
+			</result>
 		</action>
 		<!-- 上传作业的Action -->
 		<action name="uploadHomeWorkAction"
@@ -55,7 +56,8 @@
 			</interceptor-ref>
 			<!-- 配置struts2的默认拦截器栈 -->
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success" type="redirect">/goToHandInHomeWorkAction.do</result>
+			<result name="success" type="redirect">/goToHandInHomeWorkAction.do
+			</result>
 		</action>
 		<!-- 下载文件的Action -->
 		<action name="downloadAction"
