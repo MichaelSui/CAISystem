@@ -1,6 +1,5 @@
 package cn.sjy.action;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +23,7 @@ import com.spotify.docker.client.messages.HostConfig;
 import com.spotify.docker.client.messages.PortBinding;
 import com.spotify.docker.client.messages.HostConfig.Bind;
 
+import cn.sjy.db.CodeScore;
 import cn.sjy.db.QuestionExample;
 import cn.sjy.utils.FileUtils;
 import cn.sjy.utils.HibernateUtil;
@@ -140,6 +140,13 @@ public class ExecutionAction {
 	httpServletRequest.setAttribute("score", score);
 	httpServletRequest.setAttribute("msg", msg.toString().replaceAll("\n", "<br />"));
 
+	// 将最终成绩保存到数据库。
+	CodeScore cs = new CodeScore();
+	cs.setUserId(userId);
+	cs.setQuestionId(questionId);
+	cs.setScore(score);
+	session.saveOrUpdate(cs);
+
 	tx.commit();
 	session.close();
 
@@ -151,6 +158,7 @@ public class ExecutionAction {
 
 	// Close the docker client
 	docker.close();
+
 	return "success";
     }
 }

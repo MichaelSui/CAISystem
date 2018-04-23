@@ -2,7 +2,6 @@ package cn.sjy.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class FileUtils {

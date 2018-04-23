@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- ORM映射配置 -->
+<hibernate-mapping package="cn.sjy.db">
+	<!-- name:类名 table:表名 -->
+	<class name="cn.sjy.db.CodeScore" table="t_codescore">
+		<!-- 复合主键 -->
+		<composite-id>
+			<key-property name="userId" column="c_userid"
+				type="java.lang.String"></key-property>
+			<key-property name="questionId" column="c_questionid"
+				type="java.lang.Integer"></key-property>
+		</composite-id>
+
+		<!-- 其他属性 -->
+		<property name="score" column="c_score"
+			type="java.lang.Integer"></property>
+	</class>
+</hibernate-mapping>   

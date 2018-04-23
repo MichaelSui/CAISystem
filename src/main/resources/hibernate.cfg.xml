@@ -24,5 +24,6 @@
 		<mapping resource="cn/sjy/db/User.hbm.xml" />
 		<mapping resource="cn/sjy/db/Question.hbm.xml" />
 		<mapping resource="cn/sjy/db/QuestionExample.hbm.xml" />
+		<mapping resource="cn/sjy/db/CodeScore.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>	

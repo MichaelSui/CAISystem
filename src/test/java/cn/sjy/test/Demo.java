@@ -76,4 +76,22 @@ public class Demo {
 	String fileName = "root";
 	FileUtils.deleteAllFile(directory, fileName);
     }
+
+    @Test
+    public void test6() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	Query query = session.createQuery("from CodeScore");
+	List<QuestionExample> list = query.list();
+	for (QuestionExample questionExample : list) {
+	    System.out.println(questionExample.getQuestionId());
+	    System.out.println(questionExample.getExampleId());
+	    System.out.println(questionExample.getInput());
+	    System.out.println(questionExample.getOutput());
+	}
+
+	tx.commit();
+	session.close();
+    }
 }
