@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- ORM映射配置 -->
+<hibernate-mapping package="cn.sjy.db">
+	<!-- name:类名 table:表名 -->
+	<class name="cn.sjy.db.Problem" table="t_problem">
+		<!-- 主键 -->
+		<id name="problemId" column="c_problemid" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+
+		<!-- 其他属性 -->
+		<property name="userId" column="c_userId"
+			type="java.lang.String"></property>
+		<property name="content" column="c_content"
+			type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>   

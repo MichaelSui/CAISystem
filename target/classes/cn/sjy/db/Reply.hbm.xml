@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- ORM映射配置 -->
+<hibernate-mapping package="cn.sjy.db">
+	<!-- name:类名 table:表名 -->
+	<class name="cn.sjy.db.Reply" table="t_reply">
+		<!-- 复合主键 -->
+		<composite-id>
+			<key-property name="problemId" column="c_problemid"
+				type="java.lang.Integer"></key-property>
+			<key-property name="replyId" column="c_replyid"
+				type="java.lang.Integer">
+			</key-property>
+		</composite-id>
+
+		<!-- 其他属性 -->
+		<property name="userId" column="c_userId"
+			type="java.lang.String"></property>
+		<property name="content" column="c_content"
+			type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>   

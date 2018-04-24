@@ -85,5 +85,9 @@
 			class="cn.sjy.action.GoToHandInHomeWorkAction">
 			<result name="success">./pages/handInHomeWork.jsp</result>
 		</action>
+		<action name="goToQuestionListAction"
+			class="cn.sjy.action.GoToQuestionListAction">
+			<result name="success">./pages/questionList.jsp</result>
+		</action>
 	</package>
 </struts>
