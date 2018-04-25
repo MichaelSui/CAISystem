@@ -89,5 +89,9 @@
 			class="cn.sjy.action.GoToQuestionListAction">
 			<result name="success">./pages/questionList.jsp</result>
 		</action>
+		<action name="goToProblemAction"
+			class="cn.sjy.action.GoToProblemAction">
+			<result name="success">./pages/questionDiscussion.jsp</result>
+		</action>
 	</package>
 </struts>

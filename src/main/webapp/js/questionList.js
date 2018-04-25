@@ -27,7 +27,12 @@ for (var i = 0; i < problemNum; i++) {
 	var element2 = document.createElement("td");
 	element2.innerHTML = content;
 	var element3 = document.createElement("td");
-	element3.innerHTML = "#";
+	var element_a = document.createElement("a");
+	var href = "./goToProblemAction.do?problemId=" + problemId;
+	element_a.setAttribute("href", href);
+	element_a.innerHTML = "点击跳转到该问题页面";
+	element3.appendChild(element_a);
+	/* element3.innerHTML = "./goToProblemAction.do?problemId=" + problemId; */
 	var element = document.createElement("tr");
 	element.appendChild(element1);
 	element.appendChild(element2);

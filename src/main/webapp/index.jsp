@@ -91,7 +91,7 @@
 							<i class="icon-screen-desktop m-auto text-primary"></i>
 						</div>
 						<h3>全尺寸设备的支持</h3>
-						<p class="lead mb-0">电脑、平板和手机都能正常使用。</p>
+						<p class="lead mb-0">电脑、平板和高分辨率手机都能正常使用。</p>
 					</div>
 				</div>
 				<div class="col-lg-4">

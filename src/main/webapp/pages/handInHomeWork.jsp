@@ -59,7 +59,8 @@
 						href="goToCodeOnLineAction.do">在线编程</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToHandInHomeWorkAction.do">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToQuestionListAction.do">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
@@ -73,8 +74,7 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<div class="col-12">
-				<h2>提交作业：</h2>
-				<br />
+				<h2 class="mb-4">提交作业：</h2>
 				<form action="uploadHomeWorkAction.do" enctype="multipart/form-data"
 					method="post">
 					<div class="file-loading">
@@ -84,7 +84,7 @@
 			</div>
 			<div class="col-12 mt-5">
 				<h2>已经提交的文件：</h2>
-				<table class="table table-hover mt-5">
+				<table class="table table-hover mt-4">
 					<thead>
 						<tr>
 							<th>资源名称</th>

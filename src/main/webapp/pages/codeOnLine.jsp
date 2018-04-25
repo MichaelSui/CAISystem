@@ -76,7 +76,8 @@
 						href="goToCodeOnLineAction.do">在线编程</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToHandInHomeWorkAction.do">提交作业</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">提出问题</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToQuestionListAction.do">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
@@ -105,9 +106,10 @@
 				<div id="questionDetails">在控制台打印“Hello World!”字符串。</div>
 				<br />
 				<fieldset id="codeFieldSet">
-					<legend>编程区域</legend>
+					<h2>编程区域</h2>
 					<textarea class="form-control" rows="12" id="code" name="code"></textarea>
-					<button class="btn btn-primary mt-2 mb-3" type="submit">提交</button>
+					<button class="btn btn-primary mt-2 mb-3" id="submitBtn"
+						type="submit">提交</button>
 				</fieldset>
 			</form>
 			<div class="col-12">

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="logIn.jsp">
+<meta name="description" content="questionDiscussion.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -28,7 +28,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" type="text/css" href="./css/logIn.css">
+<link rel="stylesheet" href="./css/questionDiscussion.css">
 </head>
 
 <body>
@@ -62,23 +62,40 @@
 		</div>
 	</nav>
 
-	<!-- 登录功能。 -->
-	<div class="container text-center" id="main-body">
-		<form class="form-signin" action="loginAction.do" method="post">
-			<img class="mb-4" src="./img/electronics.png" alt="" width="72px"
-				height="72px">
-			<h1 class="h3 mb-3 font-weight-normal">请登陆</h1>
-			<input type="text" id="inputName" class="form-control" name="id"
-				placeholder="用户名" required> <input type="password"
-				id="inputPassword" class="form-control" name="password"
-				placeholder="密码" required>
-			<div class="radio mb-3">
-				<input type="radio" id="remember" name="remember" value="remember"
-					checked="checked"> 记住密码 <input class="ml-3" type="radio"
-					id="notRemember" name="remember" value="notRemember"> 忘记密码
+	<!-- 主体部分。 -->
+	<div class="container" id="main-body">
+		<div class="row">
+			<div class="col-12">
+				<h2>提出的问题是：</h2>
+				<br />
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th width="25%">提问者</th>
+							<th width="75%">具体问题</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td width="25%" id="problem_1"></td>
+							<td width="75%" id="problem_2"></td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<h2>回复：</h2>
+				<br />
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th width="25%">回答者</th>
+							<th width="75%">具体回答</th>
+						</tr>
+					</thead>
+					<tbody id="reply"></tbody>
+				</table>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-		</form>
+		</div>
 	</div>
 
 	<!-- Footer. -->
@@ -118,7 +135,45 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-	<script src="./js/logIn.js"></script>
+	<!-- 将后台的相关数据传递给js。 -->
+	<%
+	    String userId = null;
+	    String userAuthority = null;
+	    try {
+			userId = session.getAttribute("userId").toString();
+			userAuthority = session.getAttribute("userAuthority").toString();
+	    } catch (NullPointerException e) {
+			userId = "null";
+			userAuthority = "null";
+	    }
+	    int problemId = Integer.parseInt(request.getAttribute("problemId").toString());
+	    String problemUserId = request.getAttribute("userId").toString();
+	    String problemContent = request.getAttribute("content").toString();
+	    int replyCount = Integer.parseInt(request.getAttribute("replyCount").toString());
+	%>
+	<input type="hidden" id="userId" value="<%=userId%>" />
+	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
+	<input type="hidden" id="problemId" value="<%=problemId%>" />
+	<input type="hidden" id="problemUserId" value="<%=problemUserId%>" />
+	<input type="hidden" id="problemContent" value="<%=problemContent%>" />
+	<input type="hidden" id="replyCount" value="<%=replyCount%>" />
+	<%
+	    for (int i = 0; i < replyCount; i++) {
+			String replyIdKey = "reply" + i + "Id";
+			int replyId = Integer.parseInt(request.getAttribute(replyIdKey).toString());
+			String replyUserIdKey = "reply" + i + "UserId";
+			String replyUserId = request.getAttribute(replyUserIdKey).toString();
+			String replyContentKey = "reply" + i + "Content";
+			String replyContent = request.getAttribute(replyContentKey).toString();
+	%>
+	<input type="hidden" id="<%=replyIdKey%>" value="<%=replyId%>" />
+	<input type="hidden" id="<%=replyUserIdKey%>" value="<%=replyUserId%>" />
+	<input type="hidden" id="<%=replyContentKey%>"
+		value="<%=replyContent%>" />
+	<%
+	    }
+	%>
+	<script src="./js/questionDiscussion.js"></script>
 </body>
 
 </html>
