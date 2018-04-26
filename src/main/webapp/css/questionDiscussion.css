@@ -30,3 +30,8 @@ footer.footer {
 #main-body {
 	margin-top: 70px;
 }
+
+#replyProblemBtn {
+	width: 200px;
+	float: right;
+}

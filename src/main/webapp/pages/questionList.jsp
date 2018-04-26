@@ -79,7 +79,7 @@
 					<tbody id="problemList"></tbody>
 				</table>
 			</div>
-
+			
 			<h2 class="col-lg-12 mt-4 mb-4">我要提问：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form" action="askAProblemAction.do"

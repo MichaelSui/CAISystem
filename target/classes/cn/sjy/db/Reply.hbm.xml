@@ -12,8 +12,7 @@
 			<key-property name="problemId" column="c_problemid"
 				type="java.lang.Integer"></key-property>
 			<key-property name="replyId" column="c_replyid"
-				type="java.lang.Integer">
-			</key-property>
+				type="java.lang.Integer"></key-property>
 		</composite-id>
 
 		<!-- 其他属性 -->

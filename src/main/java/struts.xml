@@ -98,5 +98,10 @@
 			<result name="success" type="redirect">/goToQuestionListAction.do
 			</result>
 		</action>
+		<action name="replyAProblemAction"
+			class="cn.sjy.action.ReplyAProblemAction">
+			<result name="success" type="redirect">/goToProblemAction.do?problemId=${problemId}
+			</result>
+		</action>
 	</package>
 </struts>

@@ -94,6 +94,21 @@
 					<tbody id="reply"></tbody>
 				</table>
 			</div>
+
+			<h2 class="col-lg-12 mt-4 mb-4">我要回答：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="replyAProblemAction.do"
+					method="post">
+					<input type="text" class="form-control" name="replyDetails"
+						placeholder="请输入问题内容">
+					<%
+					    int problemId = Integer.parseInt(request.getAttribute("problemId").toString());
+					%>
+					<input type="hidden" name="problemId" value="<%=problemId%>" />
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="replyProblemBtn">回答</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
@@ -145,7 +160,6 @@
 			userId = "null";
 			userAuthority = "null";
 	    }
-	    int problemId = Integer.parseInt(request.getAttribute("problemId").toString());
 	    String problemUserId = request.getAttribute("userId").toString();
 	    String problemContent = request.getAttribute("content").toString();
 	    int replyCount = Integer.parseInt(request.getAttribute("replyCount").toString());
