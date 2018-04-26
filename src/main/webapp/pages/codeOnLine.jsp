@@ -90,32 +90,31 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<form class="col-12" action="executionAction.do" method="post">
+			<form action="executionAction.do" method="post">
 				<ul>
 					<li>
-						<h2>问题列表:</h2>
+						<h2 class="col-lg-12">问题列表:</h2>
 					</li>
-					<br />
-					<div id="questions">
+					<div class="col-lg-12" id="questions">
 						<input type="radio" name="question" value="question0000"
 							data-labelauty="示例" checked="true">
 					</div>
 				</ul>
-				<br />
-				<h2 id="questionTitle">练习标准输入输出函数</h2>
-				<div id="questionDetails">在控制台打印“Hello World!”字符串。</div>
-				<br />
-				<fieldset id="codeFieldSet">
-					<h2>编程区域</h2>
-					<textarea class="form-control" rows="12" id="code" name="code"></textarea>
-					<button class="btn btn-primary mt-2 mb-3" id="submitBtn"
-						type="submit">提交</button>
-				</fieldset>
+				<h2 class="col-lg-12 mt-4" id="questionTitle">练习标准输入输出函数</h2>
+				<div class="col-lg-12" id="questionDetails">在控制台打印“Hello
+					World!”字符串。</div>
+				<div class="col-lg-12">
+					<fieldset id="codeFieldSet">
+						<h2 class="mt-4">编程区域</h2>
+						<textarea class="form-control" rows="12" id="code" name="code"></textarea>
+						<button class="btn btn-primary mt-2 mb-3" id="submitBtn"
+							type="submit">提交</button>
+					</fieldset>
+				</div>
 			</form>
-			<div class="col-12">
-				<br />
-				<h2>注意事项：</h2>
-				<div>
+			<div>
+				<h2 class="col-lg-12 mt-4">注意事项：</h2>
+				<div class="col-lg-12">
 					1、推荐使用本地编译器，经调试无误后复制到代码输入区提交。 <br />
 					2、若程序有多个输出数据，请将所有输出数据置于一行，不同输出结果之间使用空格隔开，避免插入多余空格，引起系统误判。<br />
 					3、若程序有输入数据，请先在程序头文件处加上“#include
@@ -126,7 +125,6 @@
 					5、为保证服务器稳定，请不要使用文件读写等敏感操作。<br />
 					6、所有的程序都将保存到服务器，请自行完成，不要抄袭，否则可能影响最终成绩。
 				</div>
-				<br />
 			</div>
 		</div>
 	</div>

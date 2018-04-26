@@ -66,8 +66,8 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<div class="col-12">
-				<h2>问题列表：</h2>
+			<h2 class="col-lg-12">问题列表：</h2>
+			<div class="col-lg-12">
 				<table class="table table-hover mt-5">
 					<thead>
 						<tr>

@@ -65,7 +65,7 @@
 	<!-- 主体部分。 -->
 	<div class="container text-center" id="main-body">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-lg-12">
 				<h2 class="mt-5">很遗憾，发生了错误</h2>
 				<div class="mb-5 mt-5">请检查您输入的用户名和密码是否正确。如持续出现此问题请与老师联系重置密码。</div>
 			</div>

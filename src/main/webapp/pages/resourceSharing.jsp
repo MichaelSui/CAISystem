@@ -74,8 +74,8 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="mb-4">上传文件：</h2>
+			<h2 class="col-lg-12 mb-4">上传文件：</h2>
+			<div class="col-lg-12">
 				<form action="uploadAction.do" enctype="multipart/form-data"
 					method="post">
 					<div class="file-loading">
@@ -83,8 +83,8 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-12 mt-5">
-				<h2>下载文件：</h2>
+			<h2 class="col-lg-12 mt-5">下载文件：</h2>
+			<div class="col-lg-12">
 				<table class="table table-hover mt-4">
 					<thead>
 						<tr>

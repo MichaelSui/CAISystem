@@ -65,9 +65,8 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<div class="col-12">
-				<h2>提出的问题是：</h2>
-				<br />
+			<h2 class="col-lg-12 mb-4">提出的问题是：</h2>
+			<div class="col-lg-12">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -82,9 +81,9 @@
 						</tr>
 					</tbody>
 				</table>
-				<br />
-				<h2>回复：</h2>
-				<br />
+			</div>
+			<h2 class="col-lg-12 mb-4 mt-4">回复：</h2>
+			<div class="col-lg-12">
 				<table class="table table-hover">
 					<thead>
 						<tr>

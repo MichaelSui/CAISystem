@@ -65,36 +65,29 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<div class="col-12">
-				<br />
-				<h2>服务器返回结果：</h2>
-				<div>
-					<%=request.getAttribute("msg")%>
-				</div>
-				<br />
+			<h2 class="col-lg-12">服务器返回结果：</h2>
+			<div class="col-lg-12">
+				<%=request.getAttribute("msg")%>
 			</div>
-			<div class="col-6">
-				<h2>最终成绩：</h2>
+			<br />
+			<div class="col-lg-6">
+				<h2 class="mt-4">最终成绩：</h2>
 				<div>
-					总计用例个数：<%=request.getAttribute("allCount")%>
+					<br />总计用例个数：<%=request.getAttribute("allCount")%>
 					<br /> 通过用例个数：<%=request.getAttribute("correctCount")%>
 					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
 					<br /> 本题最终成绩：<%=request.getAttribute("score")%>
 				</div>
 			</div>
-			<div class="col-6">
-				<div id="canvas-holder" style="width: 70%">
+			<div class="col-lg-6">
+				<div id="canvas-holder" style="width: 100%">
 					<canvas id="chart-area"></canvas>
 				</div>
 			</div>
-			<div class="col-12">
-				<br />
-				<h2>帮助：</h2>
-				<div>
-					1、可以多次提交程序，最终成绩将按照<b>最后一次</b>提交保存。<br /> 2、刷新页面会导致代码的丢失，请自行做好程序备份。<br />
-					3、若服务器返回结果无显示，请检查程序中是否包含死循环等其他错误。<br />
-				</div>
-				<br />
+			<h2 class="col-lg-12 mt-4">帮助：</h2>
+			<div class="col-lg-12">
+				1、可以多次提交程序，最终成绩将按照<b>最后一次</b>提交保存。<br /> 2、刷新页面会导致代码的丢失，请自行做好程序备份。<br />
+				3、若服务器返回结果无显示，请检查程序中是否包含死循环等其他错误。<br />
 			</div>
 		</div>
 	</div>
