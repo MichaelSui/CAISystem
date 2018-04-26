@@ -93,5 +93,10 @@
 			class="cn.sjy.action.GoToProblemAction">
 			<result name="success">./pages/questionDiscussion.jsp</result>
 		</action>
+		<action name="askAProblemAction"
+			class="cn.sjy.action.AskAProblemAction">
+			<result name="success" type="redirect">/goToQuestionListAction.do
+			</result>
+		</action>
 	</package>
 </struts>

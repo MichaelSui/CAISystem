@@ -79,6 +79,17 @@
 					<tbody id="problemList"></tbody>
 				</table>
 			</div>
+
+			<h2 class="col-lg-12 mt-4 mb-4">我要提问：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="askAProblemAction.do"
+					method="post">
+					<input type="text" class="form-control" name="problemDetails"
+						placeholder="请输入问题内容">
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="askProblemBtn">提问</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
