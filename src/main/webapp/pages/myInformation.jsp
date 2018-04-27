@@ -108,6 +108,20 @@
 				</div>
 			</form>
 		</div>
+		<div class="row">
+			<h2 class="col-lg-12 mt-2">编程成绩：</h2>
+			<div class="col-lg-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>题目编号</th>
+							<th>最终成绩</th>
+						</tr>
+					</thead>
+					<tbody id="scoreList"></tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 
 	<!-- Footer. -->
@@ -176,6 +190,7 @@
 			qqOrTim = "";
 			wechat = "";
 	    }
+	    int codeScoreNum = Integer.parseInt(request.getAttribute("codeScoreNum").toString());
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
@@ -184,6 +199,21 @@
 	<input type="hidden" id="o_phone" value="<%=phone%>" />
 	<input type="hidden" id="o_qqOrTim" value="<%=qqOrTim%>" />
 	<input type="hidden" id="o_wechat" value="<%=wechat%>" />
+	<input type="hidden" id="codeScoreNum" value="<%=codeScoreNum%>" />
+	<%
+	    for (int i = 0; i < codeScoreNum; i++) {
+			String codeScoreNameKey = "codeScoreName" + i;
+			String codeScoreName = request.getAttribute(codeScoreNameKey).toString();
+			String codeScoreScoreKey = "codeScoreScore" + i;
+			int codeScoreScore = Integer.parseInt(request.getAttribute(codeScoreScoreKey).toString());
+	%>
+	<input type="hidden" id="<%=codeScoreNameKey%>"
+		value="<%=codeScoreName%>" />
+	<input type="hidden" id="<%=codeScoreScoreKey%>"
+		value="<%=codeScoreScore%>" />
+	<%
+	    }
+	%>
 	<script src="./js/myInformation.js"></script>
 </body>
 

@@ -11,6 +11,7 @@ import org.hibernate.query.Query;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import cn.sjy.db.CodeScore;
 import cn.sjy.db.Information;
 import cn.sjy.utils.HibernateUtil;
 
@@ -36,6 +37,17 @@ public class GoToMyInformationAction {
 	httpServletRequest.setAttribute("phone", i.getPhone());
 	httpServletRequest.setAttribute("qqOrTim", i.getQqOrTim());
 	httpServletRequest.setAttribute("wechat", i.getWechat());
+
+	// 获取编程成绩。
+	hql = "from CodeScore cs where cs.userId = :userId";
+	query = session.createQuery(hql);
+	query.setParameter("userId", userId);
+	List<CodeScore> codeScoreList = query.list();
+	httpServletRequest.setAttribute("codeScoreNum", codeScoreList.size());
+	for (int j = 0; j < codeScoreList.size(); j++) {
+	    httpServletRequest.setAttribute("codeScoreName" + j, codeScoreList.get(j).getQuestionId());
+	    httpServletRequest.setAttribute("codeScoreScore" + j, codeScoreList.get(j).getScore());
+	}
 
 	tx.commit();
 	session.close();
