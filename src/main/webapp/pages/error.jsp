@@ -117,8 +117,8 @@
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 	    }
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />

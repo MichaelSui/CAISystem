@@ -1,4 +1,3 @@
-<%@page import="cn.sjy.db.Problem"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="questionList.jsp">
+<meta name="description" content="myInformation.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -29,7 +28,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/questionList.css">
+<link rel="stylesheet" href="./css/myInformation.css">
 </head>
 
 <body>
@@ -63,33 +62,51 @@
 		</div>
 	</nav>
 
-	<!-- 主体部分。 -->
+	<!-- 主题部分。 -->
 	<div class="container" id="main-body">
-		<div class="row">
-			<h2 class="col-lg-12">问题列表：</h2>
-			<div class="col-lg-12">
-				<table class="table table-hover mt-5">
-					<thead>
-						<tr>
-							<th>提问者</th>
-							<th>问题具体</th>
-							<th>链接</th>
-						</tr>
-					</thead>
-					<tbody id="problemList"></tbody>
-				</table>
-			</div>
-			
-			<h2 class="col-lg-12 mt-4 mb-4">我要提问：</h2>
-			<div class="col-lg-12">
-				<form class="form" role="form" action="askAProblemAction.do"
-					method="post">
-					<input type="text" class="form-control" name="problemDetails"
-						placeholder="请输入问题内容">
-					<button type="submit" class="btn btn-primary mt-2 mb-4"
-						id="askProblemBtn">提问</button>
-				</form>
-			</div>
+		<div class="col-lg-12">
+			<h2 class="mb-4">查看、修改个人信息</h2>
+			<form class="needs-validation" action="changeMyInformationAction.do"
+				method="post" novalidate>
+				<div class="row">
+					<div class="col-lg-6 mb-3">
+						<label for="userId">学号</label> <input type="text"
+							class="form-control" id="final_userId" name="userId" readOnly>
+					</div>
+
+					<div class="col-lg-6 mb-3">
+						<label for="name">姓名</label> <input type="text"
+							class="form-control" id="name" name="name" required>
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label for="email">电子邮箱</label> <input type="email"
+						class="form-control" id="email" name="email">
+				</div>
+
+				<div class="mb-3">
+					<label for="phone">联系方式<span class="text-muted">(推荐手机号码)</span></label>
+					<input type="text" class="form-control" id="phone" name="phone"
+						required>
+				</div>
+
+				<div class="mb-3">
+					<label for="QQ/TIM">QQ/TIM</label> <input type="text"
+						class="form-control" id="qqOrTim" name="qqOrTim" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="wechat">微信</label> <input type="text"
+						class="form-control" id="wechat" name="wechat" required>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<button class="btn btn-primary mb-3" type="submit"
+							id="changeMyInformationBtn">修改</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 
@@ -134,6 +151,11 @@
 	<%
 	    String userId = null;
 	    String userAuthority = null;
+	    String name = null;
+	    String email = null;
+	    String phone = null;
+	    String qqOrTim = null;
+	    String wechat = null;
 	    try {
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
@@ -141,28 +163,28 @@
 			userId = "";
 			userAuthority = "";
 	    }
-	    int problemNum = Integer.parseInt(request.getAttribute("problemNum").toString());
+	    try {
+			name = request.getAttribute("name").toString();
+			email = request.getAttribute("email").toString();
+			phone = request.getAttribute("phone").toString();
+			qqOrTim = request.getAttribute("qqOrTim").toString();
+			wechat = request.getAttribute("wechat").toString();
+	    } catch (NullPointerException e) {
+			name = "";
+			email = "";
+			phone = "";
+			qqOrTim = "";
+			wechat = "";
+	    }
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
-	<input type="hidden" id="problemNum" value="<%=problemNum%>" />
-	<%
-	    for (int i = 0; i < problemNum; i++) {
-			Problem problem = (Problem) request.getAttribute("problem" + i);
-			String pi_problemId = "p" + i + "_problemId";
-			String pi_userId = "p" + i + "_userId";
-			String pi_content = "p" + i + "_content";
-			int p_problemId = problem.getProblemId();
-			String p_userId = problem.getUserId();
-			String p_content = problem.getContent();
-	%>
-	<input type="hidden" id="<%=pi_problemId%>" value="<%=p_problemId%>" />
-	<input type="hidden" id="<%=pi_userId%>" value="<%=p_userId%>" />
-	<input type="hidden" id="<%=pi_content%>" value="<%=p_content%>" />
-	<%
-	    }
-	%>
-	<script src="./js/questionList.js"></script>
+	<input type="hidden" id="o_name" value="<%=name%>" />
+	<input type="hidden" id="o_email" value="<%=email%>" />
+	<input type="hidden" id="o_phone" value="<%=phone%>" />
+	<input type="hidden" id="o_qqOrTim" value="<%=qqOrTim%>" />
+	<input type="hidden" id="o_wechat" value="<%=wechat%>" />
+	<script src="./js/myInformation.js"></script>
 </body>
 
 </html>

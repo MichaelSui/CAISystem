@@ -57,7 +57,8 @@
 						href="goToQuestionListAction.do">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToMyInformationAction.do">我的信息</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
@@ -258,8 +259,8 @@
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 	    }
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />

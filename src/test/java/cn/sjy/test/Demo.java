@@ -115,4 +115,16 @@ public class Demo {
 	tx.commit();
 	session.close();
     }
+
+    @Test
+    public void test9() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	Query query = session.createQuery("from Information");
+	List<Reply> list = query.list();
+
+	tx.commit();
+	session.close();
+    }
 }

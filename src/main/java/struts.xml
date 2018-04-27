@@ -103,5 +103,14 @@
 			<result name="success" type="redirect">/goToProblemAction.do?problemId=${problemId}
 			</result>
 		</action>
+		<action name="goToMyInformationAction"
+			class="cn.sjy.action.GoToMyInformationAction">
+			<result name="success">./pages/myInformation.jsp</result>
+		</action>
+		<action name="changeMyInformationAction"
+			class="cn.sjy.action.ChangeMyInformationAction">
+			<result name="success" type="redirect">/goToMyInformationAction.do
+			</result>
+		</action>
 	</package>
 </struts>

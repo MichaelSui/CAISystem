@@ -137,8 +137,8 @@
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 	    }
 	    int correctCount = Integer.parseInt(request.getAttribute("correctCount").toString());
 	    int errorCount = Integer.parseInt(request.getAttribute("errorCount").toString());

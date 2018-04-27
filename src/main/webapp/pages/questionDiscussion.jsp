@@ -157,8 +157,8 @@
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 	    }
 	    String problemUserId = request.getAttribute("userId").toString();
 	    String problemContent = request.getAttribute("content").toString();

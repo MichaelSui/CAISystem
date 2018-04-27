@@ -146,8 +146,8 @@
 			userId = session.getAttribute("userId").toString();
 			userAuthority = session.getAttribute("userAuthority").toString();
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 	    }
 	    String[] fileList = (String[]) request.getAttribute("fileList");
 	    int fileListNum = fileList.length;

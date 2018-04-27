@@ -177,8 +177,8 @@
 			userAuthority = session.getAttribute("userAuthority").toString();
 			questionNumber = Integer.parseInt(request.getAttribute("questionNumber").toString());
 	    } catch (NullPointerException e) {
-			userId = "null";
-			userAuthority = "null";
+			userId = "";
+			userAuthority = "";
 			questionNumber = 0;
 	    }
 	%>

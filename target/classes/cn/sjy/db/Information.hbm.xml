@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- ORM映射配置 -->
+<hibernate-mapping package="cn.sjy.db">
+	<!-- name:类名 table:表名 -->
+	<class name="cn.sjy.db.Information" table="t_information">
+		<!-- 主键 -->
+		<id name="userId" column="c_userId" type="java.lang.String"></id>
+
+		<!-- 其他属性 -->
+		<property name="name" column="c_name" type="java.lang.String"></property>
+		<property name="email" column="c_email"
+			type="java.lang.String"></property>
+		<property name="phone" column="c_phone"
+			type="java.lang.String"></property>
+		<property name="qqOrTim" column="c_qqOrTim"
+			type="java.lang.String"></property>
+		<property name="wechat" column="c_wechat"
+			type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>   

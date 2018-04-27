@@ -2,7 +2,7 @@
  * 针对用户登陆后的界面变化。
  */
 var userId = document.getElementById("userId").value;
-if (userId != "null") {
+if (userId != "") {
 	/*
 	 * 此时已登录。
 	 */
