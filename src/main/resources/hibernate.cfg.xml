@@ -28,5 +28,6 @@
 		<mapping resource="cn/sjy/db/Problem.hbm.xml" />
 		<mapping resource="cn/sjy/db/Reply.hbm.xml" />
 		<mapping resource="cn/sjy/db/Information.hbm.xml" />
+		<mapping resource="cn/sjy/db/Notice.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>	

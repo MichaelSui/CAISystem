@@ -1,3 +1,5 @@
+<%@page import="cn.sjy.utils.GetNotice"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="cn.sjy.db.Problem"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -56,12 +58,24 @@
 						href="goToQuestionListAction.do">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToMyInformationAction.do">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" id="noticeBtn"
+						href="#">通知</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
+
+	<!-- 通知窗口。 -->
+	<div id="noticeBackground"></div>
+	<div id="noticeDiv">
+		<h2>
+			通知窗口<a href="#" id="closeBtn">关闭</a>
+		</h2>
+		<div id="noticeMsg"></div>
+	</div>
 
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
@@ -79,7 +93,7 @@
 					<tbody id="problemList"></tbody>
 				</table>
 			</div>
-			
+
 			<h2 class="col-lg-12 mt-4 mb-4">我要提问：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form" action="askAProblemAction.do"
@@ -142,6 +156,11 @@
 			userAuthority = "";
 	    }
 	    int problemNum = Integer.parseInt(request.getAttribute("problemNum").toString());
+
+	    // 获取通知信息。
+	    ArrayList<String> dates = GetNotice.getDates();
+	    ArrayList<String> notices = GetNotice.getNotices();
+	    int noticeNum = dates.size();
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
@@ -159,6 +178,21 @@
 	<input type="hidden" id="<%=pi_problemId%>" value="<%=p_problemId%>" />
 	<input type="hidden" id="<%=pi_userId%>" value="<%=p_userId%>" />
 	<input type="hidden" id="<%=pi_content%>" value="<%=p_content%>" />
+	<%
+	    }
+	%>
+	<input type="hidden" id="noticeNum" value="<%=noticeNum%>" />
+	<%
+	    for (int i = 0; i < noticeNum; i++) {
+			String noticeDateKey = "notice" + i + "Date";
+			String noticeDateValue = dates.get(i);
+
+			String noticeMsgKey = "notice" + i + "Msg";
+			String noticeMsgValue = notices.get(i);
+	%>
+	<input type="hidden" id="<%=noticeDateKey%>"
+		value="<%=noticeDateValue%>" />
+	<input type="hidden" id="<%=noticeMsgKey%>" value="<%=noticeMsgValue%>" />
 	<%
 	    }
 	%>

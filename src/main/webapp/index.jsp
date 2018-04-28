@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="cn.sjy.utils.GetNotice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -59,11 +61,22 @@
 						href="goToResourceSharingAction.do">资源共享</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToMyInformationAction.do">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" id="noticeBtn"
+						href="#">通知</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
+
+	<!-- 通知窗口。 -->
+	<div id="noticeBackground"></div>
+	<div id="noticeDiv">
+		<h2>
+			通知窗口<a href="#" id="closeBtn">关闭</a>
+		</h2>
+		<div id="noticeMsg"></div>
+	</div>
 
 	<!-- Masthead. -->
 	<header class="masthead text-white text-center">
@@ -173,7 +186,7 @@
 							<i class="fab fa-google fa-9x fa-fw"></i>
 							<h5 class="mt-2">Google</h5>
 						</a>
-						<p class="font-weight-light mb-0">搜索引擎时遇到问题的第一选择。</p>
+						<p class="font-weight-light mb-0">搜索引擎是遇到问题的第一选择。</p>
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -251,8 +264,9 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-	<!-- 将后台的相关数据传递给js。 -->
 	<%
+	    // 将后台的相关数据传递给js。
+	    // 获取用户名和权限信息。
 	    String userId = null;
 	    String userAuthority = null;
 	    try {
@@ -262,9 +276,29 @@
 			userId = "";
 			userAuthority = "";
 	    }
+
+	    // 获取通知信息。
+	    ArrayList<String> dates = GetNotice.getDates();
+	    ArrayList<String> notices = GetNotice.getNotices();
+	    int noticeNum = dates.size();
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
+	<input type="hidden" id="noticeNum" value="<%=noticeNum%>" />
+	<%
+	    for (int i = 0; i < noticeNum; i++) {
+			String noticeDateKey = "notice" + i + "Date";
+			String noticeDateValue = dates.get(i);
+
+			String noticeMsgKey = "notice" + i + "Msg";
+			String noticeMsgValue = notices.get(i);
+	%>
+	<input type="hidden" id="<%=noticeDateKey%>"
+		value="<%=noticeDateValue%>" />
+	<input type="hidden" id="<%=noticeMsgKey%>" value="<%=noticeMsgValue%>" />
+	<%
+	    }
+	%>
 	<script src="./js/index.js"></script>
 </body>
 

@@ -1,3 +1,5 @@
+<%@page import="cn.sjy.utils.GetNotice"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -55,12 +57,24 @@
 						href="goToQuestionListAction.do">提出问题</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="goToResourceSharingAction.do">资源共享</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToMyInformationAction.do">我的信息</a></li>
+					<li class="nav-item active"><a class="nav-link" id="noticeBtn"
+						href="#">通知</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>
 		</div>
 	</nav>
+
+	<!-- 通知窗口。 -->
+	<div id="noticeBackground"></div>
+	<div id="noticeDiv">
+		<h2>
+			通知窗口<a href="#" id="closeBtn">关闭</a>
+		</h2>
+		<div id="noticeMsg"></div>
+	</div>
 
 	<!-- 登录功能。 -->
 	<div class="container text-center" id="main-body">
@@ -118,6 +132,27 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	<%
+	    // 获取通知信息。
+	    ArrayList<String> dates = GetNotice.getDates();
+	    ArrayList<String> notices = GetNotice.getNotices();
+	    int noticeNum = dates.size();
+	%>
+	<input type="hidden" id="noticeNum" value="<%=noticeNum%>" />
+	<%
+	    for (int i = 0; i < noticeNum; i++) {
+			String noticeDateKey = "notice" + i + "Date";
+			String noticeDateValue = dates.get(i);
+
+			String noticeMsgKey = "notice" + i + "Msg";
+			String noticeMsgValue = notices.get(i);
+	%>
+	<input type="hidden" id="<%=noticeDateKey%>"
+		value="<%=noticeDateValue%>" />
+	<input type="hidden" id="<%=noticeMsgKey%>" value="<%=noticeMsgValue%>" />
+	<%
+	    }
+	%>
 	<script src="./js/logIn.js"></script>
 </body>
 

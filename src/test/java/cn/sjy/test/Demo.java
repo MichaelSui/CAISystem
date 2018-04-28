@@ -1,5 +1,6 @@
 package cn.sjy.test;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -8,6 +9,7 @@ import org.hibernate.query.Query;
 import org.junit.Test;
 
 import cn.sjy.db.CodeScore;
+import cn.sjy.db.Notice;
 import cn.sjy.db.Problem;
 import cn.sjy.db.Question;
 import cn.sjy.db.QuestionExample;
@@ -123,6 +125,32 @@ public class Demo {
 
 	Query query = session.createQuery("from Information");
 	List<Reply> list = query.list();
+
+	tx.commit();
+	session.close();
+    }
+
+    @Test
+    public void test10() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	Query query = session.createQuery("from Notice");
+	List<Reply> list = query.list();
+
+	tx.commit();
+	session.close();
+    }
+
+    @Test
+    public void test11() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	Notice n = new Notice();
+	n.setDate(new Date());
+	n.setContent("dsda dad asd ad sad a d as d asdasdad a d a d asd sa sdasdassda.");
+	session.save(n);
 
 	tx.commit();
 	session.close();
