@@ -104,7 +104,8 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<form action="executionAction.do" method="post">
+			<form action="executionAction.do" method="post"
+				onsubmit="return checkSubmit();">
 				<ul>
 					<li>
 						<h2 class="col-lg-12">问题列表:</h2>

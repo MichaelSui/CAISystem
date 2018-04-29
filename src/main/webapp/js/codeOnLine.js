@@ -112,3 +112,14 @@ $(function() {
 		$("#noticeDiv").css("display", "none");
 	});
 })
+
+// 控制表单只能提交一次。
+var checkSubmitFlag = false;
+function checkSubmit() {
+	if (checkSubmitFlag == true) {
+		return false;
+	} else {
+		checkSubmitFlag = true;
+		return true;
+	}
+}
