@@ -21,6 +21,17 @@
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 
+	<!-- 教师权限的判断。 -->
+	<filter>
+		<filter-name>isTeacherFilter</filter-name>
+		<filter-class>cn.sjy.utils.IsTeacherFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>isTeacherFilter</filter-name>
+		<url-pattern>/goToTeacherPanelAction.do</url-pattern>
+		<url-pattern>/pages/teacherPanel.jsp</url-pattern>
+	</filter-mapping>
+
 	<!-- 定义Struts2.5核心控制器。 -->
 	<filter>
 		<filter-name>struts2</filter-name>

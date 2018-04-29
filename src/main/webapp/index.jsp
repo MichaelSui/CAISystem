@@ -63,6 +63,8 @@
 						href="goToMyInformationAction.do">我的信息</a></li>
 					<li class="nav-item active"><a class="nav-link" id="noticeBtn"
 						href="#">通知</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="goToTeacherPanelAction.do">教师面板</a></li>
 				</ul>
 				<a class="btn btn-primary" id="nav-btn-1" href="goToLogInAction.do">登陆</a>
 			</div>

@@ -112,5 +112,9 @@
 			<result name="success" type="redirect">/goToMyInformationAction.do
 			</result>
 		</action>
+		<action name="goToTeacherPanelAction"
+			class="cn.sjy.action.GoToTeacherPanelAction">
+			<result name="success">./pages/teacherPanel.jsp</result>
+		</action>
 	</package>
 </struts>

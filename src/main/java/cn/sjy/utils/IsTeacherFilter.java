@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class IsLogInFilter implements Filter {
+public class IsTeacherFilter implements Filter {
     private FilterConfig filterConfig;
 
     @Override
@@ -27,25 +27,10 @@ public class IsLogInFilter implements Filter {
 	HttpServletResponse response = (HttpServletResponse) servletResponse;
 	HttpSession session = request.getSession();
 	/*
-	 * 将首页和登录页从过滤列表中去除。
+	 * 查看权限等级是否是教师级别以上。
 	 */
-	String passURL = filterConfig.getInitParameter("passURL");
-	if (passURL != null) {
-	    String[] passURLs = passURL.split(";");
-	    for (int i = 0; i < passURLs.length; i++) {
-		if (passURLs[i] == null || "".equals(passURLs[i])) {
-		    continue;
-		}
-		if (request.getRequestURI().indexOf(passURLs[i]) != -1) {
-		    filterChain.doFilter(servletRequest, servletResponse);
-		    return;
-		}
-	    }
-	}
-	/*
-	 * 对来访者的权限进行判断。
-	 */
-	if (session.getAttribute("userId") != null) {
+	Authority authority = Authority.valueOf(session.getAttribute("userAuthority").toString());
+	if (authority.equals(Authority.TEACHER) || authority.equals(Authority.ADMIN)) {
 	    filterChain.doFilter(servletRequest, servletResponse);
 	    return;
 	} else {
