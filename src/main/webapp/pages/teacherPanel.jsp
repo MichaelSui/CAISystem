@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="template.jsp">
+<meta name="description" content="teacherPanel.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -30,7 +30,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/template.css">
+<link rel="stylesheet" href="./css/teacherPanel.css">
 </head>
 
 <body>
@@ -86,10 +86,22 @@
 						<tr>
 							<th>学号</th>
 							<th>题目编号</th>
-							<th>总成绩</th>
+							<th>成绩</th>
 						</tr>
 					</thead>
 					<tbody id="studentCodeScore"></tbody>
+				</table>
+			</div>
+			<h2 class="col-lg-12">查看学生的总成绩：</h2>
+			<div class="col-lg-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>学号</th>
+							<th>总成绩</th>
+						</tr>
+					</thead>
+					<tbody id="studentCodeScoreAll"></tbody>
 				</table>
 			</div>
 		</div>
@@ -132,8 +144,8 @@
 	<script src="./vendor/jquery-3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-	<!-- 将后台的相关数据传递给js。 -->
 	<%
+	    //将后台的相关数据传递给js。
 	    String userId = null;
 	    String userAuthority = null;
 	    try {
@@ -165,8 +177,29 @@
 	<input type="hidden" id="<%=noticeMsgKey%>" value="<%=noticeMsgValue%>" />
 	<%
 	    }
+	    // 获取成绩信息。
+	    int codeScoreNum = Integer.parseInt(request.getAttribute("codeScoreNum").toString());
 	%>
-	<script src="./js/template.js"></script>
+	<input type="hidden" id="codeScoreNum" value="<%=codeScoreNum%>" />
+	<%
+	    for (int i = 0; i < codeScoreNum; i++) {
+			String codeScoreUserIdKey = "codeScore" + i + "UserId";
+			String codeScoreUserIdValue = request.getAttribute(codeScoreUserIdKey).toString();
+			String codeScoreQuestionIdKey = "codeScore" + i + "QuestionId";
+			String codeScoreQuestionIdValue = request.getAttribute(codeScoreQuestionIdKey).toString();
+			String codeScoreScoreKey = "codeScore" + i + "Score";
+			String codeScoreScoreValue = request.getAttribute(codeScoreScoreKey).toString();
+	%>
+	<input type="hidden" id="<%=codeScoreUserIdKey%>"
+		value="<%=codeScoreUserIdValue%>" />
+	<input type="hidden" id="<%=codeScoreQuestionIdKey%>"
+		value="<%=codeScoreQuestionIdValue%>" />
+	<input type="hidden" id="<%=codeScoreScoreKey%>"
+		value="<%=codeScoreScoreValue%>" />
+	<%
+	    }
+	%>
+	<script src="./js/teacherPanel.js"></script>
 </body>
 
 </html>

@@ -44,3 +44,42 @@ $(function() {
 		$("#noticeDiv").css("display", "none");
 	});
 })
+
+// 处理学生成绩的显示。
+var codeScoreNum = document.getElementById("codeScoreNum").value;
+var studentCodeScore = document.getElementById("studentCodeScore");
+for (var i = 0; i < codeScoreNum; i++) {
+	var td1 = document.createElement("td");
+	td1.innerHTML = document.getElementById("codeScore" + i + "UserId").value;
+	var td2 = document.createElement("td");
+	td2.innerHTML = document.getElementById("codeScore" + i + "QuestionId").value;
+	var td3 = document.createElement("td");
+	td3.innerHTML = document.getElementById("codeScore" + i + "Score").value;
+	var tr = document.createElement("tr");
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	tr.appendChild(td3);
+	studentCodeScore.appendChild(tr);
+}
+
+var codeScore = new Map();
+for (var i = 0; i < codeScoreNum; i++) {
+	var userId = document.getElementById("codeScore" + i + "UserId").value;
+	var score = document.getElementById("codeScore" + i + "Score").value;
+	if (codeScore.has(userId)) {
+		codeScore.set(userId, parseInt(score) + parseInt(codeScore.get(userId)));
+	} else {
+		codeScore.set(userId, score);
+	}
+}
+var studentCodeScoreAll = document.getElementById("studentCodeScoreAll");
+for (let item of codeScore.entries()) {
+	var td1 = document.createElement("td");
+	td1.innerHTML = item[0];
+	var td2 = document.createElement("td");
+	td2.innerHTML = item[1];
+	var tr = document.createElement("tr");
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	studentCodeScoreAll.appendChild(tr);
+}
