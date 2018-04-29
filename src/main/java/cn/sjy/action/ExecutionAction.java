@@ -63,6 +63,7 @@ public class ExecutionAction {
 	Map<String, Object> application = actionContext.getApplication();
 	// 获取一个可用端口。
 	int availablePort1 = 10000;
+	int availablePort2 = 20000;
 	synchronized (application) {
 	    if (application.get("availablePort1") != null) {
 		availablePort1 = Integer.parseInt(application.get("availablePort1").toString()) + 1;
@@ -71,9 +72,7 @@ public class ExecutionAction {
 		}
 	    }
 	    application.put("availablePort1", availablePort1);
-	}
-	int availablePort2 = 20000;
-	synchronized (application) {
+
 	    if (application.get("availablePort2") != null) {
 		availablePort2 = Integer.parseInt(application.get("availablePort2").toString()) + 1;
 		if (availablePort2 == 30000) {
