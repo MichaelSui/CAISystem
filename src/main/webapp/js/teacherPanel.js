@@ -83,3 +83,20 @@ for (let item of codeScore.entries()) {
 	tr.appendChild(td2);
 	studentCodeScoreAll.appendChild(tr);
 }
+
+// 处理试题信息的显示。
+var questionNum = document.getElementById("questionNum").value;
+var questionList = document.getElementById("questionList");
+for (var i = 0 ; i < questionNum; i++) {
+	var td1 = document.createElement("td");
+	td1.innerHTML = document.getElementById("question" + i + "Id").value;
+	var td2 = document.createElement("td");
+	td2.innerHTML = document.getElementById("question" + i + "QuestionName").value;
+	var td3 = document.createElement("td");
+	td3.innerHTML = document.getElementById("question" + i + "QuestionDetails").value;
+	var tr = document.createElement("tr");
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	tr.appendChild(td3);
+	questionList.appendChild(tr);
+}

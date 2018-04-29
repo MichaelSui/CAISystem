@@ -104,6 +104,22 @@
 					<tbody id="studentCodeScoreAll"></tbody>
 				</table>
 			</div>
+			<h2 class="col-lg-12">查看当前题库：</h2>
+			<div class="col-lg-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th width="20%">编号</th>
+							<th width="40%">题目标题</th>
+							<th width="40%">题目详情</th>
+						</tr>
+					</thead>
+					<tbody id="questionList"></tbody>
+				</table>
+			</div>
+			<h2 class="col-lg-12">添加试题：</h2>
+			<h2 class="col-lg-12">添加用例：</h2>
+			<h2 class="col-lg-12">删除试题：</h2>
 		</div>
 	</div>
 
@@ -196,6 +212,27 @@
 		value="<%=codeScoreQuestionIdValue%>" />
 	<input type="hidden" id="<%=codeScoreScoreKey%>"
 		value="<%=codeScoreScoreValue%>" />
+	<%
+	    }
+	    // 获取试题信息。
+	    int questionNum = Integer.parseInt(request.getAttribute("questionNum").toString());
+	%>
+	<input type="hidden" id="questionNum" value="<%=questionNum%>" />
+	<%
+	    for (int i = 0; i < questionNum; i++) {
+			String questionIdKey = "question" + i + "Id";
+			String questionIdValue = request.getAttribute(questionIdKey).toString();
+			String questionQuestionNameKey = "question" + i + "QuestionName";
+			String questionQuestionNameValue = request.getAttribute(questionQuestionNameKey).toString();
+			String questionQuestionDetailsKey = "question" + i + "QuestionDetails";
+			String questionQuestionDetailsValue = request.getAttribute(questionQuestionDetailsKey).toString();
+	%>
+	<input type="hidden" id="<%=questionIdKey%>"
+		value="<%=questionIdValue%>" />
+	<input type="hidden" id="<%=questionQuestionNameKey%>"
+		value="<%=questionQuestionNameValue%>" />
+	<input type="hidden" id="<%=questionQuestionDetailsKey%>"
+		value="<%=questionQuestionDetailsValue%>" />
 	<%
 	    }
 	%>
