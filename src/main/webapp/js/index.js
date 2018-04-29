@@ -4,7 +4,7 @@ if (userId != "") {
 	// 此时已登录。
 	var userAuthority = document.getElementById("userAuthority").value;
 	var loginButton = document.getElementById("nav-btn-1");
-	if (userAuthority == "SUTDENT") {
+	if (userAuthority == "STUDENT") {
 		loginButton.innerHTML = "您好 学生 " + userId;
 		var classVal = loginButton.getAttribute("class");
 		classVal = classVal.concat(" disabled");

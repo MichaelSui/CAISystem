@@ -4,19 +4,11 @@ if (userId != "") {
 	// 此时已登录。
 	var userAuthority = document.getElementById("userAuthority").value;
 	var loginButton = document.getElementById("nav-btn-1");
-	if (userAuthority == "SUTDENT") {
+	if (userAuthority == "STUDENT") {
 		loginButton.innerHTML = "您好 学生 " + userId;
 		var classVal = loginButton.getAttribute("class");
 		classVal = classVal.concat(" disabled");
 		loginButton.setAttribute("class", classVal);
-
-		var callToActionMsg = document.getElementById("callToActionMsg");
-		callToActionMsg.innerHTML = "欢迎您的登陆";
-		var callToActionBtn = document.getElementById("call-to-action-btn-1");
-		callToActionBtn.innerHTML = "您好 学生 " + userId;
-		classVal = callToActionBtn.getAttribute("class");
-		classVal = classVal.concat(" disabled");
-		callToActionBtn.setAttribute("class", classVal);
 	} else if (userAuthority == "TEACHER") {
 		loginButton.innerHTML = "点击进入教师面板";
 		loginButton.href = "goToTeacherPanelAction.do";
