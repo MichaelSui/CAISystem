@@ -16,9 +16,7 @@ import com.opensymphony.xwork2.ActionContext;
 import cn.sjy.db.User;
 import cn.sjy.utils.HibernateUtil;
 
-/*
- * 登陆相关逻辑。用户名和密码正误的判断和Session信息的保存。
- */
+// 登陆相关逻辑。用户名和密码正误的判断和Session信息的保存。
 public class LoginAction {
     private String id;
     private String password;
@@ -49,20 +47,14 @@ public class LoginAction {
     }
 
     public String execute() throws Exception {
-	/*
-	 * 防止直接访问。
-	 */
+	// 防止直接访问。
 	if (id == null || password == null || remember == null) {
 	    return "noPass";
 	}
 
-	/*
-	 * 记住密码功能。
-	 */
+	// 记住密码功能。
 	if (remember.equals("remember")) {
-	    /*
-	     * 选中了记住密码。
-	     */
+	    // 选中了记住密码。
 	    Cookie cookieId = new Cookie("userId", id);
 	    cookieId.setMaxAge(60 * 60 * 24 * 7);
 	    Cookie cookiePassword = new Cookie("userPassword", password);
@@ -73,9 +65,7 @@ public class LoginAction {
 	    httpServletResponse.addCookie(cookieId);
 	    httpServletResponse.addCookie(cookiePassword);
 	} else if (remember.equals("notRemember")) {
-	    /*
-	     * 选中了忘记密码。
-	     */
+	    // 选中了忘记密码。
 	    ActionContext actionContext = ActionContext.getContext();
 	    HttpServletResponse httpServletResponse = (HttpServletResponse) actionContext
 		    .get(org.apache.struts2.StrutsStatics.HTTP_RESPONSE);
@@ -91,11 +81,10 @@ public class LoginAction {
 	    }
 	}
 
-	/*
-	 * 用户名和密码正误的判断和Session信息的保存。
-	 */
+	// 用户名和密码正误的判断和Session信息的保存。
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
+
 	String hql = "from User user where user.id = :id and user.password = :password";
 	Query query = session.createQuery(hql);
 	query.setParameter("id", id);
@@ -107,12 +96,15 @@ public class LoginAction {
 	    User user = list.get(0);
 	    httpSession.put("userId", user.getId());
 	    httpSession.put("userAuthority", user.getAuthority());
+
 	    transaction.commit();
 	    session.close();
+
 	    return "success";
 	} else {
 	    transaction.commit();
 	    session.close();
+
 	    return "error";
 	}
     }

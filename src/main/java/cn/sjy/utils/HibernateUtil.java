@@ -17,9 +17,7 @@ public class HibernateUtil {
 	sessionFactory = configuration.buildSessionFactory();
     }
 
-    /**
-     * 让外部获取Session对象
-     */
+    // 让外部获取Session对象
     public static Session getSession() {
 	return sessionFactory.openSession();
     }

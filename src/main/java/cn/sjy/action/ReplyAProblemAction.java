@@ -40,6 +40,7 @@ public class ReplyAProblemAction {
 
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
+
 	// 没有找到复合主键其中之一自增的配置文件写法，只好使用程序模拟这个自增的过程。
 	int maxReplyId = 1;
 	String hql = "from Reply r where r.problemId = :problemId";
@@ -56,6 +57,7 @@ public class ReplyAProblemAction {
 	r.setUserId(userId);
 	r.setContent(replyDetails);
 	session.save(r);
+
 	transaction.commit();
 	session.close();
 

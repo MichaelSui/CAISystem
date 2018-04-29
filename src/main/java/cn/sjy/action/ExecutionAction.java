@@ -60,8 +60,32 @@ public class ExecutionAction {
 	// Create a client based on DOCKER_HOST and DOCKER_CERT_PATH env vars
 	final DockerClient docker = DefaultDockerClient.fromEnv().build();
 
+	Map<String, Object> application = actionContext.getApplication();
+	// 获取一个可用端口。
+	int availablePort1 = 10000;
+	synchronized (application) {
+	    if (application.get("availablePort1") != null) {
+		availablePort1 = Integer.parseInt(application.get("availablePort1").toString()) + 1;
+		if (availablePort1 == 20000) {
+		    availablePort1 -= 10000;
+		}
+	    }
+	    application.put("availablePort1", availablePort1);
+	}
+	int availablePort2 = 20000;
+	synchronized (application) {
+	    if (application.get("availablePort2") != null) {
+		availablePort2 = Integer.parseInt(application.get("availablePort2").toString()) + 1;
+		if (availablePort2 == 30000) {
+		    availablePort2 -= 10000;
+		}
+	    }
+	    application.put("availablePort2", availablePort2);
+	}
+	System.out.println("port1:" + availablePort1 + " port2:" + availablePort2);
+
 	// Bind container ports to host ports
-	final String[] ports = { "80", "2222" };
+	final String[] ports = { String.valueOf(availablePort1), String.valueOf(availablePort2) };
 	final Map<String, List<PortBinding>> portBindings = new HashMap<>();
 	for (String port : ports) {
 	    List<PortBinding> hostPorts = new ArrayList<>();

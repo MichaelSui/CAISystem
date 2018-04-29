@@ -24,9 +24,7 @@ footer.footer {
 	padding-bottom: 4rem;
 }
 
-/*
- * 自定义的样式。
- */
+/* 自定义的样式。 */
 #main-body {
 	margin-top: 70px;
 }
@@ -36,9 +34,7 @@ footer.footer {
 	float: right;
 }
 
-/*
- * 通知功能。
- */
+/* 通知功能。 */
 #noticeBackground {
 	background-color: #666666;
 	position: absolute;

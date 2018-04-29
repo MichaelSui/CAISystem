@@ -164,9 +164,7 @@ footer.footer {
 	padding-bottom: 4rem;
 }
 
-/*
- * 通知功能。
- */
+/* 通知功能。 */
 #noticeBackground {
 	background-color: #666666;
 	position: absolute;

@@ -1,6 +1,4 @@
-/**
- * 读取Cookie中的用户名和密码信息。
- */
+// 读取Cookie中的用户名和密码信息。
 function getCookie(c_name) {
 	if (document.cookie.length > 0) {
 		c_start = document.cookie.indexOf(c_name + "=")
@@ -20,9 +18,7 @@ inputName.value = getCookie("userId");
 var inputPassword = document.getElementById("inputPassword");
 inputPassword.value = getCookie("userPassword");
 
-/*
- * 通知功能。
- */
+// 通知功能。
 var noticeNum = document.getElementById("noticeNum").value;
 var noticeStr = "";
 for (var i = 0; i < noticeNum; i++) {

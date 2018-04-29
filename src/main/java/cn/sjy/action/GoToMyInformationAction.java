@@ -51,6 +51,7 @@ public class GoToMyInformationAction {
 
 	tx.commit();
 	session.close();
+
 	return "success";
     }
 }

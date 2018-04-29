@@ -1,22 +1,32 @@
-/*
- * 针对用户登陆后的界面变化。
- */
+// 针对用户登陆后的界面变化。
 var userId = document.getElementById("userId").value;
 if (userId != "") {
-	/*
-	 * 此时已登录。
-	 */
+	// 此时已登录。
 	var userAuthority = document.getElementById("userAuthority").value;
 	var loginButton = document.getElementById("nav-btn-1");
-	loginButton.innerHTML = "您好 " + userAuthority + " " + userId;
-	var classVal = loginButton.getAttribute("class");
-	classVal = classVal.concat(" disabled");
-	loginButton.setAttribute("class", classVal);
+	if (userAuthority == "SUTDENT") {
+		loginButton.innerHTML = "您好 学生 " + userId;
+		var classVal = loginButton.getAttribute("class");
+		classVal = classVal.concat(" disabled");
+		loginButton.setAttribute("class", classVal);
+
+		var callToActionMsg = document.getElementById("callToActionMsg");
+		callToActionMsg.innerHTML = "欢迎您的登陆";
+		var callToActionBtn = document.getElementById("call-to-action-btn-1");
+		callToActionBtn.innerHTML = "您好 学生 " + userId;
+		classVal = callToActionBtn.getAttribute("class");
+		classVal = classVal.concat(" disabled");
+		callToActionBtn.setAttribute("class", classVal);
+	} else if (userAuthority == "TEACHER") {
+		loginButton.innerHTML = "点击进入教师面板";
+		loginButton.href = "goToTeacherPanelAction.do";
+	} else if (userAuthority == "ADMIN") {
+		loginButton.innerHTML = "点击进入管理员面板";
+		loginButton.href = "goToAdminPanelAction.do";
+	}
 }
 
-/*
- * 提问信息的展示。
- */
+// 提问信息的展示。
 var problemNum = document.getElementById("problemNum").value;
 for (var i = 0; i < problemNum; i++) {
 	var problemId = document.getElementById("p" + i + "_problemId").value;
@@ -32,7 +42,6 @@ for (var i = 0; i < problemNum; i++) {
 	element_a.setAttribute("href", href);
 	element_a.innerHTML = "点击跳转到该问题页面";
 	element3.appendChild(element_a);
-	/* element3.innerHTML = "./goToProblemAction.do?problemId=" + problemId; */
 	var element = document.createElement("tr");
 	element.appendChild(element1);
 	element.appendChild(element2);
@@ -41,9 +50,7 @@ for (var i = 0; i < problemNum; i++) {
 	element_tbody.appendChild(element);
 }
 
-/*
- * 通知功能。
- */
+// 通知功能。
 var noticeNum = document.getElementById("noticeNum").value;
 var noticeStr = "";
 for (var i = 0; i < noticeNum; i++) {

@@ -26,9 +26,8 @@ public class IsTeacherFilter implements Filter {
 	HttpServletRequest request = (HttpServletRequest) servletRequest;
 	HttpServletResponse response = (HttpServletResponse) servletResponse;
 	HttpSession session = request.getSession();
-	/*
-	 * 查看权限等级是否是教师级别以上。
-	 */
+
+	// 查看权限等级是否是教师级别以上。
 	Authority authority = Authority.valueOf(session.getAttribute("userAuthority").toString());
 	if (authority.equals(Authority.TEACHER) || authority.equals(Authority.ADMIN)) {
 	    filterChain.doFilter(servletRequest, servletResponse);

@@ -26,9 +26,8 @@ public class IsLogInFilter implements Filter {
 	HttpServletRequest request = (HttpServletRequest) servletRequest;
 	HttpServletResponse response = (HttpServletResponse) servletResponse;
 	HttpSession session = request.getSession();
-	/*
-	 * 将首页和登录页从过滤列表中去除。
-	 */
+
+	// 将首页和登录页从过滤列表中去除。
 	String passURL = filterConfig.getInitParameter("passURL");
 	if (passURL != null) {
 	    String[] passURLs = passURL.split(";");

@@ -5,9 +5,7 @@ import java.io.FileOutputStream;
 import java.util.regex.Pattern;
 
 public class FileUtils {
-    /*
-     * 将String类型的字符串content写入目录为directory的fileName文件之中。
-     */
+    // 将String类型的字符串content写入目录为directory的fileName文件之中。
     public static boolean writeFile(String directory, String fileName, String content) {
 	byte[] contentByte = content.getBytes();
 	if (contentByte != null) {
@@ -31,9 +29,7 @@ public class FileUtils {
 	return false;
     }
 
-    /*
-     * 删除directory目录下的所有名字带有fileName的文件。
-     */
+    // 删除directory目录下的所有名字带有fileName的文件。
     public static boolean deleteAllFile(String directory, String fileName) {
 	File file = new File(directory);
 	if (!file.exists() || !file.isDirectory()) {
@@ -54,9 +50,7 @@ public class FileUtils {
 	}
     }
 
-    /*
-     * 获取directory目录下的全部文件名。
-     */
+    // 获取directory目录下的全部文件名。
     public static String[] getAllFileName(String directory) {
 	File file = new File(directory);
 	if (!file.exists() || !file.isDirectory()) {

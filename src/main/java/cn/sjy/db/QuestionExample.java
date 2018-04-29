@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 public class QuestionExample implements Serializable {
     private static final long serialVersionUID = 1L;
-    /*
-     * questionId是问题序号， exampleId是用例序号， input是用例输入参数， output是用例预期输出。
-     */
     private int questionId;
     private int exampleId;
     private String input;

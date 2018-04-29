@@ -28,10 +28,12 @@ public class AskAProblemAction {
 
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
+
 	Problem p = new Problem();
 	p.setUserId(userId);
 	p.setContent(problemDetails);
 	session.save(p);
+
 	transaction.commit();
 	session.close();
 

@@ -66,6 +66,7 @@ public class ChangeMyInformationAction {
 	// 修改个人信息。
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
+
 	Information i = new Information();
 	i.setUserId(userId);
 	i.setName(name);
@@ -74,6 +75,7 @@ public class ChangeMyInformationAction {
 	i.setQqOrTim(qqOrTim);
 	i.setWechat(wechat);
 	session.update(i);
+
 	transaction.commit();
 	session.close();
 
