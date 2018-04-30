@@ -4,7 +4,16 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
-	<display-name>Archetype Created Web Application</display-name>
+	<!-- 错误页面跳转。 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/index.jsp</location>
+	</error-page>
+
+	<!-- 起始页面 -->
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
 
 	<!-- 登陆权限的判断。 -->
 	<filter>

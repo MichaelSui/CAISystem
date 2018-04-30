@@ -81,10 +81,10 @@ public class LoginAction {
 	    }
 	}
 
-	// 用户名和密码正误的判断和Session信息的保存。
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 
+	// 用户名和密码正误的判断和Session信息的保存。
 	String hql = "from User user where user.id = :id and user.password = :password";
 	Query query = session.createQuery(hql);
 	query.setParameter("id", id);

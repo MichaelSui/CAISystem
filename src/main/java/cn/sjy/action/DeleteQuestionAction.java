@@ -21,6 +21,7 @@ public class DeleteQuestionAction {
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 删除题目。
 	String hql = "delete from Question q where q.id = :id";
 	Query query = session.createQuery(hql);
 	query.setParameter("id", Integer.parseInt(deleteQuestionId));

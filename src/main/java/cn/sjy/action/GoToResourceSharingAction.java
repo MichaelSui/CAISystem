@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionContext;
 import cn.sjy.utils.FileUtils;
 
 public class GoToResourceSharingAction {
+    // 可以在这里设置资源共享的目录。
     public String execute() throws Exception {
 	String path = ServletActionContext.getServletContext().getRealPath("/files/uploadAndDownloadFiles");
 	String[] fileList = FileUtils.getAllFileName(path);

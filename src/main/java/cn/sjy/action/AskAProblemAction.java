@@ -29,6 +29,7 @@ public class AskAProblemAction {
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 
+	// 添加提问。
 	Problem p = new Problem();
 	p.setUserId(userId);
 	p.setContent(problemDetails);

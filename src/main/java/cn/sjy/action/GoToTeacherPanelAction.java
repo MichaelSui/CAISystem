@@ -17,10 +17,10 @@ import cn.sjy.utils.HibernateUtil;
 
 public class GoToTeacherPanelAction {
     public String execute() throws Exception {
-	// 获取全部的学生成绩。
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 获取全部的学生成绩。
 	Query query = session.createQuery("from CodeScore");
 	List<CodeScore> list = query.list();
 	int codeScoreNum = list.size();

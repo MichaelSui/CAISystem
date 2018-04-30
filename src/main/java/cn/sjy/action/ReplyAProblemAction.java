@@ -34,6 +34,7 @@ public class ReplyAProblemAction {
     }
 
     public String execute() throws Exception {
+	// 添加一个问题的回复。
 	ActionContext actionContext = ActionContext.getContext();
 	Map<String, Object> httpSession = actionContext.getSession();
 	String userId = httpSession.get("userId").toString();

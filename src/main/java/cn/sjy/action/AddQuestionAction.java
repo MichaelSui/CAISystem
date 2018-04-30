@@ -30,6 +30,7 @@ public class AddQuestionAction {
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 添加试题。
 	Question q = new Question();
 	q.setQuestionName(addQuestionName);
 	q.setQuestionDetails(addQuestionDetails);

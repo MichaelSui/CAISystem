@@ -49,6 +49,7 @@ public class ExecutionAction {
     }
 
     public String execute() throws Exception {
+	// 在docker容器中运行c++程序。
 	ActionContext actionContext = ActionContext.getContext();
 	Map<String, Object> httpSession = actionContext.getSession();
 	String userId = (String) httpSession.get("userId");

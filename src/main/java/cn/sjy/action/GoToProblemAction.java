@@ -26,10 +26,10 @@ public class GoToProblemAction {
     }
 
     public String execute() throws Exception {
-	// 根据problemId获取提问的具体信息和各项回复传递给前端。
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 根据problemId获取提问的具体信息和各项回复传递给前端。
 	String hql = "from Problem p where p.problemId = :problemId";
 	Query query = session.createQuery(hql);
 	query.setParameter("problemId", problemId);

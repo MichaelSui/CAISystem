@@ -63,10 +63,10 @@ public class ChangeMyInformationAction {
     }
 
     public String execute() throws Exception {
-	// 修改个人信息。
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 
+	// 修改个人信息。
 	Information i = new Information();
 	i.setUserId(userId);
 	i.setName(name);

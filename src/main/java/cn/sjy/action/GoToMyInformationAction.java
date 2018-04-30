@@ -17,10 +17,10 @@ import cn.sjy.utils.HibernateUtil;
 
 public class GoToMyInformationAction {
     public String execute() throws Exception {
-	// 获取个人信息。
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 获取个人信息。
 	String hql = "from Information i where i.userId = :userId";
 	Query query = session.createQuery(hql);
 	ActionContext actionContext = ActionContext.getContext();

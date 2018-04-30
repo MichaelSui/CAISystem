@@ -42,6 +42,7 @@ public class AddQuestionExampleAction {
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	// 添加用例。
 	// exampleId本应是自增的属性，没有找到相应的配置方法，因此手动模拟这一过程。
 	Query query = session.createQuery("from QuestionExample");
 	List<QuestionExample> list = query.list();
