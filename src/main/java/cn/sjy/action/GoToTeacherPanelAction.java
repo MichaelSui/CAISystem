@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 import cn.sjy.db.CodeScore;
 import cn.sjy.db.Question;
+import cn.sjy.db.QuestionExample;
 import cn.sjy.utils.HibernateUtil;
 
 public class GoToTeacherPanelAction {
@@ -44,6 +45,19 @@ public class GoToTeacherPanelAction {
 	    httpServletRequest.setAttribute("question" + i + "Id", q.getId());
 	    httpServletRequest.setAttribute("question" + i + "QuestionName", q.getQuestionName());
 	    httpServletRequest.setAttribute("question" + i + "QuestionDetails", q.getQuestionDetails());
+	}
+
+	// 获取全部的用例信息。
+	query = session.createQuery("from QuestionExample");
+	List<QuestionExample> questionExampleList = query.list();
+	int questionExampleNum = questionExampleList.size();
+	httpServletRequest.setAttribute("questionExampleNum", questionExampleNum);
+	for (int i = 0; i < questionExampleNum; i++) {
+	    QuestionExample qe = questionExampleList.get(i);
+	    httpServletRequest.setAttribute("questionExample" + i + "QuestionId", qe.getQuestionId());
+	    httpServletRequest.setAttribute("questionExample" + i + "ExampleId", qe.getExampleId());
+	    httpServletRequest.setAttribute("questionExample" + i + "Input", qe.getInput());
+	    httpServletRequest.setAttribute("questionExample" + i + "Output", qe.getOutput());
 	}
 
 	tx.commit();

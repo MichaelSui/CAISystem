@@ -118,8 +118,71 @@
 				</table>
 			</div>
 			<h2 class="col-lg-12">添加试题：</h2>
-			<h2 class="col-lg-12">添加用例：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="addQuestionAction.do"
+					method="post">
+					<input type="text" class="form-control" name="addQuestionName"
+						placeholder="请输入问题名称"> <input type="text"
+						class="form-control" name="addQuestionDetails"
+						placeholder="请输入问题详情">
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="addQuestionBtn">添加试题</button>
+				</form>
+			</div>
 			<h2 class="col-lg-12">删除试题：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="deleteQuestionAction.do"
+					method="post">
+					<input type="text" class="form-control" name="deleteQuestionId"
+						placeholder="请输入问题序号">
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="deleteQuestionBtn">删除试题</button>
+				</form>
+			</div>
+			<h2 class="col-lg-12">查看当前用例库：</h2>
+			<div class="col-lg-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th width="20%">题目编号</th>
+							<th width="20%">用例编号</th>
+							<th width="30%">输入</th>
+							<th width="30%">输出</th>
+						</tr>
+					</thead>
+					<tbody id="questionExampleList"></tbody>
+				</table>
+			</div>
+			<h2 class="col-lg-12">添加用例：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="addQuestionExampleAction.do"
+					method="post">
+					<input type="text" class="form-control"
+						name="addQuestionExampleQuestionId" placeholder="请输入用例对应的题目编号">
+					<input type="text" class="form-control"
+						name="addQuestionExampleInput" placeholder="请输入用例输入"><input
+						type="text" class="form-control" name="addQuestionExampleOutput"
+						placeholder="请输入用例输出">
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="addQuestionExampleBtn">添加用例</button>
+				</form>
+			</div>
+			<h2 class="col-lg-12">删除用例：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form"
+					action="deleteQuestionExampleAction.do" method="post">
+					<input type="text" class="form-control"
+						name="deleteQuestionExampleQuestionId"
+						placeholder="请输入删除用例对应的题目编号"> <input type="text"
+						class="form-control" name="deleteQuestionExampleExampleId"
+						placeholder="请输入删除用例对应的用例编号">
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="deleteQuestionExampleBtn">删除用例</button>
+				</form>
+			</div>
+			<h2 class="col-lg-12">添加单个学生</h2>
+			<h2 class="col-lg-12">批量添加学生</h2>
+			<h2 class="col-lg-12">重置密码</h2>
 		</div>
 	</div>
 
@@ -233,6 +296,32 @@
 		value="<%=questionQuestionNameValue%>" />
 	<input type="hidden" id="<%=questionQuestionDetailsKey%>"
 		value="<%=questionQuestionDetailsValue%>" />
+	<%
+	    }
+	    // 获取用例信息。
+	    int questionExampleNum = Integer.parseInt(request.getAttribute("questionExampleNum").toString());
+	%>
+	<input type="hidden" id="questionExampleNum"
+		value="<%=questionExampleNum%>" />
+	<%
+	    for (int i = 0; i < questionExampleNum; i++) {
+			String questionExampleQuestionIdKey = "questionExample" + i + "QuestionId";
+			String questionExampleQuestionIdValue = request.getAttribute(questionExampleQuestionIdKey).toString();
+			String questionExampleExampleIdKey = "questionExample" + i + "ExampleId";
+			String questionExampleExampleIdValue = request.getAttribute(questionExampleExampleIdKey).toString();
+			String questionExampleInputKey = "questionExample" + i + "Input";
+			String questionExampleInputValue = request.getAttribute(questionExampleInputKey).toString();
+			String questionExampleOutputKey = "questionExample" + i + "Output";
+			String questionExampleOutputValue = request.getAttribute(questionExampleOutputKey).toString();
+	%>
+	<input type="hidden" id="<%=questionExampleQuestionIdKey%>"
+		value="<%=questionExampleQuestionIdValue%>" />
+	<input type="hidden" id="<%=questionExampleExampleIdKey%>"
+		value="<%=questionExampleExampleIdValue%>" />
+	<input type="hidden" id="<%=questionExampleInputKey%>"
+		value="<%=questionExampleInputValue%>" />
+	<input type="hidden" id="<%=questionExampleOutputKey%>"
+		value="<%=questionExampleOutputValue%>" />
 	<%
 	    }
 	%>

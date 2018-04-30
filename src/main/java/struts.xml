@@ -116,5 +116,25 @@
 			class="cn.sjy.action.GoToTeacherPanelAction">
 			<result name="success">./pages/teacherPanel.jsp</result>
 		</action>
+		<action name="addQuestionAction"
+			class="cn.sjy.action.AddQuestionAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="addQuestionExampleAction"
+			class="cn.sjy.action.AddQuestionExampleAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="deleteQuestionAction"
+			class="cn.sjy.action.DeleteQuestionAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="deleteQuestionExampleAction"
+			class="cn.sjy.action.DeleteQuestionExampleAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
 	</package>
 </struts>

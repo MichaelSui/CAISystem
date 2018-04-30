@@ -155,4 +155,18 @@ public class Demo {
 	tx.commit();
 	session.close();
     }
+
+    @Test
+    public void test12() {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
+	String hql = "delete from Question q where q.id = :id";
+	Query query = session.createQuery(hql);
+	query.setParameter("id", 100);
+	query.executeUpdate();
+
+	tx.commit();
+	session.close();
+    }
 }

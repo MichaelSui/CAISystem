@@ -78,3 +78,23 @@ footer.footer {
 #main-body {
 	margin-top: 70px;
 }
+
+#addQuestionBtn {
+	width: 200px;
+	float: right;
+}
+
+#addQuestionExampleBtn {
+	width: 200px;
+	float: right;
+}
+
+#deleteQuestionExampleBtn {
+	width: 200px;
+	float: right;
+}
+
+#deleteQuestionExampleBtn {
+	width: 200px;
+	float: right;
+}

@@ -87,7 +87,7 @@ for (let item of codeScore.entries()) {
 // 处理试题信息的显示。
 var questionNum = document.getElementById("questionNum").value;
 var questionList = document.getElementById("questionList");
-for (var i = 0 ; i < questionNum; i++) {
+for (var i = 0; i < questionNum; i++) {
 	var td1 = document.createElement("td");
 	td1.innerHTML = document.getElementById("question" + i + "Id").value;
 	var td2 = document.createElement("td");
@@ -99,4 +99,24 @@ for (var i = 0 ; i < questionNum; i++) {
 	tr.appendChild(td2);
 	tr.appendChild(td3);
 	questionList.appendChild(tr);
+}
+
+// 处理用例信息的显示。
+var questionExampleNum = document.getElementById("questionExampleNum").value;
+var questionExampleList = document.getElementById("questionExampleList");
+for (var i = 0; i < questionExampleNum; i++) {
+	var td1 = document.createElement("td");
+	td1.innerHTML = document.getElementById("questionExample" + i + "QuestionId").value;
+	var td2 = document.createElement("td");
+	td2.innerHTML = document.getElementById("questionExample" + i + "ExampleId").value;
+	var td3 = document.createElement("td");
+	td3.innerHTML = document.getElementById("questionExample" + i + "Input").value;
+	var td4 = document.createElement("td");
+	td4.innerHTML = document.getElementById("questionExample" + i + "Output").value;
+	var tr = document.createElement("tr");
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	tr.appendChild(td3);
+	tr.appendChild(td4);
+	questionExampleList.appendChild(tr);
 }
