@@ -136,5 +136,11 @@
 			<result name="success" type="redirect">/goToTeacherPanelAction.do
 			</result>
 		</action>
+		<action name="changePasswordAction"
+			class="cn.sjy.action.ChangePasswordAction">
+			<result name="success" type="redirect">/goToMyInformationAction.do
+			</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
 	</package>
 </struts>

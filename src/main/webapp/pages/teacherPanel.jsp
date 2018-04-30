@@ -122,9 +122,9 @@
 				<form class="form" role="form" action="addQuestionAction.do"
 					method="post">
 					<input type="text" class="form-control" name="addQuestionName"
-						placeholder="请输入问题名称"> <input type="text"
+						placeholder="请输入问题名称" required> <input type="text"
 						class="form-control" name="addQuestionDetails"
-						placeholder="请输入问题详情">
+						placeholder="请输入问题详情" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="addQuestionBtn">添加试题</button>
 				</form>
@@ -134,7 +134,7 @@
 				<form class="form" role="form" action="deleteQuestionAction.do"
 					method="post">
 					<input type="text" class="form-control" name="deleteQuestionId"
-						placeholder="请输入问题序号">
+						placeholder="请输入问题序号" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="deleteQuestionBtn">删除试题</button>
 				</form>
@@ -158,11 +158,11 @@
 				<form class="form" role="form" action="addQuestionExampleAction.do"
 					method="post">
 					<input type="text" class="form-control"
-						name="addQuestionExampleQuestionId" placeholder="请输入用例对应的题目编号">
-					<input type="text" class="form-control"
-						name="addQuestionExampleInput" placeholder="请输入用例输入"><input
+						name="addQuestionExampleQuestionId" placeholder="请输入用例对应的题目编号"
+						required> <input type="text" class="form-control"
+						name="addQuestionExampleInput" placeholder="请输入用例输入" required><input
 						type="text" class="form-control" name="addQuestionExampleOutput"
-						placeholder="请输入用例输出">
+						placeholder="请输入用例输出" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="addQuestionExampleBtn">添加用例</button>
 				</form>
@@ -173,9 +173,9 @@
 					action="deleteQuestionExampleAction.do" method="post">
 					<input type="text" class="form-control"
 						name="deleteQuestionExampleQuestionId"
-						placeholder="请输入删除用例对应的题目编号"> <input type="text"
+						placeholder="请输入删除用例对应的题目编号" required> <input type="text"
 						class="form-control" name="deleteQuestionExampleExampleId"
-						placeholder="请输入删除用例对应的用例编号">
+						placeholder="请输入删除用例对应的用例编号" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="deleteQuestionExampleBtn">删除用例</button>
 				</form>
