@@ -196,7 +196,7 @@
 						id="openUploadAndDownloadFilesDirectoryBtn">打开资源目录</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">添加单个学生</h2>
+			<h2 class="col-lg-12">添加单个学生：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form" action="addUserAction.do"
 					method="post">
@@ -205,7 +205,7 @@
 					<button class="btn btn-primary mt-2 mb-4" id="addUserBtn">添加单个学生</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">批量添加学生</h2>
+			<h2 class="col-lg-12">批量添加学生：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form" action="addUsersAction.do"
 					method="post">
@@ -214,10 +214,18 @@
 						class="form-control" name="userIdEnd" placeholder="请输入新建结束学生编号"
 						required>
 					<div class="col-lg-12">请注意：批量添加仅适用于非零开头的学号，不适用于任何字母。</div>
-					<button class="btn btn-primary mt-2 mb-4" id="addUserBtn">添加多个学生</button>
+					<button class="btn btn-primary mt-2 mb-4" id="addUsersBtn">添加多个学生</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">重置密码</h2>
+			<h2 class="col-lg-12">重置密码：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form" action="resetPasswordAction.do"
+					method="post">
+					<input type="text" class="form-control" name="userId"
+						placeholder="请输入重置密码的学生编号" required>
+					<button class="btn btn-primary mt-2 mb-4" id="resetPasswordBtn">重置密码</button>
+				</form>
+			</div>
 		</div>
 	</div>
 

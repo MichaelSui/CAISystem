@@ -113,3 +113,13 @@ footer.footer {
 	width: 200px;
 	float: right;
 }
+
+#addUsersBtn {
+	width: 200px;
+	float: right;
+}
+
+#resetPasswordBtn {
+	width: 200px;
+	float: right;
+}
