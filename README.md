@@ -1,2 +1,2 @@
-# CAISystem_FullVersion
+# CAISystem
 毕业设计-网络辅助教学系统。
