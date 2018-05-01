@@ -169,4 +169,23 @@ public class Demo {
 	tx.commit();
 	session.close();
     }
+
+    @Test
+    public void test13() {
+	FileUtils.openDirectory("c:\\");
+    }
+
+    @Test
+    public void test14() throws Exception {
+	String str1 = "1321";
+	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str1));
+	String str2 = "0001";
+	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str2));
+	String str3 = "182a";
+	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str3));
+	String str4 = "a1002";
+	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str4));
+	String str5 = "adasda";
+	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str5));
+    }
 }

@@ -142,5 +142,25 @@
 			</result>
 			<result name="error">./pages/error.jsp</result>
 		</action>
+		<action name="openHomeWorkDirectoryAction"
+			class="cn.sjy.action.OpenHomeWorkDirectoryAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="openUploadAndDownloadFilesDirectoryAction"
+			class="cn.sjy.action.OpenUploadAndDownloadFilesDirectoryAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="addUserAction"
+			class="cn.sjy.action.AddUserAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
+		<action name="addUsersAction"
+			class="cn.sjy.action.AddUsersAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+		</action>
 	</package>
 </struts>

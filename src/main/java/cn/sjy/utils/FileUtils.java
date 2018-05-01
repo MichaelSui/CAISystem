@@ -2,7 +2,10 @@ package cn.sjy.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang.SystemUtils;
 
 public class FileUtils {
     // 将String类型的字符串content写入目录为directory的fileName文件之中。
@@ -57,6 +60,52 @@ public class FileUtils {
 	    return new String[0];
 	} else {
 	    return file.list();
+	}
+    }
+
+    // 打开文件夹。
+    public static void openDirectory(String folder) {
+	File file = new File(folder);
+	if (!file.exists()) {
+	    return;
+	}
+	Runtime runtime = null;
+	try {
+	    runtime = Runtime.getRuntime();
+	    if (!SystemUtils.IS_OS_WINDOWS) {
+		runtime.exec("nautilus " + folder);
+	    } else {
+		runtime.exec("cmd /c start explorer " + folder);
+	    }
+	} catch (IOException e) {
+	    e.printStackTrace();
+	} finally {
+	    if (null != runtime) {
+		runtime.runFinalization();
+	    }
+	}
+    }
+
+    // 打开文件。
+    public static void openFile(String filePath) {
+	File file = new File(filePath);
+	if (!file.exists()) {
+	    return;
+	}
+	Runtime runtime = null;
+	try {
+	    runtime = Runtime.getRuntime();
+	    if (!SystemUtils.IS_OS_WINDOWS) {
+		runtime.exec("nautilus " + filePath);
+	    } else {
+		runtime.exec("cmd /c start explorer /select,/e, " + filePath);
+	    }
+	} catch (IOException ex) {
+	    ex.printStackTrace();
+	} finally {
+	    if (null != runtime) {
+		runtime.runFinalization();
+	    }
 	}
     }
 }

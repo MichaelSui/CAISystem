@@ -84,6 +84,11 @@ footer.footer {
 	float: right;
 }
 
+#deleteQuestionBtn {
+	width: 200px;
+	float: right;
+}
+
 #addQuestionExampleBtn {
 	width: 200px;
 	float: right;
@@ -94,7 +99,17 @@ footer.footer {
 	float: right;
 }
 
-#deleteQuestionExampleBtn {
+#openHomeWorkDirectoryBtn {
+	width: 200px;
+	float: right;
+}
+
+#openUploadAndDownloadFilesDirectoryBtn {
+	width: 200px;
+	float: right;
+}
+
+#addUserBtn {
 	width: 200px;
 	float: right;
 }
