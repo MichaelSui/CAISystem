@@ -47,14 +47,13 @@ public class ChangePasswordAction {
 	    return "error";
 	}
 
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
 	// 检验旧密码是否正确
 	ActionContext actionContext = ActionContext.getContext();
 	Map<String, Object> httpSession = actionContext.getSession();
 	String userId = httpSession.get("userId").toString();
-
-	Session session = HibernateUtil.getSession();
-	Transaction tx = session.beginTransaction();
-
 	Query query = session.createQuery("from User u where u.id = :id");
 	query.setParameter("id", userId);
 	List<User> list = query.list();

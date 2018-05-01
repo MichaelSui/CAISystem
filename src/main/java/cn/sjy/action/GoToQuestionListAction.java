@@ -16,13 +16,12 @@ import cn.sjy.utils.HibernateUtil;
 public class GoToQuestionListAction {
     public String execute() throws Exception {
 	// 获取全部的问题列表信息传递给questionList.jsp。
-	ActionContext actionContext = ActionContext.getContext();
-	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
-		.get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
-
 	Session session = HibernateUtil.getSession();
 	Transaction tx = session.beginTransaction();
 
+	ActionContext actionContext = ActionContext.getContext();
+	HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
+		.get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
 	Query query = session.createQuery("from Problem");
 	List<Problem> list = query.list();
 	int problemNum = list.size();

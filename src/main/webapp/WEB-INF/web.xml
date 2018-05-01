@@ -9,6 +9,10 @@
 		<error-code>404</error-code>
 		<location>/index.jsp</location>
 	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/index.jsp</location>
+	</error-page>
 
 	<!-- 起始页面 -->
 	<welcome-file-list>
@@ -34,11 +38,15 @@
 	<filter>
 		<filter-name>isTeacherFilter</filter-name>
 		<filter-class>cn.sjy.utils.IsTeacherFilter</filter-class>
+		<init-param>
+			<param-name>filterURL</param-name>
+			<param-value>goToTeacherPanelAction.do;teacherPanel.jsp</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>isTeacherFilter</filter-name>
-		<url-pattern>/goToTeacherPanelAction.do</url-pattern>
-		<url-pattern>/pages/teacherPanel.jsp</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 
 	<!-- 定义Struts2.5核心控制器。 -->

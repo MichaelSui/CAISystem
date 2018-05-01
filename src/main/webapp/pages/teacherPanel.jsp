@@ -80,7 +80,7 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<h2 class="col-lg-12">查看学生的成绩：</h2>
-			<div class="col-lg-12">
+			<div class="col-lg-12 mt-4">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -92,8 +92,8 @@
 					<tbody id="studentCodeScore"></tbody>
 				</table>
 			</div>
-			<h2 class="col-lg-12">查看学生的总成绩：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">查看学生的总成绩：</h2>
+			<div class="col-lg-12 mt-4">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -104,8 +104,8 @@
 					<tbody id="studentCodeScoreAll"></tbody>
 				</table>
 			</div>
-			<h2 class="col-lg-12">查看当前题库：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">查看当前题库：</h2>
+			<div class="col-lg-12 mt-4">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -117,20 +117,20 @@
 					<tbody id="questionList"></tbody>
 				</table>
 			</div>
-			<h2 class="col-lg-12">添加试题：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">添加试题：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="addQuestionAction.do"
 					method="post">
 					<input type="text" class="form-control" name="addQuestionName"
 						placeholder="请输入问题名称" required> <input type="text"
-						class="form-control" name="addQuestionDetails"
+						class="form-control mt-2" name="addQuestionDetails"
 						placeholder="请输入问题详情" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="addQuestionBtn">添加试题</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">删除试题：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">删除试题：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="deleteQuestionAction.do"
 					method="post">
 					<input type="text" class="form-control" name="deleteQuestionId"
@@ -139,8 +139,8 @@
 						id="deleteQuestionBtn">删除试题</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">查看当前用例库：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">查看当前用例库：</h2>
+			<div class="col-lg-12 mt-4">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -153,34 +153,34 @@
 					<tbody id="questionExampleList"></tbody>
 				</table>
 			</div>
-			<h2 class="col-lg-12">添加用例：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">添加用例：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="addQuestionExampleAction.do"
 					method="post">
 					<input type="text" class="form-control"
 						name="addQuestionExampleQuestionId" placeholder="请输入用例对应的题目编号"
-						required> <input type="text" class="form-control"
+						required> <input type="text" class="form-control mt-2"
 						name="addQuestionExampleInput" placeholder="请输入用例输入" required><input
-						type="text" class="form-control" name="addQuestionExampleOutput"
-						placeholder="请输入用例输出" required>
+						type="text" class="form-control mt-2"
+						name="addQuestionExampleOutput" placeholder="请输入用例输出" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="addQuestionExampleBtn">添加用例</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">删除用例：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">删除用例：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form"
 					action="deleteQuestionExampleAction.do" method="post">
 					<input type="text" class="form-control"
 						name="deleteQuestionExampleQuestionId"
 						placeholder="请输入删除用例对应的题目编号" required> <input type="text"
-						class="form-control" name="deleteQuestionExampleExampleId"
+						class="form-control mt-2" name="deleteQuestionExampleExampleId"
 						placeholder="请输入删除用例对应的用例编号" required>
 					<button type="submit" class="btn btn-primary mt-2 mb-4"
 						id="deleteQuestionExampleBtn">删除用例</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">作业目录：</h2>
+			<h2 class="col-lg-12 mt-4">作业目录：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form"
 					action="openHomeWorkDirectoryAction.do" method="post">
@@ -188,7 +188,7 @@
 						id="openHomeWorkDirectoryBtn">打开作业目录</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">资源目录：</h2>
+			<h2 class="col-lg-12 mt-4">资源目录：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form"
 					action="openUploadAndDownloadFilesDirectoryAction.do" method="post">
@@ -196,8 +196,8 @@
 						id="openUploadAndDownloadFilesDirectoryBtn">打开资源目录</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">添加单个学生：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">添加单个学生：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="addUserAction.do"
 					method="post">
 					<input type="text" class="form-control" name="userId"
@@ -205,20 +205,20 @@
 					<button class="btn btn-primary mt-2 mb-4" id="addUserBtn">添加单个学生</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">批量添加学生：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">批量添加学生：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="addUsersAction.do"
 					method="post">
 					<input type="text" class="form-control" name="userIdBegin"
 						placeholder="请输入新建起始学生编号" required> <input type="text"
-						class="form-control" name="userIdEnd" placeholder="请输入新建结束学生编号"
-						required>
-					<div class="col-lg-12">请注意：批量添加仅适用于非零开头的学号，不适用于任何字母。</div>
+						class="form-control mt-2" name="userIdEnd"
+						placeholder="请输入新建结束学生编号" required>
+					<div class="col-lg-12 mt-2">请注意：批量添加仅适用于非零开头的学号，不适用于任何字母。</div>
 					<button class="btn btn-primary mt-2 mb-4" id="addUsersBtn">添加多个学生</button>
 				</form>
 			</div>
-			<h2 class="col-lg-12">重置密码：</h2>
-			<div class="col-lg-12">
+			<h2 class="col-lg-12 mt-4">重置密码：</h2>
+			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="resetPasswordAction.do"
 					method="post">
 					<input type="text" class="form-control" name="userId"

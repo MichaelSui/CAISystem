@@ -22,14 +22,13 @@ public class AskAProblemAction {
     }
 
     public String execute() throws Exception {
-	ActionContext actionContext = ActionContext.getContext();
-	Map<String, Object> httpSession = actionContext.getSession();
-	String userId = httpSession.get("userId").toString();
-
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 
 	// 添加提问。
+	ActionContext actionContext = ActionContext.getContext();
+	Map<String, Object> httpSession = actionContext.getSession();
+	String userId = httpSession.get("userId").toString();
 	Problem p = new Problem();
 	p.setUserId(userId);
 	p.setContent(problemDetails);

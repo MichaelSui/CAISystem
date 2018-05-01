@@ -34,14 +34,13 @@ public class ReplyAProblemAction {
     }
 
     public String execute() throws Exception {
+	Session session = HibernateUtil.getSession();
+	Transaction tx = session.beginTransaction();
+
 	// 添加一个问题的回复。
 	ActionContext actionContext = ActionContext.getContext();
 	Map<String, Object> httpSession = actionContext.getSession();
 	String userId = httpSession.get("userId").toString();
-
-	Session session = HibernateUtil.getSession();
-	Transaction transaction = session.beginTransaction();
-
 	// 没有找到复合主键其中之一自增的配置文件写法，只好使用程序模拟这个自增的过程。
 	int maxReplyId = 1;
 	String hql = "from Reply r where r.problemId = :problemId";
@@ -59,7 +58,7 @@ public class ReplyAProblemAction {
 	r.setContent(replyDetails);
 	session.save(r);
 
-	transaction.commit();
+	tx.commit();
 	session.close();
 
 	return "success";
