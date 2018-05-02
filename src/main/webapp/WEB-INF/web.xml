@@ -40,7 +40,7 @@
 		<filter-class>cn.sjy.utils.IsTeacherFilter</filter-class>
 		<init-param>
 			<param-name>filterURL</param-name>
-			<param-value>goToTeacherPanelAction.do;teacherPanel.jsp</param-value>
+			<param-value>goToTeacherPanelAction.do;teacherPanel.jsp;addQuestionAction.do;deleteQuestionAction.do;addQuestionExampleAction.do;deleteQuestionExampleAction.do;openHomeWorkDirectoryAction.do;openUploadAndDownloadFilesDirectoryAction.do;addUserAction.do;addUsersAction.do;resetPasswordAction.do</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
