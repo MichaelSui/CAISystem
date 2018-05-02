@@ -27,18 +27,22 @@ public class AddQuestionAction {
     }
 
     public String execute() throws Exception {
-	Session session = HibernateUtil.getSession();
-	Transaction tx = session.beginTransaction();
+	try {
+	    Session session = HibernateUtil.getSession();
+	    Transaction tx = session.beginTransaction();
 
-	// 添加试题。
-	Question q = new Question();
-	q.setQuestionName(addQuestionName);
-	q.setQuestionDetails(addQuestionDetails);
-	session.save(q);
+	    // 添加试题。
+	    Question q = new Question();
+	    q.setQuestionName(addQuestionName);
+	    q.setQuestionDetails(addQuestionDetails);
+	    session.save(q);
 
-	tx.commit();
-	session.close();
+	    tx.commit();
+	    session.close();
 
-	return "success";
+	    return "success";
+	} catch (Exception e) {
+	    return "error";
+	}
     }
 }

@@ -11,15 +11,15 @@ import cn.sjy.db.User;
 import cn.sjy.utils.Authority;
 import cn.sjy.utils.HibernateUtil;
 
-public class AddUserAction {
-    private String userId;
+public class AddTeacherAction {
+    private String addTeacherId;
 
-    public String getUserId() {
-	return userId;
+    public String getAddTeacherId() {
+	return addTeacherId;
     }
 
-    public void setUserId(String userId) {
-	this.userId = userId;
+    public void setAddTeacherId(String addTeacherId) {
+	this.addTeacherId = addTeacherId;
     }
 
     public String execute() throws Exception {
@@ -27,11 +27,11 @@ public class AddUserAction {
 	    Session session = HibernateUtil.getSession();
 	    Transaction tx = session.beginTransaction();
 
-	    // 添加一个学生。
+	    // 添加一个教师。
 	    // 先看当前的userId是否已经被占用。
 	    String hql = "from User u where u.id = :id";
 	    Query query = session.createQuery(hql);
-	    query.setParameter("id", userId);
+	    query.setParameter("id", addTeacherId);
 	    List<User> list = query.list();
 	    if (!list.isEmpty()) {
 		// 当该userId已经被占用时不再新建用户，直接跳过。
@@ -39,12 +39,12 @@ public class AddUserAction {
 	    }
 
 	    User u = new User();
-	    u.setId(userId);
+	    u.setId(addTeacherId);
 	    u.setPassword("000000");
-	    u.setAuthority(Authority.STUDENT.toString());
+	    u.setAuthority(Authority.TEACHER.toString());
 	    session.save(u);
 	    Information i = new Information();
-	    i.setUserId(userId);
+	    i.setUserId(addTeacherId);
 	    session.save(i);
 
 	    tx.commit();

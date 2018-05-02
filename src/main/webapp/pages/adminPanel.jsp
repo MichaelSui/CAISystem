@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="error.jsp">
+<meta name="description" content="adminPanel.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -30,7 +30,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/error.css">
+<link rel="stylesheet" href="./css/adminPanel.css">
 </head>
 
 <body>
@@ -77,14 +77,17 @@
 	</div>
 
 	<!-- 主体部分。 -->
-	<div class="container text-center" id="main-body">
+	<div class="container" id="main-body">
 		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="mt-5">很遗憾，发生了错误</h2>
-				<div class="mb-5 mt-5">
-					请依次检查是否出现以下错误：<br /> 1、请检查您输入的用户名和密码是否正确。<br />
-					2、重置密码时输入的旧密码错误或新密码不一致。<br />3、系统抛出了异常，请尝试重复操作。
-				</div>
+			<h2 class="col-lg-12">添加教师：</h2>
+			<div class="col-lg-12 mt-4">
+				<form class="form" role="form" action="addTeacherAction.do"
+					method="post">
+					<input type="text" class="form-control" name="addTeacherId"
+						placeholder="请输入添加教师编号" required>
+					<button type="submit" class="btn btn-primary mt-2 mb-4"
+						id="addTeacherBtn">添加教师</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -160,7 +163,7 @@
 	<%
 	    }
 	%>
-	<script src="./js/error.js"></script>
+	<script src="./js/adminPanel.js"></script>
 </body>
 
 </html>

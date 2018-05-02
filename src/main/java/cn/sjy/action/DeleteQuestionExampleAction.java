@@ -27,19 +27,23 @@ public class DeleteQuestionExampleAction {
     }
 
     public String execute() throws Exception {
-	Session session = HibernateUtil.getSession();
-	Transaction tx = session.beginTransaction();
+	try {
+	    Session session = HibernateUtil.getSession();
+	    Transaction tx = session.beginTransaction();
 
-	// 删除用例。
-	String hql = "delete from QuestionExample qe where qe.questionId = :questionId and qe.exampleId = :exampleId";
-	Query query = session.createQuery(hql);
-	query.setParameter("questionId", Integer.parseInt(deleteQuestionExampleQuestionId));
-	query.setParameter("exampleId", Integer.parseInt(deleteQuestionExampleExampleId));
-	query.executeUpdate();
+	    // 删除用例。
+	    String hql = "delete from QuestionExample qe where qe.questionId = :questionId and qe.exampleId = :exampleId";
+	    Query query = session.createQuery(hql);
+	    query.setParameter("questionId", Integer.parseInt(deleteQuestionExampleQuestionId));
+	    query.setParameter("exampleId", Integer.parseInt(deleteQuestionExampleExampleId));
+	    query.executeUpdate();
 
-	tx.commit();
-	session.close();
+	    tx.commit();
+	    session.close();
 
-	return "success";
+	    return "success";
+	} catch (Exception e) {
+	    return "error";
+	}
     }
 }

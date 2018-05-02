@@ -63,23 +63,27 @@ public class ChangeMyInformationAction {
     }
 
     public String execute() throws Exception {
-	Session session = HibernateUtil.getSession();
-	Transaction transaction = session.beginTransaction();
+	try {
+	    Session session = HibernateUtil.getSession();
+	    Transaction transaction = session.beginTransaction();
 
-	// 修改个人信息。
-	Information i = new Information();
-	i.setUserId(userId);
-	i.setName(name);
-	i.setEmail(email);
-	i.setPhone(phone);
-	i.setQqOrTim(qqOrTim);
-	i.setWechat(wechat);
-	session.update(i);
+	    // 修改个人信息。
+	    Information i = new Information();
+	    i.setUserId(userId);
+	    i.setName(name);
+	    i.setEmail(email);
+	    i.setPhone(phone);
+	    i.setQqOrTim(qqOrTim);
+	    i.setWechat(wechat);
+	    session.update(i);
 
-	transaction.commit();
-	session.close();
+	    transaction.commit();
+	    session.close();
 
-	return "success";
+	    return "success";
+	} catch (Exception e) {
+	    return "error";
+	}
     }
 
 }
