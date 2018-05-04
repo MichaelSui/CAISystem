@@ -48,7 +48,6 @@ public class UploadAction extends ActionSupport {
 	// 判断上传文件是否为空
 	if (uploadFile != null) {
 	    // 设置目标文件（根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例）
-	    System.out.println(realpath + "\\" + uploadFileFileName);
 	    File savefile = new File(realpath, uploadFileFileName);
 
 	    // 判断上传目录是否存在
@@ -70,6 +69,7 @@ public class UploadAction extends ActionSupport {
 		    }
 		    savefile = new File(realpath, newName);
 		}
+		System.out.println(this.toString() + " " + savefile.toString());
 
 		// 把文件uploadfile 拷贝到 savefile 里,FileUtils类需要commons-io-x.x.x.jar包支持
 		FileUtils.copyFile(uploadFile, savefile);

@@ -47,8 +47,6 @@ public class UploadHomeWorkAction extends ActionSupport {
 
 	// 判断上传文件是否为空
 	if (uploadFile != null) {
-	    System.out.println(realpath + "\\" + uploadFileFileName);
-
 	    // 提交的作业后面添加提交人的id。
 	    ActionContext actionContext = ActionContext.getContext();
 	    Map<String, Object> httpSession = actionContext.getSession();
@@ -56,10 +54,10 @@ public class UploadHomeWorkAction extends ActionSupport {
 
 	    // 设置目标文件（根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例）
 	    File savefile = null;
-	    if (uploadFileFileName.indexOf(".") == -1) {
+	    if (uploadFileFileName.lastIndexOf(".") == -1) {
 		savefile = new File(realpath, uploadFileFileName);
 	    } else {
-		int dotNum = uploadFileFileName.indexOf(".");
+		int dotNum = uploadFileFileName.lastIndexOf(".");
 		String newName = uploadFileFileName.substring(0, dotNum) + "_" + userId
 			+ uploadFileFileName.substring(dotNum);
 		savefile = new File(realpath, newName);
@@ -83,6 +81,7 @@ public class UploadHomeWorkAction extends ActionSupport {
 		    }
 		    savefile = new File(realpath, newName);
 		}
+		System.out.println(this.toString() + " " + savefile.toString());
 
 		// 把文件uploadfile 拷贝到 savefile 里,FileUtils类需要commons-io-x.x.x.jar包支持
 		FileUtils.copyFile(uploadFile, savefile);
