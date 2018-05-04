@@ -9,6 +9,7 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.action.extension" value="do" />
 	<constant name="struts.custom.i18n.resources" value="struts"></constant>
+	<constant name="struts.multipart.maxSize" value="1024000000" />
 
 	<package name="MyPackage" namespace="/"
 		extends="struts-default">
@@ -79,7 +80,7 @@
 				<!-- contentDisposition 使用经过转码的文件名作为下载文件名 ——默认格式是attachment;filename="${fileName}"，将调用该Action中的getFileName方法。 -->
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>
 				<!-- 指定下载文件的缓冲大小 -->
-				<param name="bufferSize">1024000000</param>
+				<param name="bufferSize">102400000</param>
 			</result>
 		</action>
 		<action name="goToHandInHomeWorkAction"

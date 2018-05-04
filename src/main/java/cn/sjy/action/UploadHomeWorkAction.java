@@ -74,10 +74,10 @@ public class UploadHomeWorkAction extends ActionSupport {
 		// 名字重复的文件按照windows系统的命名方式在后面添加小括号和数字。
 		for (int i = 2; savefile.exists(); i++) {
 		    String newName = null;
-		    if (uploadFileFileName.indexOf(".") == -1) {
+		    if (uploadFileFileName.lastIndexOf(".") == -1) {
 			newName = uploadFileFileName + "_" + userId + "(" + i + ")";
 		    } else {
-			int dotNum = uploadFileFileName.indexOf(".");
+			int dotNum = uploadFileFileName.lastIndexOf(".");
 			newName = uploadFileFileName.substring(0, dotNum) + "_" + userId + "(" + i + ")"
 				+ uploadFileFileName.substring(dotNum);
 		    }
