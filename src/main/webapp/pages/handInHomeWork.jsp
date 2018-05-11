@@ -96,6 +96,8 @@
 					</div>
 				</form>
 			</div>
+			<h2 class="col-lg-12 mt-5">注意事项：</h2>
+			<div class="col-lg-12 mt-2">只能上传1Gb大小以内的文件，否则可能会出现错误。</div>
 			<h2 class="col-lg-12 mt-5 mb-4">已经提交的文件：</h2>
 			<div class="col-lg-12">
 				<table class="table table-hover">
