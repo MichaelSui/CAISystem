@@ -52,6 +52,7 @@ public class AddUserAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

@@ -42,6 +42,7 @@ public class AddQuestionAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

@@ -80,14 +80,14 @@
 	<div class="container" id="main-body">
 		<div class="row">
 			<h2 class="col-lg-12">服务器返回结果：</h2>
-			<div class="col-lg-12">
+			<div class="col-lg-12 mt-4">
 				<%=request.getAttribute("msg")%>
 			</div>
 			<br />
 			<div class="col-lg-6">
 				<h2 class="mt-4">最终成绩：</h2>
-				<div>
-					<br />总计用例个数：<%=request.getAttribute("allCount")%>
+				<div class="mt-4">
+					总计用例个数：<%=request.getAttribute("allCount")%>
 					<br /> 通过用例个数：<%=request.getAttribute("correctCount")%>
 					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
 					<br /> 本题最终成绩：<%=request.getAttribute("score")%>

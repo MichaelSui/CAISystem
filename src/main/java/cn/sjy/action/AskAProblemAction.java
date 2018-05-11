@@ -40,6 +40,7 @@ public class AskAProblemAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

@@ -120,3 +120,23 @@ for (var i = 0; i < questionExampleNum; i++) {
 	tr.appendChild(td4);
 	questionExampleList.appendChild(tr);
 }
+
+// 通知编辑功能。
+/*
+ * var noticeNum = document.getElementById("noticeNum").value; var noticeStr =
+ * ""; for (var i = 0; i < noticeNum; i++) { var noticeItemDate =
+ * document.getElementById("notice" + i + "Date").value; var noticeItemMsg =
+ * document.getElementById("notice" + i + "Msg").value; noticeStr +=
+ * noticeItemDate + "<br />" + noticeItemMsg + "<br />"; }
+ */
+var noticeTable = document.getElementById("noticeTable");
+for (var i = 0; i < noticeNum; i++) {
+	var td1 = document.createElement("td");
+	td1.innerHTML = document.getElementById("notice" + i + "Date").value;
+	var td2 = document.createElement("td");
+	td2.innerHTML = document.getElementById("notice" + i + "Msg").value;
+	var tr = document.createElement("tr");
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	noticeTable.appendChild(tr);
+}

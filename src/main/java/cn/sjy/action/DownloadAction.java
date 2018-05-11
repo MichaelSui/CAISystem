@@ -36,5 +36,4 @@ public class DownloadAction extends ActionSupport {
     public String download() {
 	return "success";
     }
-
 }

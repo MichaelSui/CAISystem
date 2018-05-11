@@ -123,3 +123,13 @@ footer.footer {
 	width: 200px;
 	float: right;
 }
+
+#addNoticeBtn {
+	width: 200px;
+	float: right;
+}
+
+#deleteNoticeBtn {
+	width: 200px;
+	float: right;
+}

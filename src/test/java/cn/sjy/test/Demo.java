@@ -1,5 +1,6 @@
 package cn.sjy.test;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -187,5 +188,12 @@ public class Demo {
 	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str4));
 	String str5 = "adasda";
 	System.out.println(cn.sjy.action.AddUsersAction.isNumeric(str5));
+    }
+
+    @Test
+    public void test15() throws Exception {
+	String str = "2018-05-11 11:50:16.936";
+	Timestamp ts = Timestamp.valueOf(str);
+	System.out.println(ts);
     }
 }

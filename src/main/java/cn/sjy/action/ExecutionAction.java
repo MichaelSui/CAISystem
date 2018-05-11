@@ -187,6 +187,7 @@ public class ExecutionAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

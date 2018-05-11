@@ -64,6 +64,7 @@ public class ReplyAProblemAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

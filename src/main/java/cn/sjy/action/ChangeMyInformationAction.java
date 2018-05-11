@@ -82,6 +82,7 @@ public class ChangeMyInformationAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

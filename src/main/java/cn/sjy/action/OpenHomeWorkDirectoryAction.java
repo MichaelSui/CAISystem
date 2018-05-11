@@ -12,6 +12,7 @@ public class OpenHomeWorkDirectoryAction {
 	    FileUtils.openDirectory(path);
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

@@ -39,6 +39,7 @@ public class DeleteQuestionAction {
 
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }

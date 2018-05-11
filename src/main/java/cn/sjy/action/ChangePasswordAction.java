@@ -42,40 +42,45 @@ public class ChangePasswordAction {
     }
 
     public String execute() throws Exception {
-	// 检验两个新密码是否一致。
-	if (!newPassword1.equals(newPassword2)) {
-	    return "error";
-	}
+	try {
+	    // 检验两个新密码是否一致。
+	    if (!newPassword1.equals(newPassword2)) {
+		return "error";
+	    }
 
-	Session session = HibernateUtil.getSession();
-	Transaction tx = session.beginTransaction();
+	    Session session = HibernateUtil.getSession();
+	    Transaction tx = session.beginTransaction();
 
-	// 检验旧密码是否正确
-	ActionContext actionContext = ActionContext.getContext();
-	Map<String, Object> httpSession = actionContext.getSession();
-	String userId = httpSession.get("userId").toString();
-	Query query = session.createQuery("from User u where u.id = :id");
-	query.setParameter("id", userId);
-	List<User> list = query.list();
-	if (!list.get(0).getPassword().equals(oldPassword)) {
+	    // 检验旧密码是否正确
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    String userId = httpSession.get("userId").toString();
+	    Query query = session.createQuery("from User u where u.id = :id");
+	    query.setParameter("id", userId);
+	    List<User> list = query.list();
+	    if (!list.get(0).getPassword().equals(oldPassword)) {
+		tx.commit();
+		session.close();
+
+		return "error";
+	    }
+	    String authority = list.get(0).getAuthority();
+	    session.clear();
+
+	    // 修改密码
+	    User u = new User();
+	    u.setId(userId);
+	    u.setPassword(newPassword1);
+	    u.setAuthority(authority);
+	    session.update(u);
+
 	    tx.commit();
 	    session.close();
 
+	    return "success";
+	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
-	String authority = list.get(0).getAuthority();
-	session.clear();
-
-	// 修改密码
-	User u = new User();
-	u.setId(userId);
-	u.setPassword(newPassword1);
-	u.setAuthority(authority);
-	session.update(u);
-
-	tx.commit();
-	session.close();
-
-	return "success";
     }
 }

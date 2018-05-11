@@ -196,6 +196,36 @@
 						id="openUploadAndDownloadFilesDirectoryBtn">打开资源目录</button>
 				</form>
 			</div>
+			<h2 class="col-lg-12 mt-4">查看当前通知：</h2>
+			<div class="col-lg-12 mt-4">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th width="30%">发布时间</th>
+							<th width="70%">内容</th>
+						</tr>
+					</thead>
+					<tbody id="noticeTable"></tbody>
+				</table>
+			</div>
+			<h2 class="col-lg-12 mt-4">添加通知：</h2>
+			<div class="col-lg-12 mt-4">
+				<form class="form" role="form" action="addNoticeAction.do"
+					method="post">
+					<input type="text" class="form-control" name="content"
+						placeholder="请输入新建通知内容" required>
+					<button class="btn btn-primary mt-2 mb-4" id="addNoticeBtn">添加通知</button>
+				</form>
+			</div>
+			<h2 class="col-lg-12 mt-4">删除通知：</h2>
+			<div class="col-lg-12 mt-4">
+				<form class="form" role="form" action="deleteNoticeAction.do"
+					method="post">
+					<input type="text" class="form-control" name="date"
+						placeholder="请输入删除通知的具体发布时间" required>
+					<button class="btn btn-primary mt-2 mb-4" id="deleteNoticeBtn">删除通知</button>
+				</form>
+			</div>
 			<h2 class="col-lg-12 mt-4">添加单个学生：</h2>
 			<div class="col-lg-12 mt-4">
 				<form class="form" role="form" action="addUserAction.do"

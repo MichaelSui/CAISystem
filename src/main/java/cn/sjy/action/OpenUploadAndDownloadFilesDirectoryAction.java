@@ -12,6 +12,7 @@ public class OpenUploadAndDownloadFilesDirectoryAction {
 	    FileUtils.openDirectory(path);
 	    return "success";
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    return "error";
 	}
     }
