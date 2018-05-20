@@ -157,7 +157,12 @@ public class ExecutionAction {
 		    errorCount++;
 		}
 	    }
-	    int score = (int) ((double) correctCount / (correctCount + errorCount) * 100);
+	    int score = 0;
+	    if (correctCount + errorCount != 0) {
+		score = (int) ((double) correctCount / (correctCount + errorCount) * 100);
+	    } else {
+		score = 100;
+	    }
 	    HttpServletRequest httpServletRequest = (HttpServletRequest) actionContext
 		    .get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
 	    httpServletRequest.setAttribute("correctCount", correctCount);
