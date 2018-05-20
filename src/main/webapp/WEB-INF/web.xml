@@ -4,21 +4,20 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
-	<!-- 错误页面跳转。 -->
-	<error-page>
-		<error-code>404</error-code>
-		<location>/index.jsp</location>
-	</error-page>
-	<error-page>
-		<error-code>500</error-code>
-		<location>/index.jsp</location>
-	</error-page>
-
 	<!-- 起始页面 -->
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- 防止直接访问。 -->
+	<filter>
+		<filter-name>directAccessFilter</filter-name>
+		<filter-class>cn.sjy.utils.DirectAccessFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>directAccessFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
 	<!-- 登陆权限的判断。 -->
 	<filter>
 		<filter-name>isLogInFilter</filter-name>
@@ -40,7 +39,7 @@
 		<filter-class>cn.sjy.utils.IsTeacherFilter</filter-class>
 		<init-param>
 			<param-name>filterURL</param-name>
-			<param-value>goToTeacherPanelAction.do;teacherPanel.jsp;addQuestionAction.do;deleteQuestionAction.do;addQuestionExampleAction.do;deleteQuestionExampleAction.do;openHomeWorkDirectoryAction.do;openUploadAndDownloadFilesDirectoryAction.do;addUserAction.do;addUsersAction.do;resetPasswordAction.do</param-value>
+			<param-value>goToTeacherPanelAction.do;teacherPanel.jsp;addQuestionAction.do;deleteQuestionAction.do;addQuestionExampleAction.do;deleteQuestionExampleAction.do;openDockerFilesDirectoryAction;openHomeWorkDirectoryAction.do;openUploadAndDownloadFilesDirectoryAction.do;addUserAction.do;addUsersAction.do;resetPasswordAction.do</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>

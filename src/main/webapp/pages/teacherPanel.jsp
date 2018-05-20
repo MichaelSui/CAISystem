@@ -374,7 +374,6 @@
 	    }
 	    // 获取用例信息。
 	    int questionExampleNum = Integer.parseInt(request.getAttribute("questionExampleNum").toString());
-	    System.out.println(questionExampleNum);
 	%>
 	<input type="hidden" id="questionExampleNum"
 		value="<%=questionExampleNum%>" />
