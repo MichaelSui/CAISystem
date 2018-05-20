@@ -131,15 +131,8 @@
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<!-- 将后台的相关数据传递给js。 -->
 	<%
-	    String userId = null;
-	    String userAuthority = null;
-	    try {
-			userId = session.getAttribute("userId").toString();
-			userAuthority = session.getAttribute("userAuthority").toString();
-	    } catch (NullPointerException e) {
-			userId = "";
-			userAuthority = "";
-	    }
+	    String userId = session.getAttribute("userId").toString();
+	    String userAuthority = session.getAttribute("userAuthority").toString();
 
 	    // 获取通知信息。
 	    ArrayList<String> dates = GetNotice.getDates();

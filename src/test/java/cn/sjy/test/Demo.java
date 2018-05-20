@@ -196,4 +196,14 @@ public class Demo {
 	Timestamp ts = Timestamp.valueOf(str);
 	System.out.println(ts);
     }
+
+    @Test
+    public void test16() throws Exception {
+	String realpath = "C:\\Users\\Michael\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\CAISystem\\files\\dockerFiles";
+	String dockerMountPath = realpath;
+	dockerMountPath = dockerMountPath.replaceAll(":", "");
+	dockerMountPath = dockerMountPath.replaceAll("\\\\", "/");
+	dockerMountPath = "/" + dockerMountPath;
+	System.out.println(dockerMountPath);
+    }
 }

@@ -158,15 +158,9 @@
 	<script src="./vendor/bootstrap-fileinput-master/themes/fa/theme.js"></script>
 	<%
 	    //将后台的相关数据传递给js。
-	    String userId = null;
-	    String userAuthority = null;
-	    try {
-			userId = session.getAttribute("userId").toString();
-			userAuthority = session.getAttribute("userAuthority").toString();
-	    } catch (NullPointerException e) {
-			userId = "";
-			userAuthority = "";
-	    }
+	    String userId = session.getAttribute("userId").toString();
+	    String userAuthority = session.getAttribute("userAuthority").toString();
+
 	    String[] fileList = (String[]) request.getAttribute("fileList");
 	    int fileListNum = fileList.length;
 

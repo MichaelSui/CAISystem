@@ -99,6 +99,11 @@ footer.footer {
 	float: right;
 }
 
+#openDockerFilesDirectoryBtn {
+	width: 200px;
+	float: right;F
+}
+
 #openHomeWorkDirectoryBtn {
 	width: 200px;
 	float: right;

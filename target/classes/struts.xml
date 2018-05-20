@@ -211,5 +211,11 @@
 			</result>
 			<result name="error">./pages/error.jsp</result>
 		</action>
+		<action name="openDockerFilesDirectoryAction"
+			class="cn.sjy.action.OpenDockerFilesDirectoryAction">
+			<result name="success" type="redirect">/goToTeacherPanelAction.do
+			</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -184,18 +184,9 @@
 	<script src="./vendor/jquery-3.3.1/jquery-labelauty.js"></script>
 	<!-- 将后台的相关数据传递给js。 -->
 	<%
-	    String userId = null;
-	    String userAuthority = null;
-	    int questionNumber = 0;
-	    try {
-			userId = session.getAttribute("userId").toString();
-			userAuthority = session.getAttribute("userAuthority").toString();
-			questionNumber = Integer.parseInt(request.getAttribute("questionNumber").toString());
-	    } catch (NullPointerException e) {
-			userId = "";
-			userAuthority = "";
-			questionNumber = 0;
-	    }
+	    String userId = session.getAttribute("userId").toString();
+	    String userAuthority = session.getAttribute("userAuthority").toString();
+	    int questionNumber = Integer.parseInt(request.getAttribute("questionNumber").toString());
 
 	    // 获取通知信息。
 	    ArrayList<String> dates = GetNotice.getDates();

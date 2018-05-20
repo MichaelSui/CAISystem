@@ -180,6 +180,14 @@
 						id="deleteQuestionExampleBtn">删除用例</button>
 				</form>
 			</div>
+			<h2 class="col-lg-12 mt-4">程序目录：</h2>
+			<div class="col-lg-12">
+				<form class="form" role="form"
+					action="openDockerFilesDirectoryAction.do" method="post">
+					<button class="btn btn-primary mt-2 mb-4"
+						id="openDockerFilesDirectoryBtn">打开程序目录</button>
+				</form>
+			</div>
 			<h2 class="col-lg-12 mt-4">作业目录：</h2>
 			<div class="col-lg-12">
 				<form class="form" role="form"
@@ -297,16 +305,9 @@
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<%
-	    //将后台的相关数据传递给js。
-	    String userId = null;
-	    String userAuthority = null;
-	    try {
-			userId = session.getAttribute("userId").toString();
-			userAuthority = session.getAttribute("userAuthority").toString();
-	    } catch (NullPointerException e) {
-			userId = "";
-			userAuthority = "";
-	    }
+	    //将后台的相关数据传递给js。    
+	    String userId = session.getAttribute("userId").toString();
+	    String userAuthority = session.getAttribute("userAuthority").toString();
 
 	    // 获取通知信息。
 	    ArrayList<String> dates = GetNotice.getDates();
@@ -373,6 +374,7 @@
 	    }
 	    // 获取用例信息。
 	    int questionExampleNum = Integer.parseInt(request.getAttribute("questionExampleNum").toString());
+	    System.out.println(questionExampleNum);
 	%>
 	<input type="hidden" id="questionExampleNum"
 		value="<%=questionExampleNum%>" />

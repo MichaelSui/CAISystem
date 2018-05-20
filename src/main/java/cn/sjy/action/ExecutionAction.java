@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -54,7 +55,8 @@ public class ExecutionAction {
 	    ActionContext actionContext = ActionContext.getContext();
 	    Map<String, Object> httpSession = actionContext.getSession();
 	    String userId = (String) httpSession.get("userId");
-	    String directory = "C:\\Users\\Michael\\Documents\\docker\\" + question;
+	    String realpath = ServletActionContext.getServletContext().getRealPath("/files/dockerFiles");
+	    String directory = realpath + "/" + question;
 	    String fileName = userId + ".cpp";
 	    boolean deleteAllFlag = FileUtils.deleteAllFile(directory, userId);
 	    boolean writeFlag = FileUtils.writeFile(directory, fileName, code);
@@ -99,8 +101,12 @@ public class ExecutionAction {
 	    randomPort.add(PortBinding.randomPort("0.0.0.0"));
 	    portBindings.put("443", randomPort);
 
+	    String dockerMountPath = realpath;
+	    dockerMountPath = dockerMountPath.replaceAll(":", "");
+	    dockerMountPath = dockerMountPath.replaceAll("\\\\", "/");
+	    dockerMountPath = "/" + dockerMountPath;
 	    final HostConfig hostConfig = HostConfig.builder().portBindings(portBindings)
-		    .appendBinds(Bind.from("/C/Users/Michael/Documents/docker").to("/home").build()).build();
+		    .appendBinds(Bind.from(dockerMountPath).to("/home").build()).build();
 
 	    // Create container with exposed ports
 	    final ContainerConfig containerConfig = ContainerConfig.builder().hostConfig(hostConfig)
