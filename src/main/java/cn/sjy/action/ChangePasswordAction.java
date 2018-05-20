@@ -45,6 +45,9 @@ public class ChangePasswordAction {
 	try {
 	    // 检验两个新密码是否一致。
 	    if (!newPassword1.equals(newPassword2)) {
+		ActionContext actionContext = ActionContext.getContext();
+		Map<String, Object> httpSession = actionContext.getSession();
+		httpSession.put("errorMsg", "两次新密码不一致");
 		return "error";
 	    }
 
@@ -62,6 +65,7 @@ public class ChangePasswordAction {
 		tx.commit();
 		session.close();
 
+		httpSession.put("errorMsg", "旧密码验证失败");
 		return "error";
 	    }
 	    String authority = list.get(0).getAuthority();
@@ -80,6 +84,10 @@ public class ChangePasswordAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "ChangePasswordAction抛出了异常");
 	    return "error";
 	}
     }

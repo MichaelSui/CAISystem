@@ -65,6 +65,10 @@ public class ReplyAProblemAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "ReplyAProblemAction抛出了异常");
 	    return "error";
 	}
     }

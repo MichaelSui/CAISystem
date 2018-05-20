@@ -83,7 +83,7 @@ public class ExecutionAction {
 		}
 		application.put("availablePort2", availablePort2);
 	    }
-	    System.out.println("port1:" + availablePort1 + " port2:" + availablePort2);
+	    // System.out.println("port1:" + availablePort1 + " port2:" + availablePort2);
 
 	    // Bind container ports to host ports
 	    final String[] ports = { String.valueOf(availablePort1), String.valueOf(availablePort2) };
@@ -188,6 +188,10 @@ public class ExecutionAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "ExecuteAction抛出了异常");
 	    return "error";
 	}
     }

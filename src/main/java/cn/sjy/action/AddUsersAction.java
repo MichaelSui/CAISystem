@@ -1,11 +1,14 @@
 package cn.sjy.action;
 
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import cn.sjy.db.Information;
 import cn.sjy.db.User;
@@ -78,6 +81,10 @@ public class AddUsersAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "AddUsersAction抛出了异常");
 	    return "error";
 	}
     }

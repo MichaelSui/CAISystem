@@ -56,6 +56,10 @@ public class GoToMyInformationAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "GoToMyInformationAction抛出了异常");
 	    return "error";
 	}
     }

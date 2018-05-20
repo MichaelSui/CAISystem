@@ -77,14 +77,15 @@
 	</div>
 
 	<!-- 主体部分。 -->
-	<div class="container text-center" id="main-body">
+	<div class="container" id="main-body">
 		<div class="row">
+			<h2 class="col-lg-12 mt-5 text-center">很遗憾，发生了错误</h2>
+			<h2 class="col-lg-12 mt-5">服务器返回信息：</h2>
+			<div class="col-lg-12" id="errorMsgInfo"></div>
+			<h2 class="col-lg-12 mt-5">帮助信息：</h2>
 			<div class="col-lg-12">
-				<h2 class="mt-5">很遗憾，发生了错误</h2>
-				<div class="mb-5 mt-5">
-					请依次检查是否出现以下错误：<br /> 1、请检查您输入的用户名和密码是否正确。<br />
-					2、重置密码时输入的旧密码错误或新密码不一致。<br />3、系统抛出了异常，请尝试重复操作。
-				</div>
+				请根据服务器返回信息调整您的操作。<br />
+				如果系统抛出了异常，请尝试重复操作。如问题持续出现请关注通知系统并与系统管理员取得联系。
 			</div>
 		</div>
 	</div>
@@ -159,7 +160,14 @@
 	<input type="hidden" id="<%=noticeMsgKey%>" value="<%=noticeMsgValue%>" />
 	<%
 	    }
+	    String errorMsg = null;
+	    try {
+			errorMsg = session.getAttribute("errorMsg").toString();
+	    } catch (NullPointerException e) {
+			errorMsg = "未知错误";
+	    }
 	%>
+	<input type="hidden" id="errorMsg" value="<%=errorMsg%>">
 	<script src="./js/error.js"></script>
 </body>
 

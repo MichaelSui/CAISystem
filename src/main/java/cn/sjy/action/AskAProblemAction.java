@@ -41,6 +41,10 @@ public class AskAProblemAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "AddAProblemAction抛出了异常");
 	    return "error";
 	}
     }

@@ -1,6 +1,7 @@
 package cn.sjy.action;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -39,6 +40,10 @@ public class GoToCodeOnLineAction {
 	    return "success";
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "GoToCodeOnLineAction抛出了异常");
 	    return "error";
 	}
     }

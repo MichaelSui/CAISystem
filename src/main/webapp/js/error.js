@@ -44,3 +44,8 @@ $(function() {
 		$("#noticeDiv").css("display", "none");
 	});
 })
+
+// 错误信息的展示 。
+var errorMsg = document.getElementById("errorMsg").value;
+var errorMsgInfo = document.getElementById("errorMsgInfo");
+errorMsgInfo.innerHTML = errorMsg;

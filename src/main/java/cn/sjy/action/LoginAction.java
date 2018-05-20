@@ -103,6 +103,10 @@ public class LoginAction {
 
 		return "success";
 	    } else {
+		ActionContext actionContext = ActionContext.getContext();
+		Map<String, Object> httpSession = actionContext.getSession();
+		httpSession.put("errorMsg", "用户名或密码错误");
+
 		transaction.commit();
 		session.close();
 
@@ -110,6 +114,10 @@ public class LoginAction {
 	    }
 	} catch (Exception e) {
 	    e.printStackTrace();
+
+	    ActionContext actionContext = ActionContext.getContext();
+	    Map<String, Object> httpSession = actionContext.getSession();
+	    httpSession.put("errorMsg", "LoginAction抛出了异常");
 	    return "error";
 	}
     }
