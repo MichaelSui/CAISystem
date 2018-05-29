@@ -18,6 +18,7 @@
 		<filter-name>directAccessFilter</filter-name>
 		<url-pattern>*.jsp</url-pattern>
 	</filter-mapping>
+
 	<!-- 登陆权限的判断。 -->
 	<filter>
 		<filter-name>isLogInFilter</filter-name>

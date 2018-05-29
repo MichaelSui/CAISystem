@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="result.jsp">
+<meta name="description" content="privacyPolicy.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -30,7 +30,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/result.css">
+<link rel="stylesheet" href="./css/privacyPolicy.css">
 </head>
 
 <body>
@@ -79,29 +79,16 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<h2 class="col-lg-12">服务器返回结果：</h2>
-			<div class="col-lg-12 mt-4">
-				<%=request.getAttribute("msg")%>
-			</div>
-			<br />
-			<div class="col-lg-6">
-				<h2 class="mt-4">最终成绩：</h2>
-				<div class="mt-4">
-					总计用例个数：<%=request.getAttribute("allCount")%>
-					<br /> 通过用例个数：<%=request.getAttribute("correctCount")%>
-					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
-					<br /> 本题最终成绩：<%=request.getAttribute("score")%>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div id="canvas-holder" style="width: 100%">
-					<canvas id="chart-area"></canvas>
-				</div>
-			</div>
-			<h2 class="col-lg-12 mt-4">帮助：</h2>
-			<div class="col-lg-12">
-				1、可以多次提交程序，最终成绩将按照<b>最后一次</b>提交保存。<br /> 2、刷新页面会导致代码的丢失，请自行做好程序备份。<br />
-				3、若服务器返回结果无显示，请检查程序中是否包含死循环等其他错误。<br />
+			<h2 class="col-lg-12 mt-5">隐私政策</h2>
+			<div class="col-lg-12 mt-5">
+				我们致力于保护您在使用我们网站时所提供的私隐、私人资料以及个人的资料，使我们在收集、使用、储存和传送个人资料方面符合（与个人资料私隐有关的法律法规）及消费者保护方面的最高标准。为确保您对我们在处理个人资料上有充分信心，您切要详细阅读及理解隐私政策的条文。特别是您一旦使用我们的网站，将被视为接受、同意、承诺和确认：<br />
+				<br />
+				您在自愿下连同所需的同意向我们披露个人资料；您会遵守本隐私政策的全部条款和限制；您在我们的网站上作登记、资料会被收集；您同意日后我们对隐私政策的任何修改；您同意我们的分公司、附属公司、雇员、就您可能会感兴趣的产品和服务与您联络（除非您已经表示不想收到该等讯息）。<br />
+				<br /> 收集个人资料及不具名的资料的目的及用途如下：通过我们的网站向您提供我们的各项服务； 当您使用我们的网站时，
+				能辨认及确认您的身份； 让您使用我们的网站时得到为您而设的感受； 我们的顾客服务人员有需要时可以与您联系； 统计我们网站使用量的数据；
+				令您使用我们网站时更方便； 为改进我们的产品、服务及网站内容而进行市场研究调查； 为我们搞的活动、市场销售和推广计划收集资料；
+				遵守法律、政府和监管机关的规定，包括但不限于对个人资料披露及通知的规定；
+				让我们及可能处于您住的国家之外的我们的分公司、附属公司、关联公司、雇员、代理人、服务伙伴或其它跟我们合作的第三者进行产品及/或服务的推广。
 			</div>
 		</div>
 	</div>
@@ -145,12 +132,9 @@
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<%
-	    // 将后台的相关数据传递给js。
+	    //将后台的相关数据传递给js。
 	    String userId = session.getAttribute("userId").toString();
 	    String userAuthority = session.getAttribute("userAuthority").toString();
-
-	    int correctCount = Integer.parseInt(request.getAttribute("correctCount").toString());
-	    int errorCount = Integer.parseInt(request.getAttribute("errorCount").toString());
 
 	    // 获取通知信息。
 	    ArrayList<String> dates = GetNotice.getDates();
@@ -159,8 +143,6 @@
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
-	<input type="hidden" id="correctCount" value="<%=correctCount%>" />
-	<input type="hidden" id="errorCount" value="<%=errorCount%>" />
 	<input type="hidden" id="noticeNum" value="<%=noticeNum%>" />
 	<%
 	    for (int i = 0; i < noticeNum; i++) {
@@ -176,9 +158,7 @@
 	<%
 	    }
 	%>
-	<script src="./js/result.js"></script>
-	<script src="./vendor/Chart.js/Chart.Bundle.js"></script>
-	<script src="./vendor/Chart.js/utils.js"></script>
+	<script src="./js/privacyPolicy"></script>
 </body>
 
 </html>

@@ -120,13 +120,14 @@
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="#">关于</a></li>
+						<li class="list-inline-item"><a href="goToAboutAction.do">关于</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">联系</a></li>
+						<li class="list-inline-item"><a href="goToContactAction.do">联系</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">使用条款</a></li>
+						<li class="list-inline-item"><a href="goToTermsAction.do">使用条款</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">隐私政策</a></li>
+						<li class="list-inline-item"><a
+							href="goToPrivacyPolicyAction.do">隐私政策</a></li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0">&copy; CAI System
 						2017-2018. All Rights Reserved.</p>

@@ -217,7 +217,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-9 mx-auto">
-					<h2 class="mb-4" id="callToActionMsg">迫不及待想要开始学习了？请先登录。</h2>
+					<h2 class="mb-4" id="callToActionMsg">迫不及待想要开始学习了？请先登录。未登录的用户不能使用各功能！</h2>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 					<a class="btn btn-primary" id="call-to-action-btn-1"
@@ -233,13 +233,14 @@
 			<div class="row">
 				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="#">关于</a></li>
+						<li class="list-inline-item"><a href="goToAboutAction.do">关于</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">联系</a></li>
+						<li class="list-inline-item"><a href="goToContactAction.do">联系</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">使用条款</a></li>
+						<li class="list-inline-item"><a href="goToTermsAction.do">使用条款</a></li>
 						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">隐私政策</a></li>
+						<li class="list-inline-item"><a
+							href="goToPrivacyPolicyAction.do">隐私政策</a></li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0">&copy; CAI System
 						2017-2018. All Rights Reserved.</p>

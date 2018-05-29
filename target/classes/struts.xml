@@ -217,5 +217,25 @@
 			</result>
 			<result name="error">./pages/error.jsp</result>
 		</action>
+		<action name="goToAboutAction"
+			class="cn.sjy.action.GoToAboutAction">
+			<result name="success">./pages/about.jsp</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
+		<action name="goToContactAction"
+			class="cn.sjy.action.GoToContactAction">
+			<result name="success">./pages/contact.jsp</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
+		<action name="goToTermsAction"
+			class="cn.sjy.action.GoToTermsAction">
+			<result name="success">./pages/terms.jsp</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
+		<action name="goToPrivacyPolicyAction"
+			class="cn.sjy.action.GoToPrivacyPolicyAction">
+			<result name="success">./pages/privacyPolicy.jsp</result>
+			<result name="error">./pages/error.jsp</result>
+		</action>
 	</package>
 </struts>

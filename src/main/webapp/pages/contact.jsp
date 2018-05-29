@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="result.jsp">
+<meta name="description" content="contact.jsp">
 <meta name="author" content="MichaelSui">
 <link rel="icon" href="./img/favicon.ico">
 
@@ -30,7 +30,7 @@
 	href="./vendor/fonts-googleapis/fonts-googleapis.css">
 
 <!-- Custom styles for this page. -->
-<link rel="stylesheet" href="./css/result.css">
+<link rel="stylesheet" href="./css/contact.css">
 </head>
 
 <body>
@@ -79,29 +79,10 @@
 	<!-- 主体部分。 -->
 	<div class="container" id="main-body">
 		<div class="row">
-			<h2 class="col-lg-12">服务器返回结果：</h2>
-			<div class="col-lg-12 mt-4">
-				<%=request.getAttribute("msg")%>
-			</div>
-			<br />
-			<div class="col-lg-6">
-				<h2 class="mt-4">最终成绩：</h2>
-				<div class="mt-4">
-					总计用例个数：<%=request.getAttribute("allCount")%>
-					<br /> 通过用例个数：<%=request.getAttribute("correctCount")%>
-					<br /> 失败用例个数：<%=request.getAttribute("errorCount")%>
-					<br /> 本题最终成绩：<%=request.getAttribute("score")%>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div id="canvas-holder" style="width: 100%">
-					<canvas id="chart-area"></canvas>
-				</div>
-			</div>
-			<h2 class="col-lg-12 mt-4">帮助：</h2>
-			<div class="col-lg-12">
-				1、可以多次提交程序，最终成绩将按照<b>最后一次</b>提交保存。<br /> 2、刷新页面会导致代码的丢失，请自行做好程序备份。<br />
-				3、若服务器返回结果无显示，请检查程序中是否包含死循环等其他错误。<br />
+			<h2 class="col-lg-12 mt-5">联系我们</h2>
+			<div class="col-lg-12 mt-5">
+				本系统尚处测试阶段，如果您在使用过程中遇到了问题，请先接受我诚挚的道歉。<br /> <br />
+				请您及时将问题反馈给系统开发人员，具体联系方式请点击下方的企鹅图标或@图标。谢谢！
 			</div>
 		</div>
 	</div>
@@ -145,12 +126,9 @@
 	<script src="./vendor/popper/popper.min.js"></script>
 	<script src="./vendor/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<%
-	    // 将后台的相关数据传递给js。
+	    //将后台的相关数据传递给js。
 	    String userId = session.getAttribute("userId").toString();
 	    String userAuthority = session.getAttribute("userAuthority").toString();
-
-	    int correctCount = Integer.parseInt(request.getAttribute("correctCount").toString());
-	    int errorCount = Integer.parseInt(request.getAttribute("errorCount").toString());
 
 	    // 获取通知信息。
 	    ArrayList<String> dates = GetNotice.getDates();
@@ -159,8 +137,6 @@
 	%>
 	<input type="hidden" id="userId" value="<%=userId%>" />
 	<input type="hidden" id="userAuthority" value="<%=userAuthority%>" />
-	<input type="hidden" id="correctCount" value="<%=correctCount%>" />
-	<input type="hidden" id="errorCount" value="<%=errorCount%>" />
 	<input type="hidden" id="noticeNum" value="<%=noticeNum%>" />
 	<%
 	    for (int i = 0; i < noticeNum; i++) {
@@ -176,9 +152,7 @@
 	<%
 	    }
 	%>
-	<script src="./js/result.js"></script>
-	<script src="./vendor/Chart.js/Chart.Bundle.js"></script>
-	<script src="./vendor/Chart.js/utils.js"></script>
+	<script src="./js/contact.js"></script>
 </body>
 
 </html>
